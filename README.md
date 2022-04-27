@@ -1,4 +1,4 @@
-# Gennius
+# Genius
 
 I coded a <a href="https://www.behance.net/gallery/140483359/GENIUS-website-redesign?tracking_source=search_projects%7Cwebsite"> redesign of Genius.com by Pavel Korzh</a> 
 
