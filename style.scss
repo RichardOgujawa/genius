@@ -20,5 +20,29 @@ html {
     scroll-behavior: smooth;
 }
 
-//ACTUAL SCSS
 
+//ACTUAL SCSS
+#topbar {
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar {
+    background: green;
+    display: flex;
+    width: 95%;
+    height: 70px;
+    align-self: center;
+    border-bottom: 2px solid $yellow;
+}
+
+#navbar > img{
+    width: 120px;
+    object-fit: contain;
+}
+
+#search-container {
+    width: 95%;
+    align-self: center; 
+    background: yellow;
+}
