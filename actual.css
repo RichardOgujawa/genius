@@ -1,0 +1,583 @@
+/*SETUP*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;494&display=swap');
+@import "setup.css";
+
+#grid {
+    background: var(--dark-gray, red);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:
+    120vh 
+    85vh
+    100%
+    ;
+    grid-template-areas: 
+    "cell1"
+    "cell2"
+    "cell3";
+}
+
+/*Mobile Only*/
+#hamburger-container {
+    display: none;
+}
+
+#mobile-nav {
+    display: none;
+}
+
+
+/*HEADER + HERO*/
+#cell1 {
+    background: var(--dark-gray, red); 
+    grid-area: cell1;
+}
+
+/*Navbar*/
+#navbar {
+    position: fixed;
+    /* background: var(--dark-gray); */
+    height: 130px;
+    width: 100%;    
+    display: grid; 
+    grid-template-columns: 2% 17% 40% auto 20% 2%;
+    grid-template-rows: 55% 3px auto; 
+    grid-template-areas:
+    "logo logo nav-links social-links buttons buttons"
+    ". hr hr hr hr ."
+    ". search . . . ."
+    ; 
+    transition: var(--transition, 500s ease);
+}
+
+/*Logo*/
+#logo-container {
+    padding-left: calc(100vw*0.02);
+    grid-area: logo;
+    background: var(--dark-gray, red); 
+    width: 100%; 
+    height: 100%;
+}
+
+#logo-container > a {
+    display: grid; 
+    align-items: center;
+    height: 100%;
+}
+
+#logo-container > a > img {
+    width: 160px;
+    transition: var(--transition, 500s ease)
+}
+
+
+/*Nav Links*/
+#nav-link-container {
+    grid-area: nav-links;
+    background: var(--dark-gray, red); 
+    /* background: blue;  */
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    gap: 25px;
+}
+
+.nav_link {
+    text-decoration: none;  
+    transition: var(--transition, .7s ease) 
+}
+
+.nav_link:hover {
+    color: var(--yellow, red);
+}
+
+/*Social Links*/
+#social-link-container {
+    grid-area: social-links; 
+    background: var(--dark-gray, red); 
+    /* background: cadetblue; */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#social-link-container > a > img {
+    width: 25px;
+    object-fit: contain;
+}
+
+/*Navbar Buttons*/
+#navbar-buttons {
+    grid-area: buttons; 
+    background: var(--dark-gray, red); 
+    padding-right: calc(100vw*0.02);
+    /* background: darkblue; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+#navbar-buttons a{
+    text-decoration: none;
+    padding: var(--padding, 300px);
+    border-radius: 22px;
+    border: 2px solid var(--yellow, red);
+    transition: var(--transition, 500s ease);
+}
+
+#sign-up {
+    background: var(--yellow, red); 
+    color: var(--dark-gray, red);
+}
+
+#sign-up:hover {
+    background: var(--dark-gray, red); 
+    color: var(--off-white, red);
+}
+
+#sign-in {
+    color: var(--off-white);
+    background: var(--dark-gray, red);
+}
+
+#sign-in:hover{
+    color: var(--dark-gray, red);
+    background: var(--yellow, red);
+}
+
+/*Navbar Hr*/
+#navbar-hr {
+    grid-area: hr;
+    background: var(--yellow, red);
+    border: none;
+}
+
+/*Search*/
+#search-container {
+    grid-area: search; 
+    /* background: firebrick; */
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+
+#search-wrap {
+    border: 2px solid var(--off-white);
+    border-radius: 22px;
+    padding: 3px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: var(--transition, 500s ease);
+}
+
+#search-label {
+    display: grid; 
+    place-items: flex-start;
+    width: auto;
+}
+
+#search {
+    background: transparent;
+    text-align: end;
+    width: 100%;
+    border: none;
+    color: var(--yellow,red);
+}
+
+#search::placeholder {
+    color: hsl(0 0% 60%);
+}
+
+#search:focus {
+    outline: none;
+}
+
+#search-icon {
+    width: 20px;
+}
+
+
+/*Hero*/
+#hero {
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 130px 10% 35% auto;
+    grid-template-areas: 
+    ". ."
+    ". lyric-guide"
+    "hero-img hero-img"
+    ". song-meaning"
+    ;
+}
+
+#lyric-guide-container {
+    grid-area: lyric-guide; 
+    /* background: red; */
+    display: grid;
+    align-items: flex-end;
+    margin-bottom: -20px;
+}
+
+#hero-img-container {
+    grid-area: hero-img;
+    margin-bottom: -15px;
+    display: grid; 
+    place-items: center;
+}
+
+#hero-img {
+    width: 60%;
+}
+
+#song-meaning-container {
+    grid-area: song-meaning;
+    /* background: yellow; */
+}
+
+#song-meaning-container p{
+    font-size: 35pt;
+}
+
+
+
+/*GENIUS' HISTORY*/
+#cell2 {
+    /* background: red; */
+    grid-area: cell2;
+    display: grid; 
+    grid-template-columns: 2% 35% auto 2%;
+    grid-template-rows: 3px 17% auto; 
+    grid-template-areas: 
+    ". history-hr history-hr ."
+    ". history-title . ."
+    ". . history-p ."
+}
+
+#history-hr {
+    grid-area: history-hr;
+    background: var(--yellow, red);
+    border: none;
+}
+
+#history-title {
+    grid-area: history-title;
+    /* background: green; */
+    padding-top: 10px;
+}
+
+#history-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#concentric-circle {
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--yellow, red); 
+    box-sizing: content-box;
+    box-shadow: 0 0 0 2.5px var(--dark-gray, blue), 0 0 0 5px var(--yellow, blue);
+}
+
+#history-p {
+    grid-area: history-p;
+    font-size: var(--medium-font);
+}
+
+#history-p > span{
+    padding-left : 50%;
+    font-size: var(--medium-font);
+}
+
+
+/*Featured*/
+#cell3 {
+    grid-area: cell3; 
+    padding: 0px 2%; 
+}
+
+#cell3 h2 {
+    color: var(--yellow, red);
+    font-size: 90pt;
+}
+
+#featured-grid {
+    width: 100%; 
+    border: 2px solid var(--yellow, red);
+    display: flex; 
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    width: 100%; 
+}
+
+.row-1-sections {
+    width: 100%;
+    border: 2px solid var(--yellow, red);
+}
+
+.row-1-top {
+    min-height: 120px; 
+    padding: 15px;
+    display: flex;
+
+}
+
+.row-1-top-left {
+    float: left;
+    width: 60%;
+    height: 100%;
+    font-size: 14pt;
+}
+
+.row-1-top-right {
+    float: right;
+    width: 50%; 
+    height: 100%;
+    display: flex; 
+    justify-content: flex-end;
+    font-size: 10pt;
+    align-self: flex-end;  
+    color: hsl(0 0% 60%);
+}
+
+#row-1 img {
+    width: 100%;
+    object-fit: cover ;
+}
+
+
+.row-1-bottom {
+    min-height: 70px;
+}
+
+.featured-author {
+    float: left;
+    color: hsl(0 0% 60%);
+    padding: 15px;
+    opacity: 1; 
+    font-size: 10pt;
+}
+
+.featured-link {
+    float: right;
+    padding: 15px;
+    font-size: 12pt;
+}
+
+
+#load-more-container {
+    height: 350px;
+    padding: 50px 0px;
+    width: 100%;
+}
+
+#load-more-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 175px;
+    background: transparent;
+    border: 2px solid var(--yellow, red);
+    font-size: 25pt;
+    color: var(--yellow, red);
+    cursor: pointer;
+}
+
+
+
+
+/*Mobile View*/
+@media (max-width: 1190px) {
+    
+
+    /*Desktop Only*/
+    #sign-in {
+        display: none;
+    }
+
+
+    /*Reconfiguring Navbar for Mobile View*/
+    #navbar {
+        height: 130px;
+        width: 100%;    
+        display: grid; 
+        grid-template-columns: 2% 48% 48% 2%;
+        grid-template-rows: 55% 3px calc(45% - 3px); 
+        grid-template-areas:
+        ". logo hamburger-icon ."
+        ". hr hr ."
+        ". search buttons ."
+        ; 
+    }
+
+    #search-container {
+        background: var(--dark-gray, red);
+    }
+
+    #song-meaning-container p{
+        font-size: 25pt;
+        width: 95%;
+    }
+
+    #history-p > span {
+        padding-left: 155px;
+    }
+    /*Hamburger*/
+    #hamburger-container {
+        display: flex; 
+        /* background: purple; */
+        grid-area: hamburger-icon;
+        justify-content: flex-end;
+        align-items: center;
+        background: var(--dark-gray, red);
+
+    }
+
+    #hamburger {
+        width: 85px;
+        height: 20px;
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .hamburger_span, .mobile_hamburger_span {
+        background: var(--yellow);
+        width: 100%; 
+        height: 3px;
+    }
+
+    /*Mobile Navigation Menu*/
+    #mobile-nav {
+        background: var(--yellow, red);
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        display: grid;
+        grid-template-columns: auto calc(100vw*0.02);
+        grid-template-rows: calc(130px * 0.55) 3px auto;
+        grid-template-areas: 
+        "mobile-hamburger-icon ."
+        "mobile-hamburger-hr ."
+        "mobile-nav-container .";
+        transform: translateX(100%);
+        transition: var(--transition, 500 ease);
+    }
+
+    #mobile-hamburger-container {
+        grid-area: mobile-hamburger-icon; 
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
+
+    #mobile-hamburger {
+        width: 85px;
+        height: 20px;
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+
+    }
+
+    .mobile_hamburger_span {
+        background: var(--dark-gray, red);
+    }
+
+    #mobile-nav-hr {
+        grid-area: mobile-hamburger-hr; 
+        background: var(--dark-gray);
+        border: none;
+    }
+
+    #mobile-nav-container {
+        grid-area: mobile-nav-container; 
+        background: yellow;
+        padding-left: 30px;
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 30px;
+        gap: 20px;
+    }
+
+    #mobile-nav-container a {
+        color: var(--dark-gray, red);
+        text-decoration: none;
+        transition: var(--transition, 500s ease);
+        font-size: 20pt;
+        font-weight: bold;
+        position: relative;
+    }
+
+    #mobile-nav-container a::before {
+        position: absolute; 
+        content: ""; 
+        top: 0; 
+        left: 0; 
+        background: var(--dark-gray, red); 
+        width: 100%; 
+        height: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: var(--transition, 500s ease);
+    }
+
+    #mobile-nav-container a:nth-of-type(1)::after {
+        position: absolute; 
+        content: "remy martin"; 
+        top: 0; 
+        left: 0;
+        color: var(--yellow, red);
+        opacity: 0;
+        transition: var(--transition, 500s ease);
+    }
+
+    #mobile-nav-container a:nth-of-type(1):hover::after {
+        opacity: 1;
+    }
+    #mobile-nav-container a:hover::before{
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    #mobile-nav-container a:hover {
+                color: var(--yellow, red);
+    }
+
+    .mobile_nav_link:hover:nth-of-type(1)::after{
+        color: red;
+    }
+
+
+    /*Hero Section*/
+    #hero {
+        height: 100%;
+        display: grid; 
+        grid-template-columns: 50% 50%; 
+        grid-template-rows: 130px 10% 30% auto;
+        grid-template-areas: 
+        ". ."
+        ". lyric-guide"
+        "hero-img hero-img"
+        ". song-meaning"
+        ;
+    }
+
+    #hero-img {
+        width: 90%;
+    }
+
+}

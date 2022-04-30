@@ -6,3 +6,22 @@ For the disortion effect
 
 - Fix the background of the menu to come on after the preload
 - put the navbar in front of all the content using z-index
+
+Overall structuree
+- start from the aoutside, build the framework, and simply fill in the contents afterwards. 
+- Make each component responsive as you go 
+
+## Featured Section 
+- Use the cloning idea from the carousel. Every time you click on the button, the a new div with two sections is created
+
+## Notes for when you come back tomorrow
+- fix the featured-links border-bottom 
+- Make sure the mobile view works
+- Add a preload screen
+- When you move down the page, the GENIUS logo enlarges, and the bringing you the meaning text comes in 
+- Create the cursor icon - just do something simply and use the invert effect
+- Do the liquid effect using blender and distortion effects, maybe the sea modifier or something. 
+- Do the button hover effect, maybe just use a ::after pseudo element and then overflow hidden it, and then simply increse it's size.,
+
+## If you want to do a bit more
+- Make it a PHP file, and create a directory of articles to draw from for the featured page

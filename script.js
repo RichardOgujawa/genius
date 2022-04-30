@@ -1,45 +1,87 @@
-const logo = document.getElementById("img-id");
+const logo = document.getElementById("logo-img");
+const navbar  = document.getElementById("navbar");
 const hero = document.getElementById("hero");
-const bgLogo = document.getElementById("bg-logo");
-const lyricGuide = document.getElementById("lyric-guide");
-const heroImg = document.getElementById("hero-img");
-const songMeaning = document.getElementById("song-meaning");
-const mobileNav = document.getElementById("mobile-nav");
-const hamburger = document.getElementById("hamburger");
+// const bgLogo = document.getElementById("bg-logo");
+// const lyricGuide = document.getElementById("lyric-guide");
+// const heroImg = document.getElementById("hero-img");
+// const songMeaning = document.getElementById("song-meaning");
 const mobileHamburger = document.getElementById("mobile-hamburger");
-const search = document.getElementById("search-container");
+const mobileNav = document.getElementById("mobile-nav");
 const hamburgerCont = document.getElementById("hamburger-container");
+const hamburger = document.getElementById("hamburger");
+const search = document.getElementById("search");
+const searchWrap = document.getElementById("search-wrap");
 const navBtnsCont = document.getElementById("navbar-buttons");
 const socialLinkCont = document.getElementById("social-link-container");
 const navLinkCont = document.getElementById("nav-link-container"); 
-const logoCont = document.getElementById("logo");
-const bgLogoText = document.getElementById("bg-logo-text");
+const logoCont = document.getElementById("logo-container");
+// const bgLogoText = document.getElementById("bg-logo-text");
 
 const navLinks = document.querySelectorAll(".nav_link");
 const socialLinks = document.querySelectorAll(".social_link");
 const navbarButtons = document.querySelectorAll(".navbar_buttons");
 const hamburgerSpan = document.querySelectorAll(".hamburger_span");
-const mobileHamburgerSpan = document.querySelectorAll(".mobile_hamburger_span");
-
-
-
-
+// const mobileHamburgerSpan = document.querySelectorAll(".mobile_hamburger_span");
 
 // Logo and Search Animation on scroll
 
 window.addEventListener("scroll", ()=>{
     var vertScroll = window.scrollY;
+    var windowWidth = window.innerWidth;
+    console.log(windowWidth);
+    
+    var searchWrapTransform = searchWrap.style.transform;
 
-    if (vertScroll >= 10 && heroImg.style.transform == "translate(0%)") {
-        logo.style.transform="translateY(-100%)";
-        search.style.transform="translateY(-190%)";
-        songMeaning.style.transform="translateY(0%)";
+    if (windowWidth < 1190 && searchWrapTransform == "translateY(-200%)") {
+        logo.style.transform = "translateY(0%)";
+        searchWrap.style.transform = "translateY(0%)";
     }
-    else if (vertScroll < 10) {
+    else if (vertScroll >= 100 && windowWidth >= 1190) {
+        logo.style.transform="translateY(-150%)";
+        searchWrap.style.transform="translateY(-200%)";
+        
+        // songMeaning.style.transform="translateY(0%)";
+    }
+    else if (vertScroll < 100 && windowWidth >= 1190) {
         logo.style.transform="translateY(0%)";
-        search.style.transform="translateY(0%)";
+        searchWrap.style.transform="translateY(0%)";    
     }
-}), 3000   
+
+});
+
+//Cloning for Featured Section
+
+const node = document.getElementById("row2");
+// const clone = node.cloneNode(true);
+const featuredGrid = document.getElementById("featured-grid");
+
+const loadMoreButton = document.getElementById("load-more-button");
+
+    function myFunction(){
+
+        featuredGrid.appendChild(node.cloneNode(true));
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function navbarScroll() {
+//     logo.style.transform="translateY(0%)";
+//     searchWrap.style.transform="translateY(0%)";
+// }
 
 
 function preloadFunc(){
@@ -53,7 +95,7 @@ function loadingItems() {
 
     //*Menu
     //**Desktop
-    setTimeout(logoAnim, 200);
+    // setTimeout(logoAnim, 200);
 
     setTimeout(navLinksAnim, 225);
     
@@ -64,14 +106,14 @@ function loadingItems() {
     //**Mobile 
     setTimeout(hamburgerIcon, 275);
 
-    //*Header
-    setTimeout(lyricGuideAnim,300);
+    // //*Header
+    // setTimeout(lyricGuideAnim,300);
 
-    //*Hero Image 
-    setTimeout(heroImgAnim, 400);
+    // //*Hero Image 
+    // setTimeout(heroImgAnim, 400);
 
-    /*Genius text*/
-    setTimeout(bglogoTextAnim, 250);
+    // /*Genius text*/
+    // setTimeout(bglogoTextAnim, 250);
 
     setTimeout(backgroundColorChange, 400);
 }
@@ -85,24 +127,23 @@ function backgroundColorChange(){
     // logoCont
 }
 
-function bglogoTextAnim(){
-    bgLogoText.style.display = "none";
-}
+// function bglogoTextAnim(){
+//     bgLogoText.style.display = "none";
+// }
 
-//Hero Img Animation 
-function heroImgAnim(){
-    heroImg.style.transform = "translate(0%)";
-}
-//Lyric Guide Animation
-function lyricGuideAnim(){
-    lyricGuide.style.transform = "translate(0%)";
-}
+// //Hero Img Animation 
+// function heroImgAnim(){
+//     heroImg.style.transform = "translate(0%)";
+// }
+// //Lyric Guide Animation
+// function lyricGuideAnim(){
+//     lyricGuide.style.transform = "translate(0%)";
+// }
 
 
 //Logo Animation
 function logoAnim(){
     logo.style.transform = "translateY(0%)";
-
 }
 
 //NavLinks Animation
@@ -136,31 +177,22 @@ function hamburgerIcon(){
 }
 
 /*Mobile Nav Scroll*/
-var toggleClick = true;
 
+var toggleClick = true;
 hamburger.addEventListener("click", () => {
-    
+
     if (toggleClick == true) {
         toggleClick = !toggleClick;
-        mobileNav.style.transform = "translateX(-100%)";
-
-    } else if (toggleClick == false) {
-        toggleClick = !toggleClick;
         mobileNav.style.transform = "translateX(0%)";
-
-    }
+    } 
 });
 
+
 mobileHamburger.addEventListener("click", () => {
-    
-    if (toggleClick == true) {
-        toggleClick = !toggleClick;
-        mobileNav.style.transform = "translateX(-100%)";
 
-    } else if (toggleClick == false) {
+    if (toggleClick == false) {
         toggleClick = !toggleClick;
-        mobileNav.style.transform = "translateX(0%)";
-
+        mobileNav.style.transform = "translateX(100%)";
     }
 });
 
