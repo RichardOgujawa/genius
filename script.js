@@ -1,27 +1,37 @@
-const logo = document.getElementById("logo-img");
+/*VARIABLES*/
+//Navbar
 const navbar  = document.getElementById("navbar");
-const hero = document.getElementById("hero");
-// const bgLogo = document.getElementById("bg-logo");
-// const lyricGuide = document.getElementById("lyric-guide");
-// const heroImg = document.getElementById("hero-img");
-// const songMeaning = document.getElementById("song-meaning");
-const mobileHamburger = document.getElementById("mobile-hamburger");
-const mobileNav = document.getElementById("mobile-nav");
-const hamburgerCont = document.getElementById("hamburger-container");
-const hamburger = document.getElementById("hamburger");
+const logo = document.getElementById("logo-img");
 const search = document.getElementById("search");
 const searchWrap = document.getElementById("search-wrap");
 const navBtnsCont = document.getElementById("navbar-buttons");
 const socialLinkCont = document.getElementById("social-link-container");
 const navLinkCont = document.getElementById("nav-link-container"); 
 const logoCont = document.getElementById("logo-container");
-// const bgLogoText = document.getElementById("bg-logo-text");
 
 const navLinks = document.querySelectorAll(".nav_link");
 const socialLinks = document.querySelectorAll(".social_link");
 const navbarButtons = document.querySelectorAll(".navbar_buttons");
+
+//Hero 
+const hero = document.getElementById("hero");
+const heroImg = document.getElementById("hero-img");
+const songMeaning = document.getElementById("song-meaning");
+
+//Mobile Hamburger 
+const mobileHamburger = document.getElementById("mobile-hamburger");
+const mobileNav = document.getElementById("mobile-nav");
+
+//Hamburger 
+const hamburgerCont = document.getElementById("hamburger-container");
+const hamburger = document.getElementById("hamburger");
+
 const hamburgerSpan = document.querySelectorAll(".hamburger_span");
+// const lyricGuide = document.getElementById("lyric-guide");
 // const mobileHamburgerSpan = document.querySelectorAll(".mobile_hamburger_span");
+
+// const bgLogoText = document.getElementById("bg-logo-text");
+// const bgLogo = document.getElementById("bg-logo");
 
 // Logo and Search Animation on scroll
 
@@ -39,12 +49,18 @@ window.addEventListener("scroll", ()=>{
     else if (vertScroll >= 100 && windowWidth >= 1190) {
         logo.style.transform="translateY(-150%)";
         searchWrap.style.transform="translateY(-200%)";
-        
-        // songMeaning.style.transform="translateY(0%)";
+        songMeaning.style.transform = "translateY(0%)";
+        heroImg.style.width = "81%";
     }
     else if (vertScroll < 100 && windowWidth >= 1190) {
         logo.style.transform="translateY(0%)";
         searchWrap.style.transform="translateY(0%)";    
+        heroImg.style.width = "60%";
+        
+    } else if (vertScroll >= 100){
+        heroImg.style.width = "81%";
+        songMeaning.style.transform = "translateY(0%)";
+
     }
 
 });
@@ -61,6 +77,8 @@ const loadMoreButton = document.getElementById("load-more-button");
 
         featuredGrid.appendChild(node.cloneNode(true));
     }
+
+
 
     
 
@@ -84,9 +102,7 @@ const loadMoreButton = document.getElementById("load-more-button");
 // }
 
 
-function preloadFunc(){
-    setTimeout(loadingItems,  3000);
-}
+
 
 //This is the loading animation for elements that aren't in both mobile and desktop view. To prevent them from re-animating every time the window is resized.
 
@@ -195,4 +211,5 @@ mobileHamburger.addEventListener("click", () => {
         mobileNav.style.transform = "translateX(100%)";
     }
 });
+
 

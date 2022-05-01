@@ -20,6 +20,7 @@
     font-size: var(--small-font);
     color: rgb(203, 202, 205);
     color: var(--off-white, rgb(203, 202, 205));
+    /* cursor: none; */
 }
 
 html {
@@ -29,3 +30,8 @@ html {
 body {
     overflow-x: hidden;
 }
+
+canvas {
+    z-index: 9999;
+}
+

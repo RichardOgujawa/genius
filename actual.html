@@ -19,8 +19,8 @@
 
 </head>
 
-<body id="body" onload="preloadFunc()">
-    <div id="grid">
+<body id="body" onload="preloadFunc()" onmousemove="cursorMove(event)">
+    <div id="grid" class="gridPreload">
         <div id="cell1">
             <header id="header">
                 <nav id="navbar">
@@ -77,7 +77,7 @@
                 </nav>
 
                 <div id="mobile-nav">
-                
+
                     <div id="mobile-hamburger-container">
                         <div id="mobile-hamburger">
                             <span class="mobile_hamburger_span mobile_span1"></span>
@@ -86,9 +86,12 @@
                     </div>
 
                     <hr id="mobile-nav-hr">
-                
+
                     <div id="mobile-nav-container">
+
+                        <!--tRY CREATING DUPLICATES, PUTTING THEM IN CONTAINERS AND THEN POSITION ABSOLUTING, AND THEN CLIP-PATH ANIMATIONS-->
                         <a href="#" class="mobile_nav_link">remy martin</a>
+                        
                         <a href="#" class="mobile_nav_link">featured</a>
                         <a href="#" class="mobile_nav_link">community</a>
                         <a href="#" class="mobile_nav_link">charts</a>
@@ -103,7 +106,7 @@
                     <p id="lyric-guide">Your guide to lyrics and <br> the meaning behind them.</p>
                 </div>
                 <div id="hero-img-container">
-                    <img id="hero-img" src="images/genius-logo.png" alt="Genius logo">
+                    <img class="cursor_bigger" id="hero-img" src="images/genius-logo.png" alt="Genius logo">
                 </div>
                 <div id="song-meaning-container">
                     <p id="song-meaning"> BRINGING YOU THE MEANING <br> BEHIND THE MUSIC...SO YOU <br> DON'T HAVE TO HUM
@@ -126,39 +129,56 @@
                 </div>
             </div>
 
-            <p id="history-p"><span>Founded in 2009, Genius is a unique media</span> company that's powered by community, our in-house creative team,
-                and the artists themselves. We serve music knowledge to over 100 million people each month on Genius.com and
-                everywhere music fans connect across the internet. Genius celebrates More Than The Music - the lyric, the
+            <p id="history-p"><span>Founded in 2009, Genius is a unique media</span> company that's powered by
+                community, our in-house creative team,
+                and the artists themselves. We serve music knowledge to over 100 million people each month on Genius.com
+                and
+                everywhere music fans connect across the internet. Genius celebrates More Than The Music - the lyric,
+                the
                 stories behind the songs, and the creative connections that meaningfully derive culture.
             </p>
         </div>
 
         <!--Featured-->
         <div id="cell3">
-            <h2>FEATURED NEWS</h2>
+            <h2 id="featured-title">FEATURED NEWS</h2>
             <div id="featured-grid">
                 <div class="row">
                     <section class="row-1-sections">
                         <div class="row-1-top">
-                            <span class="row-1-top-left">What's Up Next: Here's Every Album Dropping in January. FKA twigs has new projects on the way</span>
+                            <span class="row-1-top-left">What's Up Next: Here's Every Album Dropping in January. FKA
+                                twigs has new projects on the way</span>
                             <span class="row-1-top-right">January 13th</span>
                         </div>
-                        <img src="images/weekend-and-fka.jpg" alt="The Weekend album cover">
+
+                        <div id="img-and-vid">
+                            <img src="images/weekend-and-fka.jpg" alt="The Weekend album cover" class="cursor_bigger" id="img-distort">
+                            <video id="liquid-vid" autoplay loop>
+                                <source src="videos/weekend-and-fka.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                              </video>
+                        </div>
+
                         <div class="row-1-bottom">
                             <span class="featured-author">by streetlights</span>
-                            <a href="#" class="featured-link">See the article</a>
+                            <div id="featured-links-container">
+                                <a href="#" class="featured-link">See the article</a>
+                            </div>
                         </div>
                     </section>
 
                     <section class="row-1-sections">
                         <div class="row-1-top">
-                            <span class="row-1-top-left">Read All The Lyrics To The Young Dolph Tribute Album 'Paper Route EMPIRE Presents: Long Live Dolph'</span>
+                            <span class="row-1-top-left">Read All The Lyrics To The Young Dolph Tribute Album 'Paper
+                                Route EMPIRE Presents: Long Live Dolph'</span>
                             <span class="row-1-top-right">January 21st</span>
                         </div>
-                        <img src="images/young-dolph.jpg" alt="Young Doplh album cover">
+                        <img src="images/young-dolph.jpg" alt="Young Doplh album cover" class="cursor_bigger">
                         <div class="row-1-bottom">
                             <span class="featured-author">by Ken Partridge</span>
-                            <a href="#" class="featured-link">See the article</a>
+                            <div id="featured-links-container">
+                                <a href="#" class="featured-link">See the article</a>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -166,13 +186,16 @@
                 <div class="row" id="row2">
                     <section class="row-1-sections">
                         <div class="row-1-top">
-                            <span class="row-1-top-left">Read All The Lyrics To YoungBoy Never Broke Again's New Mixtape 'Colors'</span>
+                            <span class="row-1-top-left">Read All The Lyrics To YoungBoy Never Broke Again's New Mixtape
+                                'Colors'</span>
                             <span class="row-1-top-right">January 21st</span>
                         </div>
-                        <img src="images/young-boy-colours.jpg" alt="The Weekend album cover">
+                        <img src="images/young-boy-colours.jpg" alt="The Weekend album cover" class="cursor_bigger">
                         <div class="row-1-bottom">
                             <span class="featured-author">by streetlights</span>
-                            <a href="#" class="featured-link">See the article</a>
+                            <div id="featured-links-container">
+                                <a href="#" class="featured-link">See the article</a>
+                            </div>
                         </div>
                     </section>
 
@@ -181,28 +204,64 @@
                             <span class="row-1-top-left">Charlie Puth Succumbs To Lust On New Song "Light Switch"</span>
                             <span class="row-1-top-right">January 20th</span>
                         </div>
-                        <img src="images/charlie-puth-light-switch.jpg" alt="Young Doplh album cover">
+                        <img src="images/charlie-puth-light-switch.jpg" alt="Young Doplh album cover" class="cursor_bigger">
                         <div class="row-1-bottom">
                             <span class="featured-author">by Ken Partridge</span>
-                            <a href="#" class="featured-link">See the article</a>
+                            <div id="featured-links-container">
+                                <a href="#" class="featured-link">See the article</a>
+                            </div>
                         </div>
                     </section>
 
                 </div>
-                
+
             </div>
 
             <div id="load-more-container">
-                <button id="load-more-button" onclick="myFunction()">LOAD MORE FEATURED NEWS</button>
+                <div id="load-more-button" onclick="myFunction()" class="cursor_bigger">
+                    <div id="load-more-button-text">LOAD MORE FEATURED NEWS</div>
+                </div>
             </div>
+        </div>
 
         </div>
-    </div>
 
-    <span cursor ></span>
+        <!--Preload-->
+        <div id="preload">
+
+
+                <div id="bg-logo-circles">
+                    <div class="circle one"></div>
+                    <div class="circle two"></div>
+                    <div class="circle three"></div>
+                    <div class="circle four"></div>
+                    <div class="circle five"></div>
+                    <div class="circle six"></div>
+                    <div class="circle seven"></div>
+                    <div class="circle eight"></div>
+                    <div class="circle nine"></div>
+                    <div class="circle ten"></div>
+                    <div class="circle eleven"></div>
+                    <div class="circle twelve"></div>
+                </div>
+
+                <div id="bg-logo-text">
+                    <p>GENIUS</p>
+                    <p>GENIUS</p>
+                    <p>GENIUS</p>
+                </div>
+
+        </div>
+
+        <!--tO FIX THIS JUST WRAP SOMETHING AROUND THIS, MAKE THAT THE POINTER AND THEN GIVE IT A BORDER-->
+        <div id="cursor-inner"></div>
+        <div id="cursor"></div>
+
+
 </body>
 
 <script src="script.js"></script>
-<script src="sketch.js"></script>
+<script src="cursor.js"></script>
+<script src="preload.js"></script>
 
 </html>
