@@ -8,7 +8,7 @@
     <title>Genius</title>
 
     <!--StyleSheets-->
-    <link rel="stylesheet" href="actual.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
     <!--Favicon-->
@@ -34,19 +34,23 @@
 
                     <!--Nav Links-->
                     <div id="nav-link-container">
-                        <a href="#" class="nav_link">remy martin</a>
-                        <a href="#" class="nav_link">featured</a>
-                        <a href="#" class="nav_link">community</a>
-                        <a href="#" class="nav_link">charts</a>
-                        <a href="#" class="nav_link">videos</a>
+                        <div id="nav-link-wrap">
+                            <a href="#" class="nav_link">remy martin</a>
+                            <a href="#" class="nav_link">featured</a>
+                            <a href="#" class="nav_link">community</a>
+                            <a href="#" class="nav_link">charts</a>
+                            <a href="#" class="nav_link">videos</a>
+                        </div>
                     </div>
 
                     <!--Social Links-->
                     <div id="social-link-container">
-                        <a href="#" class="social_link"><img src="icons/ig.png" alt="Instagram Logo"></a>
-                        <a href="#" class="social_link"><img src="icons/twitter.png" alt="Twitter Logo"></a>
-                        <a href="#" class="social_link"><img src="icons/fb.png" alt="Facebook Logo"></a>
-                        <a href="#" class="social_link"><img src="icons/yt.png" alt="Youtube Logo"></a>
+                        <div id="social-link-wrap">
+                            <a href="#" class="social_link"><img src="icons/ig.png" alt="Instagram Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/twitter.png" alt="Twitter Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/fb.png" alt="Facebook Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/yt.png" alt="Youtube Logo"></a>
+                        </div>
                     </div>
 
                     <!--Hamburger Icon-->
@@ -58,9 +62,11 @@
                     </div>
 
                     <!--Sign In/Sign Up-->
-                    <div id="navbar-buttons">
-                        <a href="#" class="navbar_buttons" id="sign-up">sign up</a>
-                        <a href="#" class="navbar_buttons" id="sign-in">sign in</a>
+                    <div id="navbar-buttons-container">
+                        <div id="navbar-buttons-wrap">
+                            <a href="#" class="navbar_buttons" id="sign-up">sign up</a>
+                            <a href="#" class="navbar_buttons" id="sign-in">sign in</a>
+                        </div>
                     </div>
 
                     <hr id="navbar-hr">
@@ -89,13 +95,45 @@
 
                     <div id="mobile-nav-container">
 
-                        <!--tRY CREATING DUPLICATES, PUTTING THEM IN CONTAINERS AND THEN POSITION ABSOLUTING, AND THEN CLIP-PATH ANIMATIONS-->
-                        <a href="#" class="mobile_nav_link">remy martin</a>
+                        <!--Separated them into two parts because width:auto kept breaking up and wrapping the text of the first mobile menu item because it has two words in it-->
+                        <a href="#" class="mobile_nav_link">
+                            <span class="mobile_nav_link_span">
+                                <span>remy</span>
+                                <span>martin</span>
+                            </span>
+                            <span class="mobile_nav_link_span">
+                                <span>remy</span>
+                                <span>martin</span>
+                            </span> 
+                        </a>
                         
-                        <a href="#" class="mobile_nav_link">featured</a>
-                        <a href="#" class="mobile_nav_link">community</a>
-                        <a href="#" class="mobile_nav_link">charts</a>
-                        <a href="#" class="mobile_nav_link">videos</a>
+                        <a href="#" class="mobile_nav_link">
+                            <span class="mobile_nav_link_span">
+                                <span>featured</span>
+                            </span>
+                            <span class="mobile_nav_link_span">
+                                <span>featured</span>
+                            </span>
+                        </a>
+
+                        <div class="mobile_nav_link_mini_container">
+
+                            <a href="#" class="mobile_nav_link1">
+                                <span class="mobile_nav_link_span1">community</span>
+                                <span class="mobile_nav_link_span1">community</span>
+                            </a>
+
+                            <a href="#" class="mobile_nav_link1">
+                                <span class="mobile_nav_link_span1">charts</span>
+                                <span class="mobile_nav_link_span1">charts</span>
+                            </a>
+
+                            <a href="#" class="mobile_nav_link1">
+                                <span class="mobile_nav_link_span1">videos</span>
+                                <span class="mobile_nav_link_span1">videos</span>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </header>
@@ -153,10 +191,6 @@
 
                         <div id="img-and-vid">
                             <img src="images/weekend-and-fka.jpg" alt="The Weekend album cover" class="cursor_bigger" id="img-distort">
-                            <video id="liquid-vid" autoplay loop>
-                                <source src="videos/weekend-and-fka.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                              </video>
                         </div>
 
                         <div class="row-1-bottom">
@@ -260,8 +294,9 @@
 
 </body>
 
-<script src="script.js"></script>
-<script src="cursor.js"></script>
-<script src="preload.js"></script>
+<script src="script/script.js"></script>
+<script src="script/cursor.js"></script>
+<script src="script/preload.js"></script>
+<script src="script/distort.js"></script>
 
 </html>

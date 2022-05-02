@@ -22,6 +22,9 @@ Overall structuree
 - ~Add a preload screen~.....
 - ~Make sure the mobile view works~
 - Do the liquid effect using blender and distortion effects, maybe the sea modifier or something. 
+- use RGB Kinetic slider and simply make the array all the images, and let them all be called upon in a forEach loop. 
 
 ## If you want to do a bit more
-- Make it a PHP file, and create a directory of articles to draw from for the featured page
+<ul>Add PHP functionality:</ul> 
+<li>Articles</li> 
+<li>Search</li>

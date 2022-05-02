@@ -257,27 +257,40 @@
     display: grid; 
     align-items: center;
     height: 100%;
+    clip-path: polygon(0% 0%, 0% 80%, 100% 80%, 100% 0%);
 }
 
 #logo-img {
     width: 160px;
-    transition: var(--transition, 500s ease)
+    transition: var(--transition, 500s ease); 
+    transform: translateY(150%);
 }
 
 /*Nav Links*/
 #nav-link-container {
+    width: 100%; 
+    height: 100%; 
     grid-area: nav-links;
     background: var(--dark-gray, red); 
     /* background: blue;  */
+    display: grid; 
+    place-items: center;
+}
+
+#nav-link-wrap {
+    width: 100%; 
+    height: 100%; 
     display: flex; 
     align-items: center;
     justify-content: center; 
     gap: 25px;
+    clip-path: polygon(0% 0%, 0% 80%, 100% 80%, 100% 0%);
 }
 
 .nav_link {
     text-decoration: none;  
-    transition: var(--transition, .7s ease) 
+    transition: var(--transition, .7s ease); 
+    transform: translateY(150%);
 }
 
 .nav_link:hover {
@@ -289,35 +302,57 @@
     grid-area: social-links; 
     background: var(--dark-gray, red); 
     /* background: cadetblue; */
+    display: grid; 
+    place-items: center;
+    width: 100%; 
+    height: 100%; 
+}
+
+#social-link-wrap {
+    width: 100%; 
+    height: 100%;
     display: flex; 
     align-items: center;
     justify-content: center;
     gap: 15px;
+    clip-path: polygon(0% 0%, 0% 80%, 100% 80%, 100% 0%);
 }
 
-#social-link-container > a > img {
+.social_link > img{
     width: 25px;
     object-fit: contain;
 }
 
+.social_link {
+    transition: var(--transition, 500s ease); 
+    transform: translateY(150%);
+}
+
 /*Navbar Buttons*/
-#navbar-buttons {
+#navbar-buttons-container {
     grid-area: buttons; 
     background: var(--dark-gray, red); 
     padding-right: calc(100vw*0.02);
     /* background: darkblue; */
+}
+
+#navbar-buttons-wrap {
+    width: 100%; 
+    height: 100%; 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 20px;
+    clip-path: polygon(0% 0%, 0% 80%, 100% 80%, 100% 0%);
 }
 
-#navbar-buttons a{
+#navbar-buttons-container a{
     text-decoration: none;
     padding: var(--padding, 300px);
     border-radius: 22px;
     border: 2px solid var(--yellow, red);
     transition: var(--transition, 500s ease);
+    transform: translateY(150%);
 }
 
 #sign-up {
@@ -345,6 +380,8 @@
     grid-area: hr;
     background: var(--yellow, red);
     border: none;
+    width: 0%;
+    transition: var(--transition, 500s ease)
 }
 
 /*Search*/
@@ -364,6 +401,7 @@
     display: flex;
     justify-content: space-between;
     transition: var(--transition, 500s ease);
+    opacity: 0;
 }
 
 #search-label {
@@ -413,6 +451,12 @@
     display: grid;
     align-items: flex-end;
     margin-bottom: -20px;
+    overflow: hidden;
+}
+
+#lyric-guide {
+    transition: var(--transition, 500s ease);
+    transform: translateY(150%);
 }
 
 #hero-img-container {
@@ -420,11 +464,13 @@
     margin-bottom: -15px;
     display: grid; 
     place-items: center;
+    overflow: hidden;
 }
 
 #hero-img {
     width: 60%;
     transition: var(--transition, 500s ease);
+    transform: translateY(150%);
 }
 
 #song-meaning-container {
@@ -592,9 +638,50 @@
     padding-bottom: 5px;
     font-size: 12pt;
     text-decoration: none;
-    border-bottom: 2px solid var(--off-white, red);
     position: relative;
 }
+
+.featured-link::before {
+    position: absolute; 
+    content: ""; 
+    width: 100%; 
+    height: 2px; 
+    top: 100%;
+    left: 0;
+    background: var(--off-white, red); 
+    transform: scaleX(1);
+}
+
+.featured-link::after {
+    position: absolute; 
+    content: ""; 
+    width: 100%; 
+    height: 2px; 
+    top: 100%;
+    left: 0;
+    background: var(--off-white, red); 
+    transform: scaleX(0);
+    transition: var(--transition, 500s ease);
+    transform-origin: left;
+}
+
+.featured-link:hover::before {
+    transform: scaleX(0);
+}
+
+.featured-link:hover::after{
+    /* transition: 0s; */
+    transform: scaleX(1);
+}
+
+
+
+
+/* @keyframes border-bottom{
+    0% {
+        border-bottom: 2px solid
+    }
+} */
 
 
 #load-more-container {
@@ -713,6 +800,11 @@ canvas {
         height: 3px;
     }
 
+    .hamburger_span {
+        transition: var(--transition, 500s ease);
+        transform: translateX(150%);
+    }
+
     /*Mobile Navigation Menu*/
     #mobile-nav {
         background: var(--yellow, red);
@@ -752,6 +844,7 @@ canvas {
 
     .mobile_hamburger_span {
         background: var(--dark-gray, red);
+        transition: var(--transition, 500s ease);
     }
 
     #mobile-nav-hr {
@@ -769,59 +862,105 @@ canvas {
         align-items: flex-end;
         padding-top: 30px;
         gap: 20px;
+        width: 100%;
+        height: 80%;
     }
 
-    /*Look at doing a forEach loop*/
+    /*This area needs fixing*/
 
-    #mobile-nav-container a {
-        color: var(--dark-gray, red);
-        text-decoration: none;
-        transition: var(--transition, 500s ease);
-        font-size: 20pt;
-        font-weight: bold;
+      /*
+    .mobile_nav_link_mini_container{
         position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-top: 27.5px;
+        padding-top: 20px;
+        gap: 30px;
+        height: 80%;
+    }
+
+    .mobile_nav_link1 {
+        width: 100%; 
+        text-decoration: none;
+        text-align: right;
+        position:relative;
+        margin-bottom: 35px;
+    }
+    
+   .mobile_nav_link_span1 {
+        padding: 10px;
+        font-size: 15pt;
+        font-weight: bold;
+        transform: translateX(-100%);
+        background: var(--yelow, red);
+        color: var(--dark-gray, red);
+        position: absolute;
+    } 
+
+    /* .spanone{
+                padding: 10px;
+        font-size: 15pt;
+        font-weight: bold;
+        transform: translateX(-100%);
+        background: var(--yelow, red);
+        color: var(--dark-gray, red);
+        position: absolute;
+        padding: 100px;
+        background: green;
+    } 
+
+
+
+    .mobile_nav_link_span1:nth-of-type(1){
+        background: var(--yellow, red);
+        color: var(--darkgray, blue);
+        position: absolute;
+        width: auto;
+    }
+     */
+
+    .mobile-nav-link {
+        position: relative;
+        width: 100%;
+        text-decoration: none;
+        margin-bottom: 150px;
+        height: 100%;
+    }
+
+    .mobile_nav_link_span {
+        display: flex;
+        gap: 5px;
+        width: auto;
+        position: absolute;
+        background: var(--yellow, red);
+        color: var(--dark-gray, red);
+        transition: var(--transition, 500s ease);
+        transform: translateX(-100%);
+        padding: 10px;
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
     }
-
-    #mobile-nav-container a::before {
-        position: absolute; 
-        content: ""; 
-        top: 0; 
-        left: 0; 
-        background: var(--dark-gray, red); 
-        width: 100%; 
-        height: 100%;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: var(--transition, 500s ease);
+    
+    .mobile_nav_link_span > span {
+        font-size: 15pt;
+        font-weight: bold;
+        color: var(--dark-gray, red);
     }
-
-    #mobile-nav-container a:nth-of-type(1)::after {
-        position: absolute; 
-        content: "remy martin"; 
-        top: 0; 
-        left: 0;
+    
+    .mobile_nav_link_span:nth-of-type(1) > span {
+        font-size: 15pt;
+        font-weight: bold;
         color: var(--yellow, red);
-        opacity: 0;
-        transition: var(--transition, 500s ease);
     }
 
-
-    #mobile-nav-container a:nth-of-type(1):hover::after {
-        opacity: 1;
-    }
-    #mobile-nav-container a:hover::before{
-        transform: scaleX(1);
-        transform-origin: right;
-    }
-
-    #mobile-nav-container:hover > a:nth-of-type(1) {
-        clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    .mobile_nav_link_span:nth-of-type(1){
+        background: var(--dark-gray, red);
+        color: var(--yellow, red);
+        position: absolute;
+        width: auto;
+        transform: translateX(-100%);
+        text-align:right;
     }
 
-    .mobile_nav_link:hover:nth-of-type(1)::after{
-        color: red;
-    }
 
 
     /*Hero Section*/
