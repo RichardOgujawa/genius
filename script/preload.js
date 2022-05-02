@@ -1,5 +1,7 @@
-var preload = document.getElementById("preload");
-var grid = document.getElementById("grid");
+
+window.addEventListener("load", ()=> {
+    preloadFunc();
+});
 
 function preloadFunc(){
     setTimeout(doneLoading,  3500);
@@ -9,7 +11,6 @@ function preloadFunc(){
 function doneLoading(){
     grid.style.display = "grid";
     preload.style.display = "none";
-
     setTimeout(loadPage, 500);
 }
 

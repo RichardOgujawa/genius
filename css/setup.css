@@ -29,6 +29,7 @@ html {
 
 body {
     overflow-x: hidden;
+    background: var(--dark-gray, red);
 }
 
 canvas {

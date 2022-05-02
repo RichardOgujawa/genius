@@ -8,7 +8,9 @@
     <title>Genius</title>
 
     <!--StyleSheets-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cursor.css">
 
 
     <!--Favicon-->
@@ -19,40 +21,43 @@
 
 </head>
 
-<body id="body" onload="preloadFunc()" onmousemove="cursorMove(event)">
+<body id="body"  onmousemove="cursorMove(event)">
     <div id="grid" class="gridPreload">
         <div id="cell1">
             <header id="header">
                 <nav id="navbar">
+            
+                    <div id="fill-gap1"></div>
+                    <div id="fill-gap2"></div>
 
                     <!--Logo-->
                     <div id="logo-container">
-                        <a href="#">
+                        <a href="index.html">
                             <img src="images/genius-logo.png" alt="Genius Logo" id="logo-img">
                         </a>
                     </div>
-
+            
                     <!--Nav Links-->
                     <div id="nav-link-container">
                         <div id="nav-link-wrap">
                             <a href="#" class="nav_link">remy martin</a>
-                            <a href="#" class="nav_link">featured</a>
+                            <a href ="featured.html" class="nav_link">featured</a>
                             <a href="#" class="nav_link">community</a>
                             <a href="#" class="nav_link">charts</a>
                             <a href="#" class="nav_link">videos</a>
                         </div>
                     </div>
-
+            
                     <!--Social Links-->
                     <div id="social-link-container">
                         <div id="social-link-wrap">
-                            <a href="#" class="social_link"><img src="icons/ig.png" alt="Instagram Logo"></a>
+                            <a href="featured.html" class="social_link"><img src="icons/ig.png" alt="Instagram Logo"></a>
                             <a href="#" class="social_link"><img src="icons/twitter.png" alt="Twitter Logo"></a>
                             <a href="#" class="social_link"><img src="icons/fb.png" alt="Facebook Logo"></a>
                             <a href="#" class="social_link"><img src="icons/yt.png" alt="Youtube Logo"></a>
                         </div>
                     </div>
-
+            
                     <!--Hamburger Icon-->
                     <div id="hamburger-container">
                         <div id="hamburger">
@@ -60,7 +65,7 @@
                             <span class="hamburger_span span2"></span>
                         </div>
                     </div>
-
+            
                     <!--Sign In/Sign Up-->
                     <div id="navbar-buttons-container">
                         <div id="navbar-buttons-wrap">
@@ -68,9 +73,9 @@
                             <a href="#" class="navbar_buttons" id="sign-in">sign in</a>
                         </div>
                     </div>
-
+            
                     <hr id="navbar-hr">
-
+            
                     <!--Search-->
                     <div id="search-container">
                         <div id="search-wrap">
@@ -80,61 +85,45 @@
                             <input type="search" id="search" placeholder="search lyrics & more">
                         </div>
                     </div>
+
+                    <div id="fill-gap3"></div>
                 </nav>
-
+            
                 <div id="mobile-nav">
-
+            
                     <div id="mobile-hamburger-container">
                         <div id="mobile-hamburger">
                             <span class="mobile_hamburger_span mobile_span1"></span>
                             <span class="mobile_hamburger_span mobile_span2"></span>
                         </div>
                     </div>
-
+            
                     <hr id="mobile-nav-hr">
-
+            
                     <div id="mobile-nav-container">
-
+            
                         <!--Separated them into two parts because width:auto kept breaking up and wrapping the text of the first mobile menu item because it has two words in it-->
                         <a href="#" class="mobile_nav_link">
-                            <span class="mobile_nav_link_span">
-                                <span>remy</span>
-                                <span>martin</span>
-                            </span>
-                            <span class="mobile_nav_link_span">
-                                <span>remy</span>
-                                <span>martin</span>
-                            </span> 
+                            remy martin
                         </a>
-                        
+            
                         <a href="#" class="mobile_nav_link">
-                            <span class="mobile_nav_link_span">
-                                <span>featured</span>
-                            </span>
-                            <span class="mobile_nav_link_span">
-                                <span>featured</span>
-                            </span>
+                            featured
                         </a>
-
-                        <div class="mobile_nav_link_mini_container">
-
-                            <a href="#" class="mobile_nav_link1">
-                                <span class="mobile_nav_link_span1">community</span>
-                                <span class="mobile_nav_link_span1">community</span>
-                            </a>
-
-                            <a href="#" class="mobile_nav_link1">
-                                <span class="mobile_nav_link_span1">charts</span>
-                                <span class="mobile_nav_link_span1">charts</span>
-                            </a>
-
-                            <a href="#" class="mobile_nav_link1">
-                                <span class="mobile_nav_link_span1">videos</span>
-                                <span class="mobile_nav_link_span1">videos</span>
-                            </a>
-                        </div>
-
+            
+                        <a href="#" class="mobile_nav_link">
+                            community
+                        </a>
+            
+                        <a href="#" class="mobile_nav_link">
+                            charts
+                        </a>
+            
+                        <a href="#" class="mobile_nav_link">
+                            videos
+                        </a>
                     </div>
+            
                 </div>
             </header>
 
@@ -189,9 +178,7 @@
                             <span class="row-1-top-right">January 13th</span>
                         </div>
 
-                        <div id="img-and-vid">
-                            <img src="images/weekend-and-fka.jpg" alt="The Weekend album cover" class="cursor_bigger" id="img-distort">
-                        </div>
+                        <img src="images/weekend-and-fka.jpg" alt="Young Doplh album cover" class="cursor_bigger">
 
                         <div class="row-1-bottom">
                             <span class="featured-author">by streetlights</span>
@@ -294,9 +281,13 @@
 
 </body>
 
-<script src="script/script.js"></script>
-<script src="script/cursor.js"></script>
+<!--Reusable Scripts-->
+<script src="script/variables.js"></script>
 <script src="script/preload.js"></script>
-<script src="script/distort.js"></script>
+<script src="script/cursor.js"></script>
+<script src="script/nav.js"></script>
+<script src="script/load-more.js"></script>
 
+<!--Only contains Javascript specific to this page-->
+<script src="script/script.js"></script>
 </html>

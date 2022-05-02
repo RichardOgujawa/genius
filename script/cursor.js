@@ -43,16 +43,3 @@ cursorBiggers.forEach(cursorBigger => {
 });
 })
 
-const liquidVid = document.getElementById("liquid-vid");
-const imgDistort = document.getElementById("img-distort");
-
-imgDistort.addEventListener("mouseenter", ()=> {
-    liquidVid.style.display = "block"; 
-    imgDistort.style.display = "none";
-})
-
-liquidVid.addEventListener("mouseleave", ()=> {
-    liquidVid.style.display = "none"; 
-    imgDistort.style.display = "block";
-})
-//Play video when hovered over 

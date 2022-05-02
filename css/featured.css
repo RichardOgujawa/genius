@@ -1,0 +1,190 @@
+/*SETUP*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;494&display=swap');
+@import "setup.css";
+
+/*MOBILE ONLY*/
+#mobile-featured-title-container {
+    display: none;
+}
+
+
+#grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:
+    100%
+    100%
+    ;
+    grid-template-areas: 
+    "cell1"
+    "cell2";
+}
+
+/*Introduction*/
+#cell1 {
+    grid-area: cell1;
+    display: grid; 
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 250px 730px auto;
+    grid-template-areas:
+    "top-row top-row"
+    "title title"
+    "image image";
+}
+
+#featured-top-row-container {
+    grid-area: top-row;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0px 2%;
+}
+
+#featured-tag {
+    background: var(--yellow);
+    color: var(--dark-gray, red);   
+    border-radius: 100vw;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+#desktop-featured-title-container {
+    padding-top: 50px;
+    grid-area: title;
+}
+
+#desktop-featured-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-left: 2%; 
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.desktop_featured_title {
+    font-size: 70pt;
+    letter-spacing: 0.3rem;
+    /* position: absolute;  */
+    color: var(--yellow);
+}
+#desktop-featured-right {
+    float: right;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+#desktop-featured-right > .desktop_featured_title {
+    position: absolute;
+    left: 0;
+}
+
+#desktop-featured-author {
+    grid-area: 3/2/span 1;
+    position: absolute; 
+    right: 0;
+    bottom: 0;
+    text-align: end;
+    padding-right: calc(100vw * 0.02); 
+}
+
+#desktop-featured-author a{
+    text-decoration: none;
+}
+
+#featured-main-image-container {
+    grid-area: image;
+    display: grid; 
+    place-items: center;
+    padding: 0px 2%;
+    padding-top: 20px;
+    padding-bottom: 150px;
+}
+
+#featured-main-image {
+    width: 100%; 
+    object-fit: contain;
+}
+
+#cell2 {
+    grid-area: cell2;
+    background: red;
+}
+
+#cell2 {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 20% 50% 50%;
+    grid-template-areas: 
+    ". album-section-heading"
+    "album-about album-grid" 
+    "load-more-button album-grid " 
+}
+
+#cell2 > h3{
+    grid-area: album-section-heading;
+    background: blue;
+    font-size: 5rem;
+}
+
+#album-about {
+    grid-area: album-about;
+    background: orange;
+    padding-left: calc(100vw*0.02);
+    width: calc(100vw*0.5); 
+    height: calc(100vw*0.5);
+}
+
+#album-load-more-container {
+    grid-area: load-more-button;
+    background: purple;
+    padding-left: calc(100vw*0.02);
+}
+
+#albums-section {
+    grid-area: album-grid;
+    background: lime;
+}
+
+@media (max-width: 1190px){
+    #mobile-featured-title-container {
+        display: block;
+    }
+
+    #desktop-featured-title-container {
+        display: none;
+    }
+    #cell1 {
+        grid-template-rows: 250px 575px auto;
+    }
+
+    #mobile-featured-title-container {
+        width: 100%; 
+        grid-area: title;
+        padding: 0px 2% 0px 2%;
+        display: flex; 
+        flex-direction: column; 
+        display: flex; 
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #mobile-featured-title{
+        padding-top:55px;
+        font-size: 4rem;
+        color: var(--yellow, red);
+        margin-bottom: 10px;
+    }
+
+    #mobile-featured-subtitle {
+        font-size: 1.2rem;
+    }
+
+    #mobile-featured-author a{
+        text-decoration: none;
+    }
+
+}

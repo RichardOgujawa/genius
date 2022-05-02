@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius | Featured</title>
+
+    <!--StyleSheets-->
+    <link rel="stylesheet" href="css/featured.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cursor.css">
+
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/genius-icon.png" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+</head>
+
+<body id="body" onload="preloadFunc()"  onmousemove="cursorMove(event)">
+    <div id="grid" class="gridPreload">
+        <div id="cell1">
+            <header id="header">
+                <nav id="navbar">
+            
+                    <div id="fill-gap1"></div>
+                    <div id="fill-gap2"></div>
+                    <div id="fill-gap3"></div>
+                    <!-- <div id="fill-gap4"></div>
+                    <div id="fill-gap5"></div> -->
+
+
+
+                    <!--Logo-->
+                    <div id="logo-container">
+                        <a href="index.html">
+                            <img src="images/genius-logo.png" alt="Genius Logo" id="logo-img">
+                        </a>
+                    </div>
+            
+                    <!--Nav Links-->
+                    <div id="nav-link-container">
+                        <div id="nav-link-wrap">
+                            <a href="#" class="nav_link">remy martin</a>
+                            <a href="featured.html" class="nav_link">featured</a>
+                            <a href="#" class="nav_link">community</a>
+                            <a href="#" class="nav_link">charts</a>
+                            <a href="#" class="nav_link">videos</a>
+                        </div>
+                    </div>
+            
+                    <!--Social Links-->
+                    <div id="social-link-container">
+                        <div id="social-link-wrap">
+                            <a href="#" class="social_link"><img src="icons/ig.png" alt="Instagram Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/twitter.png" alt="Twitter Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/fb.png" alt="Facebook Logo"></a>
+                            <a href="#" class="social_link"><img src="icons/yt.png" alt="Youtube Logo"></a>
+                        </div>
+                    </div>
+            
+                    <!--Hamburger Icon-->
+                    <div id="hamburger-container">
+                        <div id="hamburger">
+                            <span class="hamburger_span span1"></span>
+                            <span class="hamburger_span span2"></span>
+                        </div>
+                    </div>
+            
+                    <!--Sign In/Sign Up-->
+                    <div id="navbar-buttons-container">
+                        <div id="navbar-buttons-wrap">
+                            <a href="#" class="navbar_buttons" id="sign-up">sign up</a>
+                            <a href="#" class="navbar_buttons" id="sign-in">sign in</a>
+                        </div>
+                    </div>
+            
+                    <hr id="navbar-hr">
+            
+                    <!--Search-->
+                    <div id="search-container">
+                        <div id="search-wrap">
+                            <label for="search" id="search-label">
+                                <img src="icons/search-icon.png" alt="search icon" id="search-icon">
+                            </label>
+                            <input type="search" id="search" placeholder="search lyrics & more">
+                        </div>
+                    </div>
+
+    
+                </nav>
+            
+                <div id="mobile-nav">
+            
+                    <div id="mobile-hamburger-container">
+                        <div id="mobile-hamburger">
+                            <span class="mobile_hamburger_span mobile_span1"></span>
+                            <span class="mobile_hamburger_span mobile_span2"></span>
+                        </div>
+                    </div>
+            
+                    <hr id="mobile-nav-hr">
+            
+                    <div id="mobile-nav-container">
+            
+                        <!--Separated them into two parts because width:auto kept breaking up and wrapping the text of the first mobile menu item because it has two words in it-->
+                        <a href="#" class="mobile_nav_link">
+                            remy martin
+                        </a>
+            
+                        <a href="featured.html" class="mobile_nav_link">
+                            featured
+                        </a>
+            
+                        <a href="#" class="mobile_nav_link">
+                            community
+                        </a>
+            
+                        <a href="#" class="mobile_nav_link">
+                            charts
+                        </a>
+            
+                        <a href="#" class="mobile_nav_link">
+                            videos
+                        </a>
+                    </div>
+            
+                </div>
+            </header>
+
+             <!--Featured-->
+            
+            <!--Top Row-->
+            <div id="featured-top-row-container">
+                <span id="featured-tag">Featured</span>
+                <span id="featured-date">Jan 13, 2022</span>
+            </div>
+
+            <!--Headings-->
+            <!--*Dekstop*-->
+            <div id="desktop-featured-title-container">
+                <div id="desktop-featured-left">
+                    <h2 class="desktop_featured_title">WHAT'S UP <br> NEXT? HERE'S</h2>
+                    <span id="desktop-featured-subtitle">FKA twigs, Yeat & AURORA <br> have new projects on the way</span>
+                </div>
+            
+            
+                <div id="desktop-featured-right">
+                    <h2 class="desktop_featured_title"><br>EVERY ALBUM DROPPING IN JANUARY</h2>
+                    <div id="desktop-featured-author">by streetlights<br>
+                        <a href="https://www.instagram.com/">@streetlight</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--*Mobile*-->
+            <div id="mobile-featured-title-container">
+                <h2 id="mobile-featured-title">WHAT'S UP <br> NEXT? HERE <br> EVERY ALBUM <br> DROPPING IN <br> JANUARY</h2>
+                
+                <div id="mobile-featured-subtitle">FKA twigs, Yeat & AURORA <br> have new projects on the way</div>
+
+                <div id="mobile-featured-author">by streetlights<br>
+                    <a href="https://www.instagram.com/">@streetlight</a>
+                </div>
+    
+            </div>
+
+
+            <!--Main Image-->
+            <div id="featured-main-image-container">
+                <img id="featured-main-image" src="images/weekend-and-fka-large.jpg"
+                    alt="Cover photo for The Weekend's album titled Dawn FM and FKA's album Caprisongs">
+            </div>
+
+        </div>
+        
+        <!--Monthly Update-->
+        <div id="cell2">
+            <h3>GENIUS'S <br> MONTHLY  UPDATE</h3>
+
+            <div id="album-about">
+                <p id="about">Each month, the Genius Community collaborates on a comprehensive calendar of every new EP, mixtape, and album dropping throughout the month. January's release calendar features projects like FKA twigs, CAPRISONGS, Yeat's 2 Alive and AURORA'S The Gods We Can Touch. 
+                </p>   
+            </div>
+            
+         
+            <div id="album-load-more-container">
+                <div id="album-load-more-button" onclick="myFunction()" class="album_cursor_bigger">
+                    <div id="album-load-more-button-text">LOAD MORE</div>
+                </div>
+            </div>
+            
+            <div id="albums-section">
+                <div class="album_row" id="album-row1">
+                
+                    <div id="lil-playah">
+                        <p id="lil-playah-text">
+                            <span>Lil Playah</span>
+                            <span>Money Hungry</span>
+                        </p>
+                    </div>
+                
+                    <div id="the-lumineers">
+                        <p id="the-lumineers-text">
+                            <span>The Lumineers</span>
+                            <span>Brightside</span>
+                        </p>
+                    </div>
+                
+                </div>
+            
+            </div>
+        </div>
+
+        </div>
+
+        <!--cursor-->
+        <!--cursor-->
+        <!--cursor-->
+        <div id="cursor-inner"></div>
+        <div id="cursor"></div>
+</body>
+
+<script src="script/variables.js"></script>
+<script src="script/featured-preload.js"></script>
+<script src="script/cursor.js"></script>
+<script src="script/nav.js"></script>
+<script src="script/load-more.js"></script>
+
+<script src="script/featured.js"></script>
+
+
+
+</html>

@@ -1,0 +1,22 @@
+#cursor {
+    border: 2px solid var(--yellow);
+    width: 40px; 
+    aspect-ratio: 1; 
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;   
+    pointer-events: none;
+    transition: 0.2s width;
+}
+
+#cursor-inner {
+    background: var(--yellow, red);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    aspect-ratio: 1;    
+    border-radius: 50%;
+    mix-blend-mode:difference;
+    pointer-events: none;
+    transition: 0.2s width;
+}
