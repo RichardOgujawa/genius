@@ -12,12 +12,17 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows:
-    100%
-    100%
+    200vh
+    375px
+    200vh
+    100px
     ;
     grid-template-areas: 
     "cell1"
-    "cell2";
+    "."
+    "cell2"
+    "."
+    ;
 }
 
 /*Introduction*/
@@ -25,7 +30,7 @@
     grid-area: cell1;
     display: grid; 
     grid-template-columns: 50% 50%;
-    grid-template-rows: 250px 730px auto;
+    grid-template-rows: 15% 39% auto;
     grid-template-areas:
     "top-row top-row"
     "title title"
@@ -53,23 +58,43 @@
     grid-area: title;
 }
 
-#desktop-featured-left {
-    float: left;
-    width: 50%;
-    height: 100%;
-    padding-left: 2%; 
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
 .desktop_featured_title {
-    font-size: 70pt;
     letter-spacing: 0.3rem;
-    /* position: absolute;  */
     color: var(--yellow);
 }
+
+#h1-section{
+    display: grid; 
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4, 200px);
+}
+
+
+
+#h1-one {
+    /* transform-style: preserve-3d; */
+    color: red;
+    grid-area: 1/span 2;
+}
+
+#h1-two {
+    color: green;
+    grid-area: 1/span2;
+}
+
+#h1-three {
+    color: blue;
+}
+
+#h1-four {
+    color: purple;
+}
+/* 
+:is(#h1-two, #h1-three) {
+    transform: translateY(-20%);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+} */
+
 #desktop-featured-right {
     float: right;
     width: 50%;
@@ -109,45 +134,153 @@
     object-fit: contain;
 }
 
+/*Genius's Monthly Updates*/
 #cell2 {
     grid-area: cell2;
-    background: red;
-}
-
-#cell2 {
     display: grid;
     grid-template-columns: 50% 50%; 
-    grid-template-rows: 20% 50% 50%;
+    grid-template-rows: 15% 45% 45%;
     grid-template-areas: 
     ". album-section-heading"
     "album-about album-grid" 
-    "load-more-button album-grid " 
+    "load-more-button album-grid"; 
 }
 
 #cell2 > h3{
     grid-area: album-section-heading;
-    background: blue;
     font-size: 5rem;
+    color: var(--yellow, red);
 }
 
 #album-about {
     grid-area: album-about;
-    background: orange;
-    padding-left: calc(100vw*0.02);
+    background: var(--yellow, red);
+    margin-left: calc(100vw*0.02);
+    padding: calc(100vw*0.01);
     width: calc(100vw*0.5); 
-    height: calc(100vw*0.5);
+    min-height: calc(100vw*0.5);
+}
+
+#about {
+    color: var(--dark-gray);
+    width: 65%;
+    font-size: 14pt;
 }
 
 #album-load-more-container {
     grid-area: load-more-button;
     background: purple;
-    padding-left: calc(100vw*0.02);
+    margin-left: calc(100vw*0.02);
+
 }
 
-#albums-section {
+#album-section {
     grid-area: album-grid;
     background: lime;
+    display: flex;
+    flex-direction: column;
+    margin-right: calc(100vw*0.02);
+    
 }
+
+.album_row {
+    display: flex;
+    width: 100%; 
+    height: 25%;
+}
+
+
+:is(#lil-playah, #the-lumineers, #montana-of-300, #bigbabygucci, #gunna, #marina, #the-weekend, #eric-nam) {
+    width: 50%; 
+    align-items: stretch;
+    box-shadow:inset 0 0 0 1000px hsl(60, 0%, 0%, 0.4);  /*overlay*/
+    transition: var(--transition, 500s ease);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    padding: calc(100vw*0.01);
+}
+
+:is(#lil-playah, #the-lumineers, #montana-of-300, #bigbabygucci, #gunna, #marina, #the-weekend, #eric-nam):hover {
+    box-shadow:inset 0 0 0 1000px hsl(60, 100%, 50%, 0.3);
+}
+
+.album_date {
+    opacity: 0.8;
+    font-size: 9pt;
+}
+
+.album_details > p:nth-of-type(2){
+    font-size: 15pt;
+}
+
+#lil-playah {
+    background: url(../images/money-hungry-lil-playah.jpg);
+    background-size: cover;
+}
+
+#album-load-more-container {
+    border: 3px solid var(--yellow, red);
+}
+
+
+#the-lumineers{
+    background: blue;
+    width: 50%;
+    background-image: url(../images/brightside-the-lumineers.jpg);
+    background-size: cover;
+}
+
+#montana-of-300 {
+    width: 50%; 
+    background-image: url(../images/rap-god-montana-of-300.jpg);
+    background-size: cover;
+}
+
+#bigbabygucci {
+    width: 50%; 
+    background-image: url(../images/iridesense-bigbabygucci.jpg);
+    background-size: cover;
+}
+
+#gunna {
+    width: 50%; 
+    background-image: url(../images/ds4ever-gunna.jpg);
+    background-size: cover;
+    background-position: 0% 15%;
+}
+
+#marina {
+    width: 50%; 
+    background-image: url(../images/ancient-dreams-in-a-modern-land-marina.jpg);
+    background-size: cover;
+}
+
+#the-weekend {
+    width: 50%; 
+    background-image: url(../images/dawn-fm-the-weekend.jpg);
+    background-size: cover;
+    background-position: 0% 30%;
+    
+}
+
+#eric-nam {
+    width: 50%; 
+    background-image : url(../images/there-and-back-again-eric-nam.jpg); 
+    background-size: cover;
+}
+
+
+#margin-bottom {
+    height: 100%; 
+    background: var(--dark-gray); 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    grid-area: margin-bottom;
+}
+
 
 @media (max-width: 1190px){
     #mobile-featured-title-container {

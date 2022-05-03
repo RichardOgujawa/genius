@@ -20,20 +20,23 @@ function loadPage(){
     //**Mobile 
     setTimeout(hamburgerIconAnim, 700);
 
-    // //*Hero
-    setTimeout(lyricGuideAnim,800);
+    //*H1
+    
+    //**H1Two and H1Three
+    setTimeout(h1TwoThreeAnim, 900);
 
-    //*Hero Image 
-    setTimeout(heroImgAnim, 750);
+    //**H1One
+    setTimeout(h1OneAnim, 925);
 
-    // /*Genius text*/
-    // setTimeout(bglogoTextAnim, 250);
+    //*H1Four 
+    setTimeout(h1FourAnim, 950);
+    
 
-    // setTimeout(backgroundColorChange, 600);
+    
+
 }
 
 //Search Animation
-
 function searchAnim(){
     searchWrap.style.opacity = "1";
 }
@@ -77,16 +80,23 @@ function hamburgerIconAnim(){
     }
 }
 
-//Lyric Guide Animation
-function lyricGuideAnim(){
-    lyricGuide.style.transform = "translate(0%)";
+
+/*FEATURED PAGE ONLY*/
+//H1One
+function h1OneAnim(){
+    h1One.style.transform = "translateX(0%) rotateY(0deg)";
+    h1One.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)";
 }
 
-//Hero Img Animation 
-function heroImgAnim(){
-    heroImg.style.transform = "translate(0%)";
+function h1TwoThreeAnim(){
+    h1Two.style.transform = "translateY(0%)";
+    h1Two.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)";
+    
+    h1Three.style.transform = "translateY(0%)";
+    h1Three.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)";
 }
 
-
-
-
+function h1FourAnim(){
+    h1Four.style.transform = "translateX(0%) rotateY(0deg)";
+    h1Four.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)";
+}

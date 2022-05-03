@@ -1,6 +1,3 @@
-const cursor = document.getElementById("cursor");
-const cursorInner = document.getElementById("cursor-inner")
-
 function cursorMove(event) {
 
     //Check to see if the page has scrolled and add or minus that from the position, so that we get an accurate positiion
