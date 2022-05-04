@@ -9,10 +9,10 @@
 :root {
     /*clr prefix for colours*/
         /*Info:Using hsl values so they can be manipulauted later if needs be*/
-    --clr-dark: 0 0% 9%; 
-    --clr-white: 0 0% 100%;
-    --clr-accent: 60 100% 50%;
-    --clr-gray: 0 0% 55%;
+    --clr-dark: 0, 0%, 9%; 
+    --clr-white: 0, 0%, 100%;
+    --clr-accent: 60, 100%, 50%;
+    --clr-gray: 0, 0%, 55%;
 
     /* fs prefix for font-size */
     --fs-900: 9.5rem; /*2x-large*/
@@ -53,12 +53,12 @@ html {
 
 body {
     overflow-x: hidden;
-    background-color:hsl(var(--clr-dark, 0 0% 9%));
+    background-color:hsl(var(--clr-dark, 0, 0%, 9%));
     line-height: 1.5; 
     min-height: 100vh; 
     font-family: var(--ff-sans-serif, "Outfit", sans-serif);
     font-size: var(--fs-400, 1.125rem); 
-    color: hsl(var(--clr-white, 0 0% 100%));
+    color: hsl(var(--clr-white, 0, 0%, 100%));
     font-weight: 400;
 }
 
@@ -107,6 +107,10 @@ textarea,
 select {
     font: inherit; 
 }
+
+[type="search"]:focus{
+    outline: none;
+}   
 
 @media screen and (prefers-reduced-motion: reduce), 
 (update: slow) {
@@ -162,33 +166,33 @@ select {
 
 /* Colours */
 .bg-dark { 
-    background-color: hsl(var(--clr-dark, 0 0% 9%));
+    background-color: hsl(var(--clr-dark, 0, 0%, 9%));
 }
 
 .bg-white { 
-    background-color: hsl(var(--clr-white, 0 0% 100%));
+    background-color: hsl(var(--clr-white, 0, 0%, 100%));
 }
 
 .bg-accent {
-    background-color: hsl(var(--clr-accent, 60 100% 50%));
+    background-color: hsl(var(--clr-accent, 60, 100%, 50%));
 }
 
 .bg-gray {
-    background-color: hsl(var(--clr-gray, 0 0% 55%));
+    background-color: hsl(var(--clr-gray, 0, 0%, 55%));
 }
 
 .text-dark { 
-    color: hsl(var(--clr-dark, 0 0% 9%));
+    color: hsl(var(--clr-dark, 0, 0%, 9%));
 }
 .text-white {  
-    color: hsl(var(--clr-white, 0 0% 100%));
+    color: hsl(var(--clr-white, 0, 0%, 100%));
 }
 .text-accent { 
-    color: hsl(var(--clr-accent, 60 100% 50%));
+    color: hsl(var(--clr-accent, 60, 100%, 50%));
 }
 .text-gray {
-    color: hsl(0 0% 55%); 
-    color: hsl(var(--clr-gray, 0 0% 55%));
+    color: hsl(0, 0%, 55%); 
+    color: hsl(var(--clr-gray, 0, 0%, 55%));
 }
 
 
@@ -243,7 +247,7 @@ select {
 /*------------------------------------*/
 .tag {
     background-color: hsl(var(--clr-accent, 60, 100% 50%));
-    color: hsl(var(--clr-dark, 0 0% 9%)); 
+    color: hsl(var(--clr-dark, 0, 0%, 9%)); 
     padding: var(--padding-medium, 0.662rem 0.971rem); 
     border-radius: 100vw;
     border: none;
@@ -279,38 +283,38 @@ select {
 
 .black-button {
     --speed: 200ms;
-    background-color: hsl(var(--clr-dark, 0 0% 9%)); 
-    color: hsl(var(--clr-white, 0 0% 100%));
-    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    background-color: hsl(var(--clr-dark, 0, 0%, 9%)); 
+    color: hsl(var(--clr-white, 0, 0%, 100%));
+    border: 2px solid hsl(var(--clr-accent, 60, 100%, 50%));
     text-decoration: none;
     transition: var(--speed) ease;
 }
 
 .black-button:hover,
 .black-button:focus {
-    background-color: hsl(var(--clr-accent, 60 100% 50%));
-    color: hsl(var(--clr-dark, 0 0% 9%));
+    background-color: hsl(var(--clr-accent, 60, 100%, 50%));
+    color: hsl(var(--clr-dark, 0, 0%, 9%));
 }
 
 .yellow-button {
     --speed: 200ms;
-    background-color: hsl(var(--clr-accent, 60 100% 50%)); 
-    color: hsl(var(--clr-dark, 0 0% 9%));
-    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    background-color: hsl(var(--clr-accent, 60, 100%, 50%)); 
+    color: hsl(var(--clr-dark, 0, 0%, 9%));
+    border: 2px solid hsl(var(--clr-accent, 60, 100%, 50%));
     text-decoration: none;
     transition: var(--speed) ease;
 }
 
 .yellow-button:hover,
 .yellow-button:focus {
-    background-color: hsl(var(--clr-dark, 0 0% 9%));
-    color: hsl(var(--clr-white, 0 0% 100%));
+    background-color: hsl(var(--clr-dark, 0, 0%, 9%));
+    color: hsl(var(--clr-white, 0, 0%, 100%));
 }
 
 /*Breakpoints*/
 @media (max-width: 1336px){
     body {
-        background-color:hsl(var(--clr-accent, 60 100% 50%));
+        background-color:hsl(var(--clr-accent, 60, 100%, 50%));
     }
     :root {
         font-size: 10pt;
@@ -319,7 +323,7 @@ select {
 
 @media (max-width: 1206px){
     body {
-        background-color:hsl(var(--clr-white, 0 0% 100%));
+        background-color:hsl(var(--clr-white, 0, 0%, 100%));
     }
 
 }
