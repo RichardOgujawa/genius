@@ -8,37 +8,33 @@
 /*------------------------------------*/
 :root {
     /*clr prefix for colours*/
-        /*Using hsl values so they can be manipulauted later if needs be*/
+        /*Info:Using hsl values so they can be manipulauted later if needs be*/
     --clr-dark: 0 0% 9%; 
     --clr-white: 0 0% 100%;
     --clr-accent: 60 100% 50%;
     --clr-gray: 0 0% 55%;
 
-    /*fs prefix for font-size*/
-       /*Using rem is better than using pixel values for example, it's responsive to the root font*/
-    /*Smallest font-size*/
-    font-size: 14px; 
-    --fs-900: 9.375rem; 
-    --fs-800: 6.25rem; 
-
-    /*Small to x-large*/
-    --fs-700: 3.214rem; 
-    --fs-600: 2.286rem; 
-    --fs-500: 1.5rem; 
-    --fs-400: 1.214rem; 
-    --fs-300: 1rem;
+    /* fs prefix for font-size */
+    --fs-900: 9.5rem; /*2x-large*/
+    --fs-800: 6.25rem; /*--additional--*/
+    --fs-700: 3.214rem; /*x-large*/
+    --fs-600: 2.286rem; /*large*/
+    --fs-500: 1.5rem; /*medium*/
+    --fs-400: 1.214rem; /*regular*/
+    --fs-300: 1rem; /*small*/
+    --fs-200: 0.875rem; /*--additional--*/
     
-    --fs-200: 0.875rem;
-
-    /*ff prefix for font-family*/
+    font-size: 11pt; 
+    /* ff prefix for font-family */
     --ff-sans-serif: "Outfit", sans-serif;
 
-    /*Misc*/
-    --padding-bigger: 1em 2em;
-    --padding-smaller: 2em 4em;
+    /* Padding */
+    --padding-large: 0.883rem 2.476rem; 
+    --padding-medium: 0.662rem 0.971rem;
+    --padding-small: 0.16rem 1.8rem;
 
-    /*Transition*/
-    --transition: var(--speed) ease; 
+    /* Transition */
+    --speed: 500ms; 
 }
 
 /*------------------------------------*/
@@ -57,16 +53,12 @@ html {
 
 body {
     overflow-x: hidden;
-    background:hsl(0, 0%, 9%);
-    background-color:hsl(var(--clr-dark));
-    line-height: 1.5; /*The default is 1.4 which is a bit small*/
-    min-height: 100vh; /*This is to ensure that there's no issues when it comes to shorter screen sizes*/
-    font-family: "Outfit", sans-serif;
-    font-family: var(--ff-sans-serif, '"Outfit", sans-serif');
-    font-size: 1.125rem; 
+    background-color:hsl(var(--clr-dark, 0 0% 9%));
+    line-height: 1.5; 
+    min-height: 100vh; 
+    font-family: var(--ff-sans-serif, "Outfit", sans-serif);
     font-size: var(--fs-400, 1.125rem); 
-    color: hsl(0 0% 100%);
-    color: hsl(var(--clr-white));
+    color: hsl(var(--clr-white, 0 0% 100%));
     font-weight: 400;
 }
 
@@ -78,20 +70,35 @@ h4,
 h5, 
 p, 
 figure, 
-picture{
+picture
+{
     margin: 0;
 } 
 
-h2{
-    font-size: 3.5rem;
-    font-size: var(--fs-700);
+ul {
+    padding: 0;
 }
+
+h1 {
+    font-size: var(--fs-900, 9.5rem);
+}
+
+h2{
+    font-size: var(--fs-700, 3.214rem);
+}
+
+h3 {
+    font-size: var(--fs-600, 2.286rem); 
+}
+
+h4 {
+    font-size: var(--fs-500, 1.5rem); 
+}
+
 
 img, picture {
     max-width: 100%; 
-        /*This ensures that the available space they have to live in shrinks as the viewport gets narrower*/
     display: block; 
-        /*prevents some issues that may occur on images from time to time*/
 }
 
 input,
@@ -99,10 +106,8 @@ button,
 textarea, 
 select {
     font: inherit; 
-        /*By default these elements don't inherit font-properties*/
 }
 
-    /*This is to remove animations for people who have turned it off in their settings*/
 @media screen and (prefers-reduced-motion: reduce), 
 (update: slow) {
     *, 
@@ -120,29 +125,29 @@ select {
 /* Utility Classes */
 /*------------------------------------*/
 
-    /*Info: utility classes will be written in the following format .outer-inner, all other classes will be written as .outer_inner*/
+/*Info: utility classes will be written in the following format .outer-inner, all other classes will be written as .outer_inner*/
 .flex {
     display: flex;
-    gap: 1rem;
     gap: var(--gap, 1rem); 
 }
 
 .grid {
     display: grid;
-    gap: 1rem;
     gap: var(--gap, 1rem);
 }
 
-.container {
-    padding-inline: 2em; 
-        /*This will look at the left and the right side of your container only, not the top and the bottom. It has full browser support too.*/
-    margin-inline: 2em; 
-        /*Once again, this will be your margin left and margin-right*/
-    max-width: 80rem; 
+.center {
+    align-items: center;
+    justify-content: center;
 }
 
-/*Screen-reader only elements*/
-    /*This utility class  keeps the element in the DOM and just hides it visually. It's therefore still accessible to screen readers. Whereas display:none takes it completely out of the DOM*/
+.container {
+    padding-inline: var(--gap, 2em); 
+    margin-inline: 2vw; 
+    max-width: 98vw; 
+}
+
+/* Screen-reader only elements */
 .sr-only {
     position: absolute; 
     width: 1px; 
@@ -156,49 +161,39 @@ select {
 }
 
 /* Colours */
-    /*I'm using both variables and non-variables incase the browser doesn't support the variables. If it does it'll have the last say and therefore render, if it doesn't then it will be ignored and just the original css rule will render*/
 .bg-dark { 
-    background-color:hsl(0 0% 9%); 
-    background-color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
 .bg-white { 
-    background-color: hsl(0 0 100%); 
-    background-color: hsl(var(--clr-white));
+    background-color: hsl(var(--clr-white, 0 0% 100%));
 }
 
 .bg-accent {
-    background-color: hsl(60 100% 50%); 
-    background-color: hsl(var(--clr-accent));
+    background-color: hsl(var(--clr-accent, 60 100% 50%));
 }
 
 .bg-gray {
-    background-color: hsl(0 0% 55%); 
-    background-color: hsl(var(--clr-gray));
+    background-color: hsl(var(--clr-gray, 0 0% 55%));
 }
 
 .text-dark { 
-    color:hsl(0 0% 9%); 
-    color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-dark, 0 0% 9%));
 }
-.text-white { 
-    color:hsl(0 0% 100%); 
-    color: hsl(var(--clr-white));
+.text-white {  
+    color: hsl(var(--clr-white, 0 0% 100%));
 }
 .text-accent { 
-    color:hsl(60 100% 50%); 
-    color: hsl(var(--clr-accent));
+    color: hsl(var(--clr-accent, 60 100% 50%));
 }
 .text-gray {
     color: hsl(0 0% 55%); 
-    color: hsl(var(--clr-gray));
+    color: hsl(var(--clr-gray, 0 0% 55%));
 }
 
-/*Typography*/
-.ff-sans-serif { 
-    font-family: "Outfit", sans-serif;
-    font-family: var(--ff-sans-serif);
-}
+
+
+/* Typography */
 
 .letter-spacing-1 {letter-spacing: 2.35px;}
 .letter-spacing-2 {letter-spacing: 2.7px;}
@@ -207,40 +202,30 @@ select {
 .uppercase {text-transform: uppercase;}
 
 .fs-900 {
-    font-size:9.375rem; 
-    font-size:var(--fs-900);
-
+    font-size:var(--fs-900, 9.5rem);
 }
 .fs-800 {
-    font-size:6.25rem; 
-    font-size:var(--fs-800);
+    font-size:var(--fs-800, 6.25rem);
 }
 .fs-700 {
-    font-size: 3.5rem; 
-    font-size: var(--fs-700);
+    font-size: var(--fs-700, 3.214rem);
 }
 .fs-600 {
-    font-size: 2rem; 
-    font-size: var(--fs-600);
+    font-size: var(--fs-600, 2.286rem);
 }
 .fs-500 {
-    font-size: 1.75rem; 
-    font-size: var(--fs-500);
+    font-size: var(--fs-500, 1.5rem);
 }
 .fs-400 {
-    font-size: 1.125rem; 
-    font-size: var(--fs-400);
+    font-size: var(--fs-400, 1.214rem);
 }
 .fs-300 {
-    font-size: 1rem; 
-    font-size: var(--fs-300);
+    font-size: var(--fs-300, 1rem);
 }
 .fs-200 {
-    font-size: 0.875rem; 
-    font-size: var(--fs-200);
+    font-size: var(--fs-200, 00.875rem);
 }
 
-    /*When bigger fonts break/word wrap, the line-height may be an issue,this fixes that*/
 .fs-900, 
 .fs-800, 
 .fs-700, 
@@ -248,39 +233,94 @@ select {
     line-height: 1.1;
 }
 
+/*Extras*/
+.link-container > li > a, .link{
+    text-decoration: none;
+}
 
-    /* Mini-Component Classes  */ 
-        /*they're component classes that can be applied like utility classes*/
+/*------------------------------------*/
+/* Mini-Component Classes  */ 
+/*------------------------------------*/
 .tag {
-    background-color:hsl(60 100% 50%);
-    background-color: hsl(var(--clr-accent));
-    color:hsl(0 0% 9%);
-    color: hsl(var(--clr-dark)); 
-    padding: 1em 2em;
-    padding: var(--padding-smaller, 1em 2em); 
-        /*using em ensures that if the font were to change the padding would grow or shrink with it */
+    background-color: hsl(var(--clr-accent, 60, 100% 50%));
+    color: hsl(var(--clr-dark, 0 0% 9%)); 
+    padding: var(--padding-medium, 0.662rem 0.971rem); 
     border-radius: 100vw;
+    border: none;
 }
 
-/*Not including the navigation buttons*/
+.list-container > li, .list{
+    list-style: none;
+}
+
+.fill-space {
+    width: 100%; 
+    height: 100%;
+}
+ 
+/*Buttons*/
+.large-button {
+    padding: var(--padding-large, 0.883rem 2.2489rem);
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.medium-button {
+    padding: var(--padding-medium, 0.662rem 0.971rem);
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
 .small-button {
-    background-color: hsl(0 0% 9%);
-    background-color: hsl(var(--clr-dark));
-    color: hsl(60 100% 50%); 
-    color: hsl(var(--clr-accent));
-    padding: 2em 4em;
-    padding: var(--padding-bigger, 2em 4em);
-    border: 2px solid hsl(60 100% 50%);
-    border: 2px solid hsl(var(--clr-accent));
+    padding: var(--padding-small, 0.16rem 0.96rem 0.321rem);
     border-radius: 100vw;
+    cursor: pointer;
 }
 
-.small-button:hover,
-.small-button:focus {
-    background-color: hsl(60 100% 50%);
-    background-color: hsl(var(--clr-accent));
-    color: hsl(0 0% 9%); 
-    color: hsl(var(--clr-dark));
+.black-button {
+    --speed: 200ms;
+    background-color: hsl(var(--clr-dark, 0 0% 9%)); 
+    color: hsl(var(--clr-white, 0 0% 100%));
+    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    text-decoration: none;
+    transition: var(--speed) ease;
 }
 
+.black-button:hover,
+.black-button:focus {
+    background-color: hsl(var(--clr-accent, 60 100% 50%));
+    color: hsl(var(--clr-dark, 0 0% 9%));
+}
+
+.yellow-button {
+    --speed: 200ms;
+    background-color: hsl(var(--clr-accent, 60 100% 50%)); 
+    color: hsl(var(--clr-dark, 0 0% 9%));
+    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    text-decoration: none;
+    transition: var(--speed) ease;
+}
+
+.yellow-button:hover,
+.yellow-button:focus {
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
+    color: hsl(var(--clr-white, 0 0% 100%));
+}
+
+/*Breakpoints*/
+@media (max-width: 1336px){
+    body {
+        background-color:hsl(var(--clr-accent, 60 100% 50%));
+    }
+    :root {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 1206px){
+    body {
+        background-color:hsl(var(--clr-white, 0 0% 100%));
+    }
+
+}
 

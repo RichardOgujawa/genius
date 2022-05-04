@@ -11,7 +11,6 @@
     display: none;
 }
 
-
 #header {
     position: fixed;
     z-index: 999;
@@ -21,7 +20,6 @@
 /*Navbar*/
 #navbar {
     position: fixed;
-    /* background: var(--dark-gray); */
     height: 130px;
     width: 100%;    
     display: grid; 
@@ -32,11 +30,11 @@
     ". hr hr hr hr ."
     ". search fill-gap3 fill-gap3 fill-gap3 ."
     ; 
-    transition: var(--transition, 500s ease);
+    transition: var(--transition, 500ms ease);
 }
 
 :is(#fill-gap1, #fill-gap2, #fill-gap3) {
-    background: var(--dark-gray, red);
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
 #fill-gap1 {
@@ -55,7 +53,7 @@
 /*Logo*/
 #logo-container {
     grid-area: logo;
-    background: var(--dark-gray, red); 
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
     width: 100%; 
     height: 100%;
 }
@@ -69,7 +67,7 @@
 
 #logo-img {
     width: 160px;
-    transition: var(--transition, 500s ease); 
+    transition: var(--speed, 500ms) ease; 
     transform: translateY(150%);
 }
 
@@ -78,8 +76,7 @@
     width: 100%; 
     height: 100%; 
     grid-area: nav-links;
-    background: var(--dark-gray, red); 
-    /* background: blue;  */
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
     display: grid; 
     place-items: center;
 }
@@ -95,20 +92,22 @@
 }
 
 .nav_link {
+    --speed: .7s;
     text-decoration: none;  
-    transition: var(--transition, .7s ease); 
+    transition: var(--speed, .7s) ease; 
     transform: translateY(150%);
+    color: hsl(var(--clr-white, 0 0% 50%));
+
 }
 
 .nav_link:hover {
-    color: var(--yellow, red);
+    color: hsl(var(--clr-yellow, 60 100% 50%));
 }
 
 /*Social Links*/
 #social-link-container {
     grid-area: social-links; 
-    background: var(--dark-gray, red); 
-    /* background: cadetblue; */
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
     display: grid; 
     place-items: center;
     width: 100%; 
@@ -131,15 +130,14 @@
 }
 
 .social_link {
-    transition: var(--transition, 500s ease); 
+    transition: var(--speed, 500ms) ease; 
     transform: translateY(150%);
 }
 
 /*Navbar Buttons*/
 #navbar-buttons-container {
     grid-area: buttons; 
-    background: var(--dark-gray, red); 
-    /* background: darkblue; */
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
 #navbar-buttons-wrap {
@@ -152,61 +150,55 @@
     clip-path: polygon(0% 0%, 0% 80%, 100% 80%, 100% 0%);
 }
 
-#navbar-buttons-container a{
-    text-decoration: none;
-    padding: var(--padding, 300px);
+#navbar-buttons-container > #navbar-buttons-wrap > a{
     border-radius: 22px;
-    border: 2px solid var(--yellow, red);
-    transition: var(--transition, 500s ease);
+    border: 2px solid hsl(var(--clr-yellow, 60 100% 50%));
+    transition: var(--speed, 500ms) ease;
     transform: translateY(150%);
 }
 
-#sign-up {
-    background: var(--yellow, red); 
-    color: var(--dark-gray, red);
-}
 
 #sign-up:hover {
-    background: var(--dark-gray, red); 
-    color: var(--off-white, red);
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
+    color: hsl(var(--clr-white, 0 0% 100%));
 }
 
 #sign-in {
-    color: var(--off-white);
-    background: var(--dark-gray, red);
+    color: var(--clrwhtie);
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
 #sign-in:hover{
-    color: var(--dark-gray, red);
-    background: var(--yellow, red);
+    color: hsl(var(--clr-dark, 0 0% 9%));
+    background: hsl(var(--yellow, 60 100% 50%));
 }
 
 /*Navbar Hr*/
 #navbar-hr {
     grid-area: hr;
-    background: var(--yellow, red);
+    background-color: var(--clr-yellow, 60 100% 50%);
     border: none;
     width: 0%;
-    transition: var(--transition, 500s ease)
+    transition: var(--speed, 500ms) ease;
 }
 
 /*Search*/
 #search-container {
     grid-area: search; 
-    background: var(--dark-gray);
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
     display: flex;
     align-items: center;
     width: 100%; 
 }
 
 #search-wrap {
-    border: 2px solid var(--off-white);
+    border: 2px solid hsl(var(--clr-white, 0 0% 100%));
     border-radius: 22px;
     padding: 3px 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    transition: var(--transition, 500s ease);
+    transition: var(--speed, 500ms) ease;
     opacity: 0;
 }
 
@@ -221,11 +213,11 @@
     text-align: end;
     width: 100%;
     border: none;
-    color: var(--yellow,red);
+    color: hsl(var(--clr-yellow, 60 100% 50%));
 }
 
 #search::placeholder {
-    color: hsl(0 0% 60%);
+    color: hsl(var(--clr-gray, 0 0% 55%));
 }
 
 #search:focus {
@@ -260,7 +252,7 @@
     }
 
     :is(#fill-gap1, #fill-gap2, #fill-gap4, #fill-gap5){
-        background: var(--dark-gray,red);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
     }
 
     #fill-gap1 {
@@ -272,7 +264,7 @@
     }
 
     #search-container {
-        background: var(--dark-gray, red);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
     }
 
     #song-meaning-container p{
@@ -290,7 +282,7 @@
         grid-area: hamburger-icon;
         justify-content: flex-end;
         align-items: center;
-        background: var(--dark-gray, red);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
 
     }
 
@@ -304,19 +296,19 @@
     }
 
     .hamburger_span, .mobile_hamburger_span {
-        background: var(--yellow);
+        background-color: hsl(var(--clr-yellow, 60  100% 50%));
         width: 100%; 
         height: 3px;
     }
 
     .hamburger_span {
-        transition: var(--transition, 500s ease);
+        transition: var(--speed, 500ms) ease;
         transform: translateX(150%);
     }
 
     /*Mobile Navigation Menu*/
     #mobile-nav {
-        background: var(--yellow, red);
+        background-color: hsl(var(--clr-yellow, 60  100% 50%));
         position: fixed;
         top: 0;
         right: 0;
@@ -330,7 +322,7 @@
         "mobile-hamburger-hr ."
         "mobile-nav-container .";
         transform: translateX(100%);
-        transition: var(--transition, 500 ease);
+        transition: var(--speed, 500) ease;
     }
 
     #mobile-hamburger-container {
@@ -352,19 +344,19 @@
     }
 
     .mobile_hamburger_span {
-        background: var(--dark-gray, red);
-        transition: var(--transition, 500s ease);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
+        transition: var(--speed, 500ms) ease;
     }
 
     #mobile-nav-hr {
         grid-area: mobile-hamburger-hr; 
-        background: var(--dark-gray);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
         border: none;
     }
 
     #mobile-nav-container {
         grid-area: mobile-nav-container; 
-        background: yellow;
+        background-color: hsl(var(--clr-yellow, 60  100% 50%));
         padding-left: 30px;
         display: flex; 
         flex-direction: column;
@@ -376,17 +368,18 @@
     }
 
     .mobile_nav_link {
+        --speed: 0.1s;
         padding: var(--padding, 50px);
-        color: var(--dark-gray); 
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
         text-decoration: none;
         font-size: 12pt;
         position: relative; 
         font-weight: bold;
-        transition: 0.1s linear;
+        transition: var(--speed, 0.1s) linear;
     }
 
     .mobile_nav_link:hover {
-        background: var(--dark-gray);
+        background-color: hsl(var(--clr-dark, 0 0% 9%));
         color: var(--yellow); 
     }
 

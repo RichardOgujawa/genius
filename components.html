@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+
+    <link rel="stylesheet" href="css/setup.css">
+
+    <style>
+        body {
+            margin-inline: auto;
+            max-width: 85rem;
+        }
+
+        .helper {
+            display: flex; 
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1em;
+        }
+
+        #button-section{
+            border: 2px solid hsl(0 0% 100% / 0.25);
+            justify-content: space-around;
+            align-items: center;
+            padding: 1em 0px;
+        }
+
+        h2:first-child {
+            text-align:center;   
+            margin: 0.5em 0px;
+        }
+
+        .main_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Components</h2>
+    
+    <div class="container main_wrap">
+
+        <section id="button-section" class="flex">
+            <h3>Buttons</h3>
+            <div class="container helper">
+                <!--Navigation Button Yellow-->
+                <a href="#" class="fs-300 small-button yellow-button">sign up</a>
+                <!--Navigation Button Black-->
+                <a href="#" class="fs-300 small-button black-button">sign in</a>
+                <!--Tag-->
+                <div class="tag">Featured</div>
+                <!--Body Buttons-->
+                <button type="button" class="fs-600 large-button black-button" >All</button>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

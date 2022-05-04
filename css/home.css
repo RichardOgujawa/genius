@@ -3,8 +3,8 @@
 @import "setup.css";
 
 #grid {
-    background: var(--dark-gray, red);
     display: grid;
+    --gap: 0;
     grid-template-columns: 100%;
     grid-template-rows:
     120vh 
@@ -30,7 +30,6 @@
     overflow: hidden;
     display: grid;
     margin: 0px;
-    background: var(--dark-gray, red);
     top: 0px; 
     left: 0px;
 }
@@ -44,7 +43,7 @@
 }
 
 .circle {
-    background: var(--yellow, yellow);
+    background-color: hsl(var(--clr-clr-yellow, 60 100% 50%));
     border-radius: 50%;
     position: absolute;
     aspect-ratio: 1/1;
@@ -55,7 +54,7 @@
 }
 
 .circle:nth-of-type(2n) {
-    background: var(--dark-gray);
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
 .one,
@@ -181,7 +180,7 @@
 
 /*HEADER + HERO*/
 #cell1 {
-    background: var(--dark-gray, red); 
+    background-color: hsl(var(--clr-dark, 0 0% 9%)); 
     grid-area: cell1;
 }
 
@@ -201,7 +200,6 @@
 
 #lyric-guide-container {
     grid-area: lyric-guide; 
-    /* background: red; */
     display: grid;
     align-items: flex-end;
     margin-bottom: -20px;
@@ -209,7 +207,7 @@
 }
 
 #lyric-guide {
-    transition: var(--transition, 500s ease);
+    transition: var(--speed, 500s) ease;
     transform: translateY(150%);
 }
 
@@ -242,7 +240,6 @@
 
 /*GENIUS' HISTORY*/
 #cell2 {
-    /* background: red; */
     grid-area: cell2;
     display: grid; 
     grid-template-columns: 2% 35% auto 2%;
@@ -255,13 +252,12 @@
 
 #history-hr {
     grid-area: history-hr;
-    background: var(--yellow, red);
+    background-color: hsl(var(--clr-clr-yellow, 60 100% 50%));
     border: none;
 }
 
 #history-title {
     grid-area: history-title;
-    /* background: green; */
     padding-top: 10px;
 }
 
@@ -275,9 +271,9 @@
     width: 10px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: var(--yellow, red); 
+    background-color: hsl(var(--clr-clr-yellow, 60 100% 50%)); 
     box-sizing: content-box;
-    box-shadow: 0 0 0 2.5px var(--dark-gray, blue), 0 0 0 5px var(--yellow, blue);
+    box-shadow: 0 0 0 2.5px hsl(var(--clr-dark, 0 0% 9%)), 0 0 0 5px hsl(var(--clr-yellow, 60 100% 50%));
 }
 
 #history-p {
@@ -298,13 +294,13 @@
 }
 
 #cell3 h2 {
-    color: var(--yellow, red);
+    color: hsl(var(--clr-yellow, 60 100% 50%));
     font-size: 90pt;
 }
 
 #featured-grid {
     width: 100%; 
-    border: 2px solid var(--yellow, red);
+    border: 2px solid hsl(var(--clr-yellow, 60 100% 50%));
     display: flex; 
     flex-direction: column;
 }
@@ -316,7 +312,7 @@
 
 .row-1-sections {
     width: 100%;
-    border: 2px solid var(--yellow, red);
+    border: 2px solid hsl(var(--clr-yellow, 60 100% 50%));
 }
 
 .row-1-top {
@@ -385,7 +381,7 @@
     height: 2px; 
     top: 100%;
     left: 0;
-    background: var(--off-white, red); 
+    background: hsl(var(--clr-whtie, 0 0% 100%)); 
     transform: scaleX(1);
 }
 
@@ -396,9 +392,9 @@
     height: 2px; 
     top: 100%;
     left: 0;
-    background: var(--off-white, red); 
+    background: hsl(var(--clr-whtie, 0 0% 100%)); 
     transform: scaleX(0);
-    transition: var(--transition, 500s ease);
+    transition: var(--speed, 500s) ease;
     transform-origin: left;
 }
 
@@ -432,7 +428,7 @@
     height: 100%;
     border-radius: 175px;
     background: transparent;
-    border: 2px solid var(--yellow, red);
+    border: 2px solid hsl(var(--clr-yellow, 60 100% 50%));
     cursor: pointer;
     overflow: hidden;
     /* position: relative; */
@@ -442,14 +438,14 @@
 }
 
 #load-more-button-text {
-    color: var(--yellow, red);
+    color: hsl(var(--clr-yellow, 60 100% 50%));
     font-size: 25pt;
     /* position: absolute; */
     text-align: center;
 }
 
 #load-more-button::before {
-    background: var(--yellow); 
+    background: hsl(var(--clr-yellow, 60 100% 50%)); 
     position: absolute; 
     content: ""; 
     width: 100px; 

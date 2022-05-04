@@ -1,5 +1,5 @@
 #cursor {
-    border: 2px solid var(--yellow);
+    border: 2px solid hsl(var(--clr-yellow, 60 100% 50%));
     width: 40px; 
     aspect-ratio: 1; 
     border-radius: 50%;
@@ -10,7 +10,7 @@
 }
 
 #cursor-inner {
-    background: var(--yellow, red);
+    background: hsl(var(--clr-yellow, 60 100% 50%));
     position: absolute;
     transform: translate(-50%, -50%);
     width: 40px;
