@@ -21,7 +21,7 @@
     --fs-600: 2.286rem; /*large*/
     --fs-500: 1.5rem; /*medium*/
     --fs-400: 1.214rem; /*regular*/
-    --fs-300: 1rem; /*small*/
+    --fs-300: 1rem; /*small*/   
     --fs-200: 0.875rem; /*--additional--*/
     
     font-size: 11pt; 
@@ -123,7 +123,6 @@ select {
         scroll-behavior: auto !important;
     }
 }
-
 
 /*------------------------------------*/
 /* Utility Classes */

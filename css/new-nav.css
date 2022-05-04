@@ -230,7 +230,7 @@
 
     /*Navigation Bar*/
     #navbar-wrapper {
-        margin-inline: 1vw;
+        margin-inline: 1.5vw;
         grid-template-columns: 50% 50%;
         grid-template-areas: 
         "nav-logo nav-hamburger-icon"
@@ -255,6 +255,11 @@
     
     #nav-search-wrap {
         padding: 0rem 0.5rem 0rem;
+    }
+
+    #nav-search {
+        text-align: center;
+        width: 10em;
     }
 
     /*Sign In Button*/
