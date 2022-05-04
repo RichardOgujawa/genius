@@ -230,7 +230,7 @@
 
     /*Navigation Bar*/
     #navbar-wrapper {
-        margin-inline: 1.5vw;
+        margin-inline: 1.6vw;
         grid-template-columns: 50% 50%;
         grid-template-areas: 
         "nav-logo nav-hamburger-icon"
