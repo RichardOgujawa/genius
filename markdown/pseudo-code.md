@@ -33,3 +33,6 @@ Overall structuree
 ### Liquid Effect
 - For the liquid effect, I tried to make a liquid distort effect in blender and then import it as a video. Put that on top of an image but display:none it and simply have it display:block on hover of the container that would house both the video and the image. But I realised that that approach wouldn't be procedural. 
 - I also tried using rgbKineticSlider, and got far with it, but realised that it wasn't something that I could propogate on the page with classes. I tried using forEach too, but to no avail. 
+
+## Fixes 
+- I had some issues with the flex class on the mobile hamburger icon, if that happens next time take it out and add the flex manually

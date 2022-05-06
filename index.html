@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/setup.css">
     <link rel="stylesheet" href="css/new-nav.css">
     <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/new-home.css">
     <!-- <link rel="stylesheet" href="css/home.css"> -->
     <!-- <link rel="stylesheet" href="css/nav.css"> -->
 
@@ -25,79 +26,156 @@
 
 <body>
     <header id="navbar">
-        <div class="grid container" id="navbar-wrapper">
+        <div class="bg-dark fill-space" id="nav-filler"></div>
 
-            
-            <div class="flex fill-space" id="nav-logo-container">
+        <div class="grid container bg-dark" id="navbar-wrapper">
+
+            <!--Logo-->
+            <div class="flex fill-space bg-dark" id="nav-logo-container">
                 <img id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo">
             </div>
-
-            <ul class="link-container list-container flex fs-400" id="nav-link-container">
-
+            
+            <!--Nav Links-->
+            <ul class="link-container list-container flex fs-400 bg-dark" id="nav-link-container">
+                
                 <li class="nav_link"><a href="#" class="text-white">remy martin</a></li>
                 <li class="nav_link"><a href="#" class="text-white">featured</a></li>
                 <li class="nav_link"><a href="#" class="text-white">community</a></li>
                 <li class="nav_link"><a href="#" class="text-white">charts</a></li>
                 <li class="nav_link"><a href="#" class="text-white">videos</a></li>
-  
+                
             </ul>
-
-            <ul class="list-container link-container flex center" id="nav-social-link-container">
-
+            
+            <!--Social Links-->
+            <ul class="list-container link-container flex center bg-dark" id="nav-social-link-container">
+                
                 <li class="social_link">
                     <a href="#">
                         <img src="icons/ig.png" alt="Instagram Icon">
                     </a>
                 </li>
-
+                
                 <li class="social_link">
                     <a href="#">
                         <img src="icons/twitter.png" alt="Twitter Icon">
                     </a>
                 </li>
-
+                
                 <li class="social_link">
                     <a href="#">
                         <img src="icons/fb.png" alt="Facebook Icon">
                     </a>
                 </li>
-
+                
                 <li class="social_link">
                     <a href="#">
                         <img src="icons/yt.png" alt="YouTube Icon">
                     </a>
                 </li>
-
+                
             </ul>
-
-            <ul class="fill-space list-container link-container flex" id="nav-buttons-container">
+            
+            <!--Nav Buttons-->
+            <ul class="fill-space list-container link-container flex bg-dark" id="nav-buttons-container">
                 <li class="nav_button"><a href="#" class="fs-300 small-button yellow-button">sign up</a></li>
                 <li class="nav_button"><a href="#" class="fs-300 small-button black-button">sign in</a></li>
             </ul>
-
+            
+            <!--Nav Hr-->
             <hr class="fill-space bg-accent" id="nav-hr">
-
+            
+            <!--Search-->
             <div class="grid" id="nav-search-container">
                 <div class="flex center" id="nav-search-wrap">
                     <label for="search" class="fill-space flex center" id="nav-search-label">
                         <img id="nav-search-img" src="icons/search-icon.png" alt="Search Icon">
                     </label>
-
-                    <input class="fs-300" type="search" id="nav-search" placeholder="search lyrics & more">
+                    
+                    <input class="fs-300 text-accent" type="search" id="nav-search" placeholder="search lyrics & more">
                 </div>
             </div>
-
-            <div class="fill-space" id="nav-hamburger-container">
+            
+            <!--Hamburger-->
+            <div class="fill-space flex bg-dark" id="nav-hamburger-container">
                 <div class="flex" id="nav-hamburger-wrapper">
-                    <div class="nav_hamburger_span"></div>
-                    <div class="nav_hamburger_span"></div>
+                    <span class="nav_hamburger_span"></span>
+                    <span class="nav_hamburger_span"></span>
                 </div>
             </div>
+            
+        </div>
 
+    
+
+
+        <!--Mobile Container-->
+        <div class="flex" id="mobile-nav-container">
+            <div id="mobile-nav-wrapper">
+                
+                <div class="fill-space flex" id="mobile-nav-hamburger-container">
+                    <div id="mobile-nav-hamburger-wrapper">
+                        <span class="mobile_nav_hamburger_span"></span>
+                        <span class="mobile_nav_hamburger_span"></span>
+                    </div>
+                </div>
+                
+                <hr class="bg-dark" id="mobile-nav-hr">
+                
+                <ul class="list-container link-container flex" id="mobile-nav-link-container">
+                    <li>
+                        <a href="#" class="mobile_nav_link">remy martin</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile_nav_link">featured</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile_nav_link">community</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile_nav_link">charts</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mobile_nav_link">videos</a>
+                    </li>
+                </ul>
+                
+            </div>
         </div>
 
     </header>
+
+
+    <div class="bg-dark fill-space grid" id="body-grid-wrap">
+
+        <div class="grid fill-space" id="hero">
+
+            <div class="flex" id="lyric-guide-container">
+                <p class="text-white" id="lyric-guide-text">Your guide to lyrics and <br> the meaning behind them</p>
+            </div>
+
+            <div class="grid" id="body-img-container">
+                <img id="body-img" src="images/genius-logo.png" alt="Genius Logo">
+            </div>
+
+            <div class="uppercase" id="bringing-meaning-container">
+                <h3 class="text-white"id="bringing-meaning-text">Bringing you the meaning <br> behind the music...so you <br> don't have to hum along <br> to that song</h3>
+            </div>
+        </div>
+
+        <div id="body-grid-history">dkelrfd
+        </div>
+
+        <div id="body-grid-featured">melkmrvlke
+        </div>
+
+    </div>
+
+
 </body>
+<!--Variables-->
+<script src="script/new-variables.js"></script>
+<script src="script/new-mobile-nav.js"></script>
+<script src="script/new-nav-home.js"></script>
 
 <!-- <script src="script/color-scheme.js"></script> -->
 </html>

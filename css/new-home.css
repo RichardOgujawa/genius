@@ -1,0 +1,144 @@
+@import url(setup.css);
+
+/* Body Content */
+#body-grid-wrap {
+    grid-template-columns: 100%;
+    grid-template-rows: 100vh 100vh 100vh;
+    grid-template-areas: 
+    "hero"
+    "body-grid-history"
+    "body-grid-featured";
+}
+
+/* Hero */
+#hero {
+    --gap: 0em;
+    grid-area: hero;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 40% auto;
+    grid-template-areas: 
+    ". lyric-guide-container"
+    "body-img-container body-img-container"
+    ". bringing-meaning-container";
+    background: red;
+}
+
+#lyric-guide-container {
+    grid-area: lyric-guide-container;
+    background: blue;
+    align-items: flex-end;
+}
+
+
+#body-img-container {
+    grid-area: body-img-container;
+    background: orange;
+    place-items: center;
+}
+
+#body-img {
+    background: lightblue;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+#bringing-meaning-container {
+    grid-area: bringing-meaning-container;
+    background: purple;
+}
+
+#bringing-meaning-text{
+    width: 90%;
+}
+
+/* History */
+#body-grid-history {
+    grid-area: body-grid-history; 
+}
+
+/* Featured */
+#body-grid-featured {
+    grid-area: body-grid-featured;
+}
+
+/* There are media queries for max-width: 1336px, 1206px, 926px, 810px, 684px, 360px */
+@media (max-width: 1336px){
+    :root{
+        --fs-600: 1.83rem;
+    }
+    /* Body */
+    #body-grid-wrap {
+        grid-template-rows: 100vh 100vh 100vh;
+    }
+    
+    /* Hero */
+    #hero {
+        grid-template-rows: 20% 35% auto;
+    }
+
+
+}
+
+@media (max-width: 1206px){
+    /* Body */
+    #body-grid-wrap {
+        grid-template-rows: 81.5vh 100vh 100vh;
+    }
+    
+}
+
+@media (max-width: 926px){
+    /* Body */
+    #body-grid-wrap {
+        grid-template-rows: 125vh 100vh 100vh;
+    }
+    
+    /*Hero*/
+    #hero {
+        grid-template-rows: 20% 20% auto;
+    }
+}
+
+@media (max-width: 810px){
+    :root {
+        font-size: 12pt;
+    }
+    /* Body */
+    #body-grid-wrap {
+        grid-template-rows: 80vh 100vh 100vh;
+    }
+    /*Hero*/
+    #hero {
+        grid-template-rows: 20% 35% auto;
+    }
+
+}
+
+@media (max-width: 684px){
+    /* Body */
+    #body-grid-wrap {
+        grid-template-rows: 81.5vh 100vh 100vh;
+    }
+
+    /*Hero*/
+    #hero {
+        grid-template-rows: 25% 25% auto;
+    }
+
+    /*Lyric Guide*/
+    #lyric-guide-text {
+        width: 85%;
+    }
+
+
+    #bringing-meaning-text {
+        font-size: var(--fs-400); 
+    }
+}
+
+@media (max-width: 360px){
+    #body-grid-wrap {
+        grid-template-rows: 100vh 100vh 100vh;
+    }
+}
+
