@@ -59,7 +59,7 @@ window.addEventListener("scroll", ()=> {
         navFiller.style.boxShadow= "inset 0 -3px 0 hsl(var(--clr-accent, 60 100% 50%))";
         
         navLogoImg.style.transform="translateY(-160%)";
-        navSearchWrap.style.transform="translateY(-200%)";
+        navSearchWrap.style.transform="translateY(-170%)";
         
         
     } 

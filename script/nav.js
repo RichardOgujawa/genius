@@ -43,7 +43,6 @@ window.addEventListener("scroll", ()=>{
         fillgap3.style.background = "var(--dark-gray, red)";
         
         searchCont.style.background = "var(--dark-gray, red)";
- 
     }
 });
 
