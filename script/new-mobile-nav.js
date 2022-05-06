@@ -12,7 +12,7 @@ mobileNavHamburgerWrapper.addEventListener("click", ()=> {
 window.addEventListener("resize", ()=>{
     var windowWidthMobile = window.innerWidth;
     console.log(windowWidthMobile)
-    if (mobileNavContainer.style.transform == "translateX(0%)" && windowWidthMobile > 926) {
+    if(mobileNavContainer.style.transform == "translateX(0%)" && windowWidthMobile > 926) {
         mobileNavContainer.style.transform = "translateX(100%)";
     }
     else {

@@ -1,12 +1,15 @@
+old.html
 featured.html
 references
-componenets.html
+components.html
 script/script.js
 script/preload.js
 script/variables.js 
 script/featured.js
 script/load-more.js 
-scipt/color-scheme.js
+script/color-scheme.js
+script/featured-preload.js
+script/nav.js
 css/featured.css
 css/home.css
 markdown/pseudo-code.md 

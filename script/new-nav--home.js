@@ -5,7 +5,7 @@ var scroll = false; //Toggle to prevent it from re-animating everytime user scro
 window.addEventListener("resize", ()=> {
     var windowWidthMobile = window.innerWidth;
 
-if (windowWidthMobile <= 926 && navSearchWrap.style.transform == "translateY(-200%)") {
+if (windowWidthMobile <= 926 && navSearchWrap.style.transform == "translateY(-170%)") {
     //Mobile View
     navbar.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)";
 

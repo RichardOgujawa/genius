@@ -24,7 +24,7 @@
     --fs-300: 1rem; /*small*/   
     --fs-200: 0.875rem; /*--additional--*/
     
-    font-size: 12pt; /*Recommended not to go lower than 12pt*/
+    font-size: 11pt; /*Recommended not to go lower than 12pt*/
     /* ff prefix for font-family */
     --ff-sans-serif: "Outfit", sans-serif;
 
@@ -155,9 +155,14 @@ hr {
     justify-content: center;
 }
 
+.aspect-ratio-1 {
+    display: inline-block;
+    aspect-ratio: 1/1;
+}
+
 .container {
-    padding-inline: var(--gap, 2em); 
-    margin-inline: 2vw; 
+    /* padding-inline: var(--gap, 2em);  */
+    margin-inline: var(--margin-gap, 2vw); 
     max-width: 98vw; 
 }
 
@@ -175,6 +180,10 @@ hr {
 }
 
 /* Colours */
+.bg-red {
+    background-color: red;
+}
+
 .bg-dark { 
     background-color: hsl(var(--clr-dark, 0, 0%, 9%));
 }
@@ -225,7 +234,7 @@ hr {
     font-size: var(--fs-700, 3.214rem);
 }
 .fs-600 {
-    font-size: var(--fs-600, 2.286rem);
+    font-size: var(--fs-600, 2.5rem);
 }
 .fs-500 {
     font-size: var(--fs-500, 1.5rem);
@@ -326,18 +335,18 @@ hr {
 
 /*Breakpoints*/
 @media (max-width: 1336px){
-    body {
+    /* body {
         background-color:hsl(var(--clr-accent, 60, 100%, 50%));
-    }
+    } */
     :root {
-        font-size: 12pt;
+        font-size: 10pt;
     }
 }
 
 @media (max-width: 1206px){
-    body {
+    /* body {
         background-color:hsl(var(--clr-white, 0, 0%, 100%));
-    }
+    } */
 }
 
 
