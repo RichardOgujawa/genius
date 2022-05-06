@@ -11,3 +11,4 @@ css/featured.css
 css/home.css
 markdown/pseudo-code.md 
 markdown/checklist.md 
+*.dccache
