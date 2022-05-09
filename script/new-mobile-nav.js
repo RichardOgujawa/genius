@@ -1,22 +1,25 @@
-console.clear();
+console.log(mobileNavToggle);
+console.log(mobileNavContainer);
 
-/* Mobile Menu slide in & out */
-navHamburgerWrapper.addEventListener("click", ()=> {
-    mobileNavContainer.style.transform = "translateX(0%)";
-});
+mobileNavToggle[0].addEventListener("click", () => {
+    mobileNavContainer.style.transform = "translateX(0%)"
+})
 
-mobileNavHamburgerWrapper.addEventListener("click", ()=> {
-    mobileNavContainer.style.transform = "translateX(100%)";
-});
+mobileNavToggle[1].addEventListener("click", () => {
+    mobileNavContainer.style.transform = "translateX(100%)"
+})
 
-window.addEventListener("resize", ()=>{
+//Reset Mobile Nav Container position if the page is resized to desktop layout
+
+window.addEventListener("resize", () => {
     var windowWidthMobile = window.innerWidth;
     console.log(windowWidthMobile)
-    if(mobileNavContainer.style.transform == "translateX(0%)" && windowWidthMobile > 926) {
+    if (mobileNavContainer.style.transform == "translateX(0%)" && windowWidthMobile > 1024) {
         mobileNavContainer.style.transform = "translateX(100%)";
     }
     else {
         console.log("Not Yet");
     }
 });
+
 

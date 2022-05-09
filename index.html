@@ -24,15 +24,15 @@
 
 </head>
 
-<body>
+<body onmousemove="cursorMove(event)">
     <header id="header">
         <nav id="navbar">
 
             <div class="bg-dark fill-space" id="nav-filler"></div>
             <div class="grid container bg-dark" id="navbar-wrapper">
                 <!--Logo-->
-                <div class="container flex fill-space bg-dark" id="nav-logo-container">
-                    <img id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo">
+                <div class="container flex fill-space bg-dark" id="nav-logo-container" tabindex="-1">
+                    <img id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
                 </div>
 
                 <!--Nav Links-->
@@ -49,25 +49,25 @@
                 <!--Social Links-->
                 <ul class="list-container link-container flex center bg-dark" id="nav-social-link-container">
 
-                    <li class="social_link">
+                    <li class="nav_social_link">
                         <a href="#">
                             <img src="icons/ig.png" alt="Instagram Icon">
                         </a>
                     </li>
 
-                    <li class="social_link">
+                    <li class="nav_social_link">
                         <a href="#">
                             <img src="icons/twitter.png" alt="Twitter Icon">
                         </a>
                     </li>
 
-                    <li class="social_link">
+                    <li class="nav_social_link">
                         <a href="#">
                             <img src="icons/fb.png" alt="Facebook Icon">
                         </a>
                     </li>
 
-                    <li class="social_link">
+                    <li class="nav_social_link">
                         <a href="#">
                             <img src="icons/yt.png" alt="YouTube Icon">
                         </a>
@@ -97,11 +97,12 @@
                 </div>
 
                 <!--Hamburger-->
+                <!--Change this into a button like K.Powell-->
                 <div class="fill-space flex bg-dark" id="nav-hamburger-container">
-                    <div class="flex" id="nav-hamburger-wrapper">
-                        <span class="nav_hamburger_span"></span>
-                        <span class="nav_hamburger_span"></span>
-                    </div>
+
+                    <button class="mobile-nav-toggle" aria-controls="mobile-nav-link-container"><span class="sr-only"
+                            aria-expanded="false">Menu</span></button>
+
                 </div>
 
             </div>
@@ -110,10 +111,10 @@
                 <div id="mobile-nav-wrapper">
 
                     <div class="fill-space flex" id="mobile-nav-hamburger-container">
-                        <div id="mobile-nav-hamburger-wrapper">
-                            <span class="mobile_nav_hamburger_span"></span>
-                            <span class="mobile_nav_hamburger_span"></span>
-                        </div>
+
+                        <button class="mobile-nav-toggle" aria-controls="mobile-nav-link-container"><span
+                                class="sr-only" aria-expanded="false">Menu</span></button>
+
                     </div>
 
                     <hr class="bg-dark" id="mobile-nav-hr">
@@ -145,7 +146,7 @@
 
     <div class="bg-dark container grid" id="body-grid-wrap">
 
-        <div class="grid fill-space" id="hero">
+        <section class="grid fill-space" id="hero">
 
             <div class="flex" id="lyric-guide-container">
                 <p class="text-white" id="lyric-guide-text">Your guide to lyrics and <br> the meaning behind them</p>
@@ -156,40 +157,161 @@
             </div>
 
             <div class="flex" id="bringing-meaning-container">
-                <h3 class="uppercase text-white" id="bringing-meaning-text">Bringing you the meaning behind the music...so
+                <h3 class="uppercase text-white fs-700" id="bringing-meaning-text">Bringing you the meaning behind the
+                    music...so
                     you don't have to hum along to that song</h3>
             </div>
-        </div>
+        </section>
 
         <section class="grid" id="history">
 
             <hr class="fill-space bg-accent" id="history-hr">
 
             <div class="flex" id="history-title-container">
-                <p class="flex fs-400" id="history-title">
+                <p class="flex" id="history-title">
                     <span class="bg-accent aspect-ratio-1" id="history-title-circle"></span>
-                    <span class="" id="history-title-text">Genius's history</span>
+                    <span class="fs-400" id="history-title-text">Genius's history</span>
                 </p>
             </div>
 
-            <div class="flex" id="about-container">
-                <p class="fs-600" id="about-text">
-                    Founded in 2009, Genius is a unique media</span> company that's powered by community, our in-house creative team, and the artists themselves. We serve music knowledge to over 100 million people each month on Genius.com and everywhere music fans connect across the internet. Genius celebrates More Than The Music - the lyric, the stories behind the songs, and the creative connections that meaningfully derive culture.
+            <div class="flex" id="history-about-container">
+                <p class="fs-600" id="history-about-text">
+                    <span></span>
+                    <span>Founded in 2009, Genius is a unique media company that's powered by community, our in-house
+                        creative team, and the artists themselves. We serve music knowledge to over 100 million people
+                        each month on Genius.com and everywhere music fans connect across the internet. Genius
+                        celebrates More Than The Music - the lyric, the stories behind the songs, and the creative
+                        connections that meaningfully derive culture.</span>
                 </p>
             </div>
         </section>
 
-        <div id="featured-news">melkmrvlke
-        </div>
-
     </div>
 
+    <section class="container" id="featured-news">
 
+        <!--Featured News Title-->
+        <h2 class="flex uppercase fs-900 text-accent" id="featured-news-title">Featured News</h2>
+
+        <!--Featured News Grid-->
+        <section class="grid bg-accent" id="featured-news-grid">
+
+            <section class="flex featured_news_row">
+
+                <div class="featured_cell">
+                    <!--Heading and Time-->
+                    <div class="flex top_row">
+
+                        <span class="capitalize featured_title"></span>
+                        <span class="featured_date"></span>
+
+                    </div>
+
+                    <!--Image-->
+                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+
+                    <!--Author and CTA-->
+                    <div class="bottom_row">
+                        <span class="featured_author"></span>
+                        <div class="featured_links_container">
+                            <a href="#" class="text-white featured_link"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured_cell">
+                    <!--Heading and Time-->
+                    <div class="flex top_row">
+
+                        <span class="capitalize featured_title"></span>
+                        <span class="featured_date"></span>
+
+                    </div>
+
+                    <!--Image-->
+                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+
+                    <!--Author and CTA-->
+                    <div class="bottom_row">
+                        <span class="featured_author"></span>
+                        <span class="featured_links_container">
+                            <a href="#" class="text-white featured_link"></a>
+                        </span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="flex featured_news_row">
+
+                <div class="featured_cell">
+                    <!--Heading and Time-->
+                    <div class="flex top_row">
+
+                        <span class="capitalize featured_title"></span>
+                        <span class="featured_date">
+
+                        </span>
+
+                    </div>
+
+                    <!--Image-->
+                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+
+                    <!--Author and CTA-->
+                    <div class="bottom_row">
+                        <span class="featured_author"></span>
+                        <div class="featured_links_container">
+                            <a href="#" class="text-white featured_link"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured_cell">
+                    <!--Heading and Time-->
+                    <div class="flex top_row">
+
+                        <span class="featured_title"></span>
+                        <span class="featured_date"></span>
+
+                    </div>
+
+                    <!--Image-->
+                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+
+                    <!--Author and CTA-->
+                    <div class="bottom_row">
+                        <span class="featured_author"></span>
+                        <div class="featured_links_container">
+                            <a href="#" class="text-white featured_link"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+        <!--Load More Button-->
+        <div class="center" id="load-more-container">
+            <button class="fill-space x-large-button fs-700" type="button" id="load-more-button"><span
+                    id="load-more-button-text">Load More Featured News</span><span id="loading-circle"
+                    style="display:none;"></span></button>
+        </div>
+
+    </section>
+
+
+
+    <div id="cursor-inner"></div>
+    <div id="cursor-outer"></div>
 </body>
 <!--Variables-->
 <script src="script/new-variables.js"></script>
+<script src="script/cursor.js"></script>
 <script src="script/new-mobile-nav.js"></script>
 <script src="script/new-nav--home.js"></script>
+<script src="script/load-more.js"></script>
 
 <!-- <script src="script/color-scheme.js"></script> -->
 
