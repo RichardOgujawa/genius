@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
+@font-face {
+    font-family: "Programme";
+    src: url(../fonts/programme_light.woff2);
+}
 
 /*------------------------------------*/
 /* Custom Properties */
@@ -35,7 +39,7 @@
     font-size: 11pt;
     /*Recommended not to go lower than 12pt*/
     /* ff prefix for font-family */
-    --ff-sans-serif: "Outfit", sans-serif;
+    --ff-sans-serif: "Outfit", Arial, sans-serif;
 
     /* Padding */
     --padding-large: 0.883rem 2.476rem;
@@ -294,6 +298,11 @@ hr {
     text-decoration: none;
 }
 
+.list-container>li,
+.list {
+    list-style: none;
+}
+
 /*------------------------------------*/
 /* Mini-Component Classes  */
 /*------------------------------------*/
@@ -305,14 +314,19 @@ hr {
     border: none;
 }
 
-.list-container>li,
-.list {
-    list-style: none;
-}
 
 .fill-space {
     width: 100%;
     height: 100%;
+}
+
+.concentric-circle {
+    border-radius: 100%;
+    width: 0.6em;
+    aspect-ratio: 1;
+    box-shadow: 0 0 0 0.2em hsl(var(--clr-dark, 0 0% 9%)), 0 0 0 0.3em hsl(var(--clr-accent, 60 100% 50%));
+    aspect-ratio: 1;
+    background-color: hsl(var(--clr-accent, 60 100% 50%));
 }
 
 

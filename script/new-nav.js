@@ -40,5 +40,16 @@ window.addEventListener("scroll", () => {
         navFiller.style.boxShadow = "inset 0 -3px 0 hsl(var(--clr-dark, 0 0% 9%))";
     }
 
-
 })
+
+//To select parent selectors you can't use CSS so use JS to do it. So this bit of code is used to animate the search on focus/blur
+
+navSearchInput.addEventListener("focus", () => {
+    navSearchWrap.style.border = "2px solid hsl(var(--clr-white, 0 0% 100%))"
+});
+
+navSearchInput.addEventListener("blur", () => {
+    navSearchWrap.style.border = "2px solid hsl(var(--clr-accent, 60 100% 50%))"
+});
+
+

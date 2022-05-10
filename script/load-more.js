@@ -138,6 +138,23 @@ loadMoreButton.addEventListener("click", () => {
 
             i++;
 
+            const cursorBiggers = document.querySelectorAll(".cursor_bigger");
+
+            cursorBiggers.forEach(cursorBigger => {
+                cursorBigger.addEventListener("mouseenter", () => {
+                    cursorOuter.style.width = "70px";
+                    cursorInner.style.width = "70px";
+                });
+            })
+
+            cursorBiggers.forEach(cursorBigger => {
+                cursorBigger.addEventListener("mouseleave", () => {
+                    cursorOuter.style.width = "40px";
+                    cursorInner.style.width = "40px";
+                });
+            })
+
+
             loadMoreButtonText.style.display = "inline-block";
             loadingCircle.style.display = "none";
         }

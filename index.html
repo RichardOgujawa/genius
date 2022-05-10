@@ -10,6 +10,7 @@
     <!--StyleSheets-->
     <link rel="stylesheet" href="css/setup.css">
     <link rel="stylesheet" href="css/new-nav.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/new-home.css">
     <!-- <link rel="stylesheet" href="css/home.css"> -->
@@ -18,9 +19,6 @@
 
     <!--Favicon-->
     <link rel="shortcut icon" href="images/genius-icon.png" type="image/x-icon">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
 
 </head>
 
@@ -32,7 +30,7 @@
             <div class="grid container bg-dark" id="navbar-wrapper">
                 <!--Logo-->
                 <div class="container flex fill-space bg-dark" id="nav-logo-container" tabindex="-1">
-                    <img id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
+                    <img  id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
                 </div>
 
                 <!--Nav Links-->
@@ -92,7 +90,7 @@
                         </label>
 
                         <input class="fs-300 text-accent" type="search" id="nav-search"
-                            placeholder="search lyrics & more">
+                            placeholder="search lyrics & more" autocomplete="off">
                     </div>
                 </div>
 
@@ -153,7 +151,7 @@
             </div>
 
             <div class="grid container" id="body-img-container">
-                <img id="body-img" src="images/genius-logo.png" alt="Genius Logo">
+                <img class="cursor_bigger" id="body-img" src="images/genius-logo.png" alt="Genius Logo">
             </div>
 
             <div class="flex" id="bringing-meaning-container">
@@ -169,7 +167,7 @@
 
             <div class="flex" id="history-title-container">
                 <p class="flex" id="history-title">
-                    <span class="bg-accent aspect-ratio-1" id="history-title-circle"></span>
+                    <span class="bg-accent aspect-ratio-1 concentric-circle " id="history-title-circle"></span>
                     <span class="fs-400" id="history-title-text">Genius's history</span>
                 </p>
             </div>
@@ -295,12 +293,11 @@
         <!--Load More Button-->
         <div class="center" id="load-more-container">
             <button class="fill-space x-large-button fs-700" type="button" id="load-more-button"><span
-                    id="load-more-button-text">Load More Featured News</span><span id="loading-circle"
+                    id="load-more-button-text">Load More  Featured News</span><span id="loading-circle"
                     style="display:none;"></span></button>
         </div>
 
     </section>
-
 
 
     <div id="cursor-inner"></div>
@@ -308,11 +305,12 @@
 </body>
 <!--Variables-->
 <script src="script/new-variables.js"></script>
-<script src="script/cursor.js"></script>
 <script src="script/new-mobile-nav.js"></script>
 <script src="script/new-nav--home.js"></script>
 <script src="script/load-more.js"></script>
+<script src="script/cursor.js"></script>
 
+<!--This now works just need to work with the colours a little bit-->
 <!-- <script src="script/color-scheme.js"></script> -->
 
 </html>

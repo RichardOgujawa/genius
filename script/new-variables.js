@@ -67,7 +67,7 @@ const featuredDataJson = JSON.stringify(
             "date": "May 6, 2022",
             "image": "images/laura-stylez.jpg",
             "author": "Leah Degrazia",
-            "href": "https://genius.com/a/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career"
+            "href": "../featured/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career.html"
         },
 
         {

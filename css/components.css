@@ -1,0 +1,72 @@
+body {
+    margin-inline: auto;
+    max-width: 85rem;
+    margin-bottom: 10vh;
+}
+
+.helper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.section {
+    border: 2px solid hsl(0 0% 100% / 0.25);
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em 0px;
+}
+
+h2:first-child {
+    text-align: center;
+    margin: 0.5em 0px;
+}
+
+.main_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+/*Share and Like Buttons*/
+#share-and-like-container {
+    --gap: 0em;
+    max-width: 40rem;
+    overflow: hidden; 
+    grid-template-columns: repeat(4, 1fr) 30%;
+    border: 3px solid hsl(var(--clr-white, 0 0% 100%));
+    border-radius: 100vw;
+}
+#share-and-like-container > * > * {
+    cursor: pointer;
+}
+
+#share-and-like-container>*+* {
+    border-left: 2px solid white;
+}
+
+#share-and-like-container img {
+    max-width: 1.3em;
+    opacity: 0.8;
+}
+
+#share-and-like-container > div > button:hover > img{
+    opacity: 1;
+}
+
+
+button {
+    background-color: transparent;
+    padding: 0.5em;
+    border: none;
+    place-content: center;
+}
+
+#share-and-like-container > div:nth-of-type(4) > button  > img {
+    transform: rotate(180deg);
+}
+
+#upvotes {
+    place-content: center;
+}
