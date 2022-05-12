@@ -31,9 +31,7 @@ cursorBiggers.forEach(cursorBigger => {
         cursorOuter.style.width = "70px";
         cursorInner.style.width = "70px";
     });
-})
-
-cursorBiggers.forEach(cursorBigger => {
+    
     cursorBigger.addEventListener("mouseleave", () => {
         cursorOuter.style.width = "40px";
         cursorInner.style.width = "40px";
@@ -41,12 +39,30 @@ cursorBiggers.forEach(cursorBigger => {
 })
 
 const highlights = document.querySelectorAll(".highlight");
+const cursorText = document.querySelector('#cursor-text');
+
 highlights.forEach(highlight => {
     highlight.addEventListener("mouseenter", () => {
-        cursorOuter.style.width = "70px";
-        cursorInner.style.width = "70px";
-        cursorInner.style.opacity = "0.9";
+        cursorOuter.style.width = "74px";
+
+        cursorText.style.opacity = "1";
+        
+        cursorInner.style.width = "72px";
+        cursorInner.style.backgroundColor = "hsl(var(--clr-dark, 0 0% 9%), 0.5)";
         cursorInner.style.mixBlendMode = "normal";
+        //This effect doesn't work on Firefox, it's not supported
+        // if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+            cursorInner.style.backdropFilter = "blur(3px)";
+        })
+        
+        highlight.addEventListener("mouseleave", () => {
+            cursorOuter.style.width = "40px";
+            
+            cursorText.style.opacity = "0";
+            
+            cursorInner.style.width = "40px";
+            cursorInner.style.backgroundColor = "hsl(var(--clr-accent, 60 100% 50%))";
+        cursorInner.style.mixBlendMode = "difference";
         cursorInner.style.backdropFilter = "blur(0px)";
     })
 })

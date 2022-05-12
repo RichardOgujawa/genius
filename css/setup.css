@@ -32,6 +32,7 @@
     /*small*/
     --fs-200: 0.875rem;
     /*--additional--*/
+    --fs-100: 0.75rem;
 
     font-size: 11pt;
     /*Recommended not to go lower than 12pt*/
@@ -294,6 +295,10 @@ hr {
 
 .fs-200 {
     font-size: var(--fs-200, 00.875rem);
+}
+
+.fs-100 {
+    font-size: var(--fs-100, 0.7rem);
 }
 
 .fs-900,

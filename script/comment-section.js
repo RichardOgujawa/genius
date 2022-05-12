@@ -2,9 +2,13 @@ const textarea = document.querySelector('#comment-textarea');
 
 function submitComment(){ 
     var value = textarea.value; 
-
-    if(value != "")
-    {
+    //trim() trims off the whitespace at the start and end of a string
+    var valueTrim = value.trim();
+    if(valueTrim==='') {
+        console.log("Nothing to comment");
+    }
+    else 
+    {   
 
     var comments = document.querySelector('.comments');
     
@@ -78,9 +82,8 @@ function submitComment(){
     comments.appendChild(commentContainer);
 
     textarea.value = "";
+    console.log(value);
 }
-else {
-    console.log("Nothing");
-}
+
 }
 
