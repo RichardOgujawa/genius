@@ -1,11 +1,7 @@
 /*/ SETUP FILE /*/
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
 
-@font-face {
-    font-family: "Programme";
-    src: url(../fonts/programme_light.woff2);
-}
 
 /*------------------------------------*/
 /* Custom Properties */
@@ -16,7 +12,8 @@
     --clr-dark: 0, 0%, 9%;
     --clr-white: 0, 0%, 100%;
     --clr-accent: 60, 100%, 50%;
-    --clr-gray: 0, 0%, 66%;
+    --clr-light-gray: 0, 0%, 66%;
+    --clr-dark-gray: 0, 0%, 20%;
 
     /* fs prefix for font-size */
     --fs-900: 9.5rem;
@@ -39,7 +36,7 @@
     font-size: 11pt;
     /*Recommended not to go lower than 12pt*/
     /* ff prefix for font-family */
-    --ff-sans-serif: "Outfit", Arial, sans-serif;
+    --ff-sans-serif: "Poppins", Arial, sans-serif;
 
     /* Padding */
     --padding-large: 0.883rem 2.476rem;
@@ -87,6 +84,16 @@ p,
 figure,
 picture {
     margin: 0;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+p, 
+span {
+    font-weight: 400;
 }
 
 ul {
@@ -209,8 +216,12 @@ hr {
     background-color: hsl(var(--clr-accent, 60, 100%, 50%));
 }
 
-.bg-gray {
-    background-color: hsl(var(--clr-gray, 0, 0%, 66%));
+.bg-light-gray {
+    background-color: hsl(var(--clr-light-gray, 0 0% 70%))
+}
+
+.bg-dark-gray {
+    background-color: hsl(var(--clr-dark-gray, 0 0% 20%))
 }
 
 .text-dark {

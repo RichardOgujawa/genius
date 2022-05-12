@@ -40,3 +40,15 @@ cursorBiggers.forEach(cursorBigger => {
     });
 })
 
+const highlights = document.querySelectorAll(".highlight");
+highlights.forEach(highlight => {
+    highlight.addEventListener("mouseenter", () => {
+        cursorOuter.style.width = "70px";
+        cursorInner.style.width = "70px";
+        cursorInner.style.opacity = "0.9";
+        cursorInner.style.mixBlendMode = "normal";
+        cursorInner.style.backdropFilter = "blur(0px)";
+    })
+})
+
+
