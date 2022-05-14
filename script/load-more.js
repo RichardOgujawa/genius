@@ -1,6 +1,5 @@
 /*Adding Images to background for featured section*/
 for (i = 0; i < 4; i++) {
-    console.log(featuredData[i].image)
     featuredTitle[i].textContent = `${featuredData[i].title}`;
     featuredImg[i].style.backgroundImage = `url(${featuredData[i].image})`;
     featuredDate[i].textContent = `${featuredData[i].date}`
@@ -75,12 +74,12 @@ loadMoreButton.addEventListener("click", () => {
             /*Featured Img*/
             const createImg = document.createElement("div");
             createImg.style.backgroundImage = `url(${featuredData[i].image})`;
-            createImg.setAttribute("class", "flex cursor_bigger featured_cell_img_container");
+            createImg.setAttribute("class", "flex cursor-bigger featured_cell_img_container");
             createCell.appendChild(createImg);
 
             //
             const createImg1 = document.createElement("div");
-            createImg1.setAttribute("class", "flex cursor_bigger featured_cell_img_container");
+            createImg1.setAttribute("class", "flex cursor-bigger featured_cell_img_container");
             createImg1.style.backgroundImage = `url(${featuredData[i1].image})`;
             createCell1.appendChild(createImg1);
 
@@ -120,14 +119,14 @@ loadMoreButton.addEventListener("click", () => {
 
             /*Featured Link*/
             const createFeaturedLink = document.createElement("a");
-            createFeaturedLink.setAttribute("class", "text-white featured_link");
+            createFeaturedLink.setAttribute("class", "featured_link text-white cursor-bigger");
             createFeaturedLink.innerText = `See the article`;
             createFeaturedLink.setAttribute("href", `${featuredData[i].href}`);
             createFeaturedLinksContainer.appendChild(createFeaturedLink);
 
             //
             const createFeaturedLink1 = document.createElement("a");
-            createFeaturedLink1.setAttribute("class", "text-white featured_link");
+            createFeaturedLink1.setAttribute("class", "featured_link text-white cursor-bigger");
             createFeaturedLink1.innerText = `See the article`;
             createFeaturedLink1.setAttribute("href", `${featuredData[i1].href}`);
             createFeaturedLinksContainer1.appendChild(createFeaturedLink1);
@@ -138,7 +137,7 @@ loadMoreButton.addEventListener("click", () => {
 
             i++;
 
-            const cursorBiggers = document.querySelectorAll(".cursor_bigger");
+            const cursorBiggers = document.querySelectorAll(".cursor-bigger");
 
             cursorBiggers.forEach(cursorBigger => {
                 cursorBigger.addEventListener("mouseenter", () => {

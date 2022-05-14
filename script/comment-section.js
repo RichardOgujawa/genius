@@ -1,11 +1,11 @@
-const textarea = document.querySelector('#comment-textarea');
+const textarea = document.querySelector('.comment_textarea');
 
 function submitComment(){ 
     var value = textarea.value; 
     //trim() trims off the whitespace at the start and end of a string
     var valueTrim = value.trim();
     if(valueTrim==='') {
-        console.log("Nothing to comment");
+
     }
     else 
     {   
@@ -36,18 +36,18 @@ function submitComment(){
     profilePictureLink.appendChild(profilePictureImg);
 
     var accountName = document.createElement('span');
-    accountName.setAttribute('class', 'account_name text-white fs-300');
+    accountName.setAttribute('class', 'account_name text-white fs-200');
     accountName.textContent = 'James Raposo';
     profileDetails.appendChild(accountName); 
 
     //update (have different things like 'just now' '1 min ago' '5 mins ago' etc. come up at different time intervals)
     var timePast = document.createElement('div');
-    timePast.setAttribute('class', 'time_past fs-300 text-white');
+    timePast.setAttribute('class', 'time_past fs-200 text-white');
     timePast.textContent = 'Just now';
     commentTopRow.appendChild(timePast); 
     
     var userComment = document.createElement('p');
-    userComment.setAttribute('class', 'user_comment fs-300 text-accent');
+    userComment.setAttribute('class', 'user_comment fs-400 text-accent');
     userComment.textContent = value;
     commentContainer.appendChild(userComment);
     
@@ -66,7 +66,7 @@ function submitComment(){
     
     //Generate upvotes based on likes
     var upvotesNum = document.createElement('span');
-    upvotesNum.setAttribute('class', 'upvotesNum fs-300 text-gray');
+    upvotesNum.setAttribute('class', 'upvotesNum fs-200 text-gray');
     upvotesNum.textContent = ' +3 upvotes '; 
     upvotesDownvotes.appendChild(upvotesNum);
 
@@ -82,7 +82,6 @@ function submitComment(){
     comments.appendChild(commentContainer);
 
     textarea.value = "";
-    console.log(value);
 }
 
 }

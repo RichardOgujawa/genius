@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/new-home.css">
+    <link rel="stylesheet" href="css/components.css">
     <!-- <link rel="stylesheet" href="css/home.css"> -->
     <!-- <link rel="stylesheet" href="css/nav.css"> -->
 
@@ -29,43 +30,45 @@
             <div class="bg-dark fill-space" id="nav-filler"></div>
             <div class="grid container bg-dark" id="navbar-wrapper">
                 <!--Logo-->
-                <div class="container flex fill-space bg-dark" id="nav-logo-container" tabindex="-1">
-                    <img  id="nav-logo-img" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
+                <div class="container bg-dark" id="nav-logo-container" tabindex="-1">
+                    <a href="index.html" class="flex fill-space">
+                        <img id="nav-logo-img" class="cursor-bigger" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
+                    </a>
                 </div>
 
                 <!--Nav Links-->
                 <ul class="link-container list-container flex fs-400 bg-dark" id="nav-link-container">
 
-                    <li class="nav_link"><a href="#" class="text-white">remy martin</a></li>
-                    <li class="nav_link"><a href="#" class="text-white">featured</a></li>
-                    <li class="nav_link"><a href="#" class="text-white">community</a></li>
-                    <li class="nav_link"><a href="#" class="text-white">charts</a></li>
-                    <li class="nav_link"><a href="#" class="text-white">videos</a></li>
+                    <li class="nav_link cursor-bigger"><a href="components.html" class="text-white">components</a></li>
+                    <li class="nav_link cursor-bigger"><a href="#" class="text-white">feedback</a></li>
+                    <li class="nav_link cursor-bigger"><a href="#" class="text-white">community</a></li>
+                    <li class="nav_link cursor-bigger"><a href="#" class="text-white">charts</a></li>
+                    <li class="nav_link cursor-bigger"><a href="#" class="text-white">videos</a></li>
 
                 </ul>
 
                 <!--Social Links-->
                 <ul class="list-container link-container flex center bg-dark" id="nav-social-link-container">
 
-                    <li class="nav_social_link">
+                    <li class="nav_social_link cursor-bigger">
                         <a href="#">
                             <img src="icons/ig.png" alt="Instagram Icon">
                         </a>
                     </li>
 
-                    <li class="nav_social_link">
+                    <li class="nav_social_link cursor-bigger">
                         <a href="#">
                             <img src="icons/twitter.png" alt="Twitter Icon">
                         </a>
                     </li>
 
-                    <li class="nav_social_link">
+                    <li class="nav_social_link cursor-bigger">
                         <a href="#">
                             <img src="icons/fb.png" alt="Facebook Icon">
                         </a>
                     </li>
 
-                    <li class="nav_social_link">
+                    <li class="nav_social_link cursor-bigger">
                         <a href="#">
                             <img src="icons/yt.png" alt="YouTube Icon">
                         </a>
@@ -75,8 +78,8 @@
 
                 <!--Nav Buttons-->
                 <ul class="fill-space list-container link-container flex bg-dark" id="nav-buttons-container">
-                    <li class="nav_button"><a href="#" class="fs-300 small-button yellow-button">sign up</a></li>
-                    <li class="nav_button"><a href="#" class="fs-300 small-button black-button">sign in</a></li>
+                    <a href="#" class="fs-300 small-button yellow-button cursor-bigger">sign up</a>
+                    <a href="#" class="fs-300 small-button black-button cursor-bigger">sign in</a>
                 </ul>
 
                 <!--Nav Hr-->
@@ -89,7 +92,7 @@
                             <img id="nav-search-img" src="icons/search-icon.png" alt="Search Icon">
                         </label>
 
-                        <input class="fs-300 text-accent" type="search" id="nav-search"
+                        <input class="fs-300 text-accent cursor-bigger" type="search" id="nav-search"
                             placeholder="search lyrics & more" autocomplete="off">
                     </div>
                 </div>
@@ -119,10 +122,10 @@
 
                     <ul class="list-container link-container flex" id="mobile-nav-link-container">
                         <li>
-                            <a href="#" class="mobile_nav_link">remy martin</a>
+                            <a href="components.html" class="mobile_nav_link">components</a>
                         </li>
                         <li>
-                            <a href="#" class="mobile_nav_link">featured</a>
+                            <a href="#" class="mobile_nav_link">feedback</a>
                         </li>
                         <li>
                             <a href="#" class="mobile_nav_link">community</a>
@@ -151,7 +154,7 @@
             </div>
 
             <div class="grid container" id="body-img-container">
-                <img class="cursor_bigger" id="body-img" src="images/genius-logo.png" alt="Genius Logo">
+                <a href="index.html" class="cursor-bigger"><img id="body-img" src="images/genius-logo.png" alt="Genius Logo"></a>
             </div>
 
             <div class="flex" id="bringing-meaning-container">
@@ -206,13 +209,13 @@
                     </div>
 
                     <!--Image-->
-                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+                    <div class="flex cursor-bigger featured_cell_img_container"></div>
 
                     <!--Author and CTA-->
                     <div class="bottom_row">
                         <span class="featured_author"></span>
                         <div class="featured_links_container">
-                            <a href="#" class="text-white featured_link"></a>
+                            <a href="#" class="featured_link text-white cursor-bigger"></a>
                         </div>
                     </div>
                 </div>
@@ -227,13 +230,13 @@
                     </div>
 
                     <!--Image-->
-                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+                    <div class="flex cursor-bigger featured_cell_img_container"></div>
 
                     <!--Author and CTA-->
                     <div class="bottom_row">
                         <span class="featured_author"></span>
                         <span class="featured_links_container">
-                            <a href="#" class="text-white featured_link"></a>
+                            <a href="#" class="featured_link text-white cursor-bigger"></a>
                         </span>
                     </div>
                 </div>
@@ -254,13 +257,13 @@
                     </div>
 
                     <!--Image-->
-                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+                    <div class="flex cursor-bigger featured_cell_img_container"></div>
 
                     <!--Author and CTA-->
                     <div class="bottom_row">
                         <span class="featured_author"></span>
                         <div class="featured_links_container">
-                            <a href="#" class="text-white featured_link"></a>
+                            <a href="#" class="featured_link text-white cursor-bigger"></a>
                         </div>
                     </div>
                 </div>
@@ -275,13 +278,13 @@
                     </div>
 
                     <!--Image-->
-                    <div class="flex cursor_bigger featured_cell_img_container"></div>
+                    <div class="flex cursor-bigger featured_cell_img_container"></div>
 
                     <!--Author and CTA-->
                     <div class="bottom_row">
                         <span class="featured_author"></span>
                         <div class="featured_links_container">
-                            <a href="#" class="text-white featured_link"></a>
+                            <a href="#" class="featured_link text-white cursor-bigger"></a>
                         </div>
                     </div>
                 </div>
@@ -292,7 +295,7 @@
 
         <!--Load More Button-->
         <div class="center" id="load-more-container">
-            <button class="fill-space x-large-button fs-700" type="button" id="load-more-button"><span
+            <button class="fill-space x-large-button fs-700 cursor-bigger" type="button" id="load-more-button"><span
                     id="load-more-button-text">Load More  Featured News</span><span id="loading-circle"
                     style="display:none;"></span></button>
         </div>
@@ -300,17 +303,15 @@
     </section>
 
 
-    <div id="cursor-inner"></div>
-    <div id="cursor-outer"></div>
+    <div class="cursor_inner"></div>
+    <div class="cursor_outer"></div>
 </body>
 <!--Variables-->
+<script src="script/home-message.js"></script>
 <script src="script/new-variables.js"></script>
 <script src="script/new-mobile-nav.js"></script>
 <script src="script/new-nav--home.js"></script>
 <script src="script/load-more.js"></script>
 <script src="script/cursor.js"></script>
-
-<!--This now works just need to work with the colours a little bit-->
-<!-- <script src="script/color-scheme.js"></script> -->
 
 </html>

@@ -34,12 +34,184 @@ const mobileNavContainer = document.getElementById("mobile-nav-container");
 const mobileNavToggle = document.querySelectorAll(".mobile-nav-toggle");
 
 
+
 /*-----------------------*/
 /* Cursor                */
 /*-----------------------*/
+const cursorOuter = document.querySelector(".cursor_outer");
+const cursorInner = document.querySelector(".cursor_inner");
 
-const cursorOuter = document.getElementById("cursor-outer");
-const cursorInner = document.getElementById("cursor-inner");
+const cursorBiggers = document.querySelectorAll(".cursor-bigger");
+
+const cursorText = document.querySelector('.cursor_text');
+
+
+/*-----------------------*/
+/* Share                 */
+/*-----------------------*/
+const thumbsUpBtn = document.querySelector(".thumbs_up_button");
+
+const thumbsDownBtn = document.querySelector(".thumbs_down_button");
+
+const upvotes = document.querySelector(".upvotes");
+var upvoteNum = 9;
+
+
+/*-----------------------------*/
+/* Lyrics Analysis Component   */
+/*-----------------------------*/
+const highlights = document.querySelectorAll(".highlights");
+
+const annotationJSON = JSON.stringify(
+    [
+        {
+            "highlightText" : "Black and Samoan in my veins, my culture bangin' with Strange",
+            
+            "annotationDetails" : 
+            'In this line, Dwayne explains his mixed ancestry. His father, former professional wrestler <a href="https://www.wwe.com/superstars/rockyjohnson">Rocky Johnson</a>, was Black, while his mother Ata Johnson, is Samoan. His adopted maternal grandfather Peter Maivia was also a pro wrestler, making him an honorary member of the Anoa\' i Samoan wrestling family. Johnson’s original ring name was Rocky Maivia, an homage to both his father and grandfather\.',
+
+            "annotationSrc" : "../images/peter-rocky-rock.jpg",
+
+            "annotationFigcaption" : 'Pictured left to right: Peter Maivia, Rocky Johnson, and Dwayne “The Rock” Johnson.',
+
+            "annotationUpvoteNum" : "+68"
+        }, 
+        {
+            "highlightText" : "Face to face now we escalatin' when I have to put boots to asses",
+            
+            "annotationDetails" : 
+            `Dwayne "The Rock" Johnson's first verse is written as a “stream-of-conscious” narrative, as exemplified in James Joyce’s Ulysses. The orientation of the constellations offer a greater degradation of the human civilisation. In other words boots to asses is one of the rock’s most famous catchphrases`,
+
+            "annotationSrc" : "../images/face-off-the-rock.jpg",
+
+            "annotationFigcaption" : 'The Rock in <a href="https://www.youtube.com/watch?v=E9T78bT26sk">"Face Off"</a> Music Video',
+
+            "annotationUpvoteNum" : "+0"
+        },
+        {
+            "highlightText" : "Thank you, Teremana",
+            
+            "annotationDetails" : 
+            `Teremana means spirit of the earth, and the name of Dwayne “The Rock” Johnson’s tequila brand.`,
+
+            "annotationSrc" : "../images/rock-holding-teremana-drink.jpg",
+
+            "annotationFigcaption" : '',
+
+            "annotationUpvoteNum" : "+0"
+        }
+  
+]
+)
+
+const annotationData = JSON.parse(annotationJSON);
+
+var annotation = document.querySelector('.annotation');
+const annotationClose = document.querySelector('.fa-close')
+const annotationDetails = document.querySelector('.annotation_details');
+const annotationImg = document.querySelector('.annotation_img');
+const annotationFigcaption = document.querySelector('.annotation_figcaption');
+const annotationUpvoteNum = document.querySelector('.annotation_upvote_container>span');
+
+
+/*-----------------------*/
+/* Featured News         */
+/*-----------------------*/
+const albumSongsJSON = JSON.stringify(
+    [
+        {
+            "title": "Talk Of The Town",
+            "song": "../sound/jack-harlow-talk-of-the-town.mp3",
+        },
+
+        {
+            "title": "Young Harleezy",
+            "song": "../sound/jack-harlow-young-harleezy.mp3"
+        },
+
+        {
+            "title": "I'd Do Anything To Make You Smile",
+            "song": "../sound/jack-harlow-id-do-anything-to-make-you-smile.mp3"
+        },
+
+        {
+            "title": "First Class",
+            "song": "../sound/jack-harlow-first-class.mp3"
+        },
+
+        {
+            "title": "Dua Lipa",
+            "song": "../sound/jack-harlow-dua-lipa.mp3"
+        },
+
+        {
+            "title": "Side Piece",
+            "song": "../sound/jack-harlow-side-piece.mp3"
+        },
+
+        {
+            "title": "Movie Star (ft. Pharrell Williams)",
+            "song": "../sound/jack-harlow-movie-star-feat-pharrell-williams.mp3"
+        },
+
+        {
+            "title": "Lil Secret",
+            "song": "../sound/jack-harlow-lil-secret.mp3"
+        },
+        {
+            "title": "I Got A Shot",
+            "song": "../sound/jack-harlow-i-got-a-shot.mp3"
+        },
+
+        {
+            "title": "Churchill Downs (ft. Drake)",
+            "song": "../sound/jack-harlow-churchill-downs-feat-drake.mp3"
+        },
+
+        {
+            "title": "Like A Blade of Grass",
+            "song": "../sound/jack-harlow-like-a-blade-of-grass.mp3"
+        },
+
+        {
+            "title": "Parent Trap (ft. Justin Timberlake)",
+            "song": "../sound/jack-harlow-parent-trap-feat-justin-timberlake.mp3"
+        },
+
+        {
+            "title": "Poison (ft. Lil Wayne)",
+            "song": "../sound/jack-harlow-poison-feat-lil-wayne.mp3"
+        },
+
+        {
+            "title": "Nail Tech",
+            "song": "../sound/jack-harlow-nail-tech.mp3"
+        },
+
+        {
+            "title": "State Fair",
+            "song": "../sound/jack-harlow-state-fair.mp3"
+        }
+    ]
+)
+
+
+const albumSongsData = JSON.parse(albumSongsJSON);
+
+const playPauseBtn = document.querySelector('.play_pause_btn');
+// const pauseBtn = document.querySelector(".fa-pause");
+
+var audio = document.querySelector(".audio");
+var currentSong = document.querySelector(".current_song");
+const audioPlaylistSong = document.querySelectorAll(".playlist_song");
+
+const progress = document.querySelector(".progress");
+const progressContainer = document.querySelector(".progress_container");
+
+const levelBar = document.querySelectorAll(".level_bar");
+
+const fullTime = document.querySelector(".full_time")
+
 
 /*-----------------------*/
 /* Featured News         */
@@ -130,7 +302,7 @@ const featuredDataJson = JSON.stringify(
         {
             "title": "Genius Community Playlist April 2022 ",
             "date": "April 30th, 2022",
-            "image": "images/genius-community-playlist.gif",
+            "image": "images/genius-community.gif",
             "author": "streetlights",
             "href": "https://genius.com/a/genius-community-playlist-april-2022"
         },
@@ -162,7 +334,5 @@ const featuredDataJson = JSON.stringify(
     ;
 
 const featuredData = JSON.parse(featuredDataJson);
-
-
 
 

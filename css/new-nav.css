@@ -48,8 +48,10 @@
     height: 100%;
     margin: 0 auto 0 0;
     grid-area: nav-logo;
+}
+
+#nav-logo-container a{
     align-items: center;
-    justify-content: start;
 }
 
 #nav-logo-img {
@@ -170,7 +172,10 @@
 /* Media Queries               */
 /*-----------------------------*/
 
-@media (max-width: 1336px) {}
+@media (max-width: 1336px) {
+    #navbar-wrapper
+    {grid-template-columns: 20% 42% auto 20%;}
+}
 
 @media (max-width: 1206px) {
 
@@ -302,8 +307,10 @@
     }
 
     #nav-search {
-        text-align: center;
+        text-align: end;
         width: 10em;
+        padding: 0.5em;
+        font-size: var(--fs-200);
     }
 
 
@@ -415,7 +422,9 @@
 }
 
 @media (max-width: 684px) {
-
+    :root {
+        --fs-700: 0.5rem;
+    }
     /*Navigation Logo*/
     #nav-logo-img {
         max-width: 90%;

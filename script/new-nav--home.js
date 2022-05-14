@@ -3,7 +3,6 @@ var scroll = false; //Toggle to prevent it from re-animating everytime user scro
 window.addEventListener("resize", () => {
     var windowWidthMobile = window.innerWidth;
     var windowHeight = window.innerHeight;
-    console.log("Height:" + windowHeight);
 
 
     if (windowWidthMobile <= 926 && navSearchWrap.style.transform == "translateY(-180%)") {
@@ -84,7 +83,6 @@ window.addEventListener("scroll", () => {
 
     }
 
-    console.log(scroll);
 
 })
 

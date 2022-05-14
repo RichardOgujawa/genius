@@ -1,75 +1,101 @@
-//Create an element with the x position of the width of the span plus a couple of pixelse, and the height of the box will depend on the content. But it will have a 
-//<figure><img class=\'annotation_img\' src="../images/peter-rocky-rock.jpg" alt="Peter Waiva, Rocky Johnson and Dwayne "The Rock" Johnson"><figcaption class="annotation_figcaption fs-200">Pictured left to right: Peter Maivia, Rocky Johnson, and Dwayne “The Rock” Johnson.</figcaption></figure>
+const annotationsEditBtn = document.querySelector(".annotation_edit_btn");
+const annotationEditTextArea = document.querySelector(".annotation_edit_textarea");
+const annotationEditReview = document.querySelector(".annotation_edit_review")
 
-const annotationJSON = JSON.stringify(
-    [
-        {
-            "annotationDetails" : 
-            'In this line, Dwayne explains his mixed ancestry. His father, former professional wrestler Rocky Johnson, was Black, while his mother Ata Johnson, is Samoan. His adopted maternal grandfather Peter Maivia was also a pro wrestler, making him an honorary member of the Anoa\' i Samoan wrestling family. Johnson’s original ring name was Rocky Maivia, an homage to both his father and grandfather\.',
+annotationsEditBtn.addEventListener("click", () => {
+    if (annotationsEditBtn.textContent == "Edit") {
+        annotationEditTextArea.value = annotationDetails.innerHTML;
+        annotationDetails.innerHTML = "";
+        annotationEditTextArea.style.display = "block";
+        annotationEditReview.style.display = "block";
+        annotationsEditBtn.textContent = "Save";
+    } else {
+        annotationDetails.innerHTML = annotationEditTextArea.value;
+        annotationEditTextArea.style.display = "none";
+        annotationsEditBtn.textContent = "Edit";
+        annotationEditReview.style.display = "none";
+    }
+});
 
-            "annotationImg" : "../images/peter-rocky-rock.jpg",
 
-            "annotationFigcaption" : 'Pictured left to right: Peter Maivia, Rocky Johnson, and Dwayne “The Rock” Johnson.',
-
-            "annotationUpvoteNum" : "+68"
-        }, 
-        {
-            "annotationDetails" : 
-            'Dwayne "The Rock" Johnson\'s first verse is written as a “stream-of-conscious” narrative, as exemplified in             James Joyce’s Ulysses. The orientation of the constellations offer a greater degradation of the human civilisation. That\'s why it\'s imperative that any similitude between the human condition, and the retired recompensation of Socrates\' political animal.',
-
-            "annotationImg" : "../images/face-off-the-rock.jpg",
-
-            "annotationFigcaption" : 'The Rock in <a href="https://www.youtube.com/watch?v=E9T78bT26sk">"Face Off"</a> Music Video',
-
-            "annotationUpvoteNum" : "+0"
-        }, 
-  
-]
-)
-
-const annotationData = JSON.parse(annotationJSON);
-
-var annotation = document.querySelector('.annotation');
-const annotationClose = document.querySelector('.fa-close')
-const annotationDetails = document.querySelector('.annotation_details');
-const annotationImg = document.querySelector('.annotation_img');
-const annotationFigcaption = document.querySelector('.annotation_figcaption');
-const annotationUpvoteNum = document.querySelector('.annotation_upvote_container>span');
 
 highlights.forEach((highlight, index) => {
-    highlight.addEventListener('click', ()=> {
+    highlight.addEventListener('click', () => {
         annotation.style.visibility = "visible";
-        // Get position of highlight
-        console.log(`${highlight.offsetTop}px`);
-        let highlightrect = highlight.getBoundingClientRect();
-        
-        annotation.style.top = `${highlight.offsetTop}px`;
-        
-        annotation.style.left = `${highlightrect.left - annotation.clientWidth*1.8}px` 
-        annotationDetails.innerHTML = annotationData[index].annotationDetails;
-        annotationUpvoteNum.textContent = annotationData[index].annotationUpvoteNum;
 
-        
-        if (annotationData[index].trim != ""){
-            annotationImg.setAttribute('src', `${annotationData[index].annotationImg}`)
-        
-            annotationFigcaption.innerHTML =  annotationData[index].annotationFigcaption;
+        var i;
+
+        for (i = 0; annotationData.length; i++) {
+
+            if (highlight.textContent === annotationData[i].highlightText) {
+                // Getting position of Highlight
+                let highlightrect = highlight.getBoundingClientRect();
+
+                //Setting position of Annotation using Highlight
+                annotation.style.top = `${highlight.offsetTop}px`;
+                annotation.style.left = `${highlightrect.left - annotation.clientWidth * 1.1}px`;
+
+                //Annotation Subtle Slide Animation
+                annotation.classList.add("annotation_animation");
+
+                //Setting content of Highlight using JSON Data
+                annotationDetails.innerHTML = annotationData[index].annotationDetails;
+                annotationUpvoteNum.textContent = annotationData[index].annotationUpvoteNum;
+
+                //Checking if there is an image and setting the image to that
+                if (annotationData[index].trim != "") {
+                    annotationImg.setAttribute('src', `${annotationData[index].annotationSrc}`);
+                    annotationFigcaption.innerHTML = annotationData[index].annotationFigcaption;
+                }
+
+            }
+
+            else {
+            }
+
+            annotationEditTextArea.style.display = "none";
+            annotationsEditBtn.textContent = "Edit";
+            annotationEditReview.style.display = "none";
+            annotationsEditBtn.style.display = "block";
         }
-
+        
     });
 })
 
-
-annotationClose.addEventListener('click', ()=> {
+//Closing Annotation function
+annotationClose.addEventListener('click', () => {
+    annotationsEditBtn.style.display = "none";
     annotation.style.visibility = "hidden";
+    annotation.classList.remove("annotation_animation");
+
 })
 
 
+highlights.forEach(highlight => {
+    highlight.addEventListener("mouseenter", () => {
+        cursorOuter.style.width = "74px";
 
-// highlight.forEach(item => {
-//     item.addEventListener('click', ()=> {
-//     })
-// })
+        cursorText.style.opacity = "1";
 
+        cursorInner.style.width = "72px";
+        cursorInner.style.backgroundColor = "hsl(var(--clr-dark, 0 0% 9%), 0.5)";
+        cursorInner.style.mixBlendMode = "normal";
+
+        //This effect doesn't work on Firefox, it's not supported
+        cursorInner.style.backdropFilter = "blur(3px)";
+    })
+
+    highlight.addEventListener("mouseleave", () => {
+
+        cursorText.style.opacity = "0";
+
+        cursorOuter.style.width = "40px";
+
+        cursorInner.style.width = "40px";
+        cursorInner.style.backgroundColor = "hsl(var(--clr-accent, 60 100% 50%))";
+        cursorInner.style.mixBlendMode = "difference";
+        cursorInner.style.backdropFilter = "blur(0px)";
+    })
+})
 
 

@@ -1,73 +1,139 @@
-
-
-body {
-    margin-inline: auto;
-    max-width: 85rem;
-    margin-bottom: 10vh;
-}
-
-.helper {
-    display: flex;
+.heading_of_page {
     align-items: center;
-    justify-content: flex-start;
-    gap: 1em;
+    padding: 0.7em;
 }
 
-.section {
-    border: 2px solid hsl(0 0% 100% / 0.25);
-    justify-content: space-around;
-    align-items: center;
-    padding: 1em 0px;
-}
 
-.main_wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-}
-
-/*Share and Like Buttons*/
-#share-and-like-container {
+/*------------------------*/
+/*Share and Like Buttons  */
+/*------------------------*/
+.share_and_like_component {
     --gap: 0em;
-    max-width: 40rem;
+    min-width: 40rem;
     overflow: hidden; 
     grid-template-columns: repeat(4, 1fr) 30%;
     border: 3px solid hsl(var(--clr-white, 0 0% 100%));
     border-radius: 100vw;
 }
 
-
-#share-and-like-container>*+* {
+.share_and_like_component>*+* {
     border-left: 2px solid white;
 }
 
-#share-and-like-container img,
-#share-and-like-container i {
+.share_and_like_component img,
+.share_and_like_component i {
     max-width: 1.3em;
     opacity: 0.8;
 }
 
-#share-and-like-container > div > button:hover > *{
+.share_and_like_component > div > button:hover > *{
     opacity: 1;
 }
 
-
-#share-and-like-container > div > button {
-    background-color: transparent;
+.share_and_like_component > div > button {
     padding: 0.5em;
     border: none;
     place-content: center;
+    background-color: transparent;
 }
 
-#share-and-like-container > div:nth-of-type(4) > button  > img {
+.share_and_like_component > div:nth-of-type(4) > button > img {
     transform: rotate(180deg);
 }
 
-#upvotes {
+.upvotes {
     place-content: center;
 }
 
-/*Music Player*/
+
+
+/*------------------------*/
+/*Music Player            */
+/*------------------------*/
+
+/*Music Player (Left Side)*/
+.music_player_section {
+    flex-direction: column;
+}
+
+.music_player_container {
+    min-width: 700px; 
+    max-height: 500px;
+    display: flex;
+    overflow: hidden; 
+    border-radius: 30px; 
+    transform: scale(0.9); 
+}
+
+.music_player_white_side {
+    --gap: 0em; 
+    padding: 0em 1em 1em 1em; 
+    grid-template-rows: 65px 57% 12% 75px; 
+    flex-basis: 300px; 
+    flex-shrink: 0;
+}
+
+.music_player_apple_music_logo {
+    align-self: center;
+}
+
+.music_player_apple_music_logo img{
+    max-width: 70px; 
+    opacity: 70%;
+}
+
+.music_player_album_cover img{
+    border-radius: 20px;
+}
+
+.apple_music_cta{
+    padding: 0.7em 1em;
+    align-self: end; 
+    text-decoration: none; 
+    text-align: center; 
+}
+
+/*Music Player Playlist (Right Side)*/
+.music_player_yellow_side {
+    --gap: 0em; 
+    flex-basis: 100%; 
+    grid-template-rows: 65px auto 75px;
+}
+
+.music_player_currently_playing {
+    align-items: center; 
+    justify-content: space-between;
+    padding-inline: 1.5em;
+}
+
+.current_song {
+    font-weight: 700; 
+    flex-basis: 400px
+}
+
+.music_player_playlist {
+    --gap: 0em; flex-direction:
+    column; padding: 
+    0.1em 0em; 
+}
+
+.music_player_playlist > * { 
+    padding: 0.5em 3em;
+}
+
+.music_player_playlist > *:not(:last-child){
+    /* background: red; */
+    border-bottom: 2px solid hsl(var(--clr-gray, 0 0% 67%)/0.2)
+}
+
+
+.level_bars{
+    --gap: 0.2em; 
+    flex-basis: 50px;  
+    justify-content: flex-end;
+}
+
+
 .level_bar{
     width: 5px;
     aspect-ratio: 1/2;
@@ -95,34 +161,92 @@ body {
     animation-delay: 0.4s;
 }
 
-[type="range"]::-webkit-slider-thumb,
-[type="range"]::-moz-range-thumb,
-[type="range"]::-ms-thumb{
-    appearance: none;
-    background-color: red;
+.music_player_playlist_container {
+    overflow: scroll;
 }
 
-#music-player-playlist > * { 
-    padding: 0.5em 3em;
-    /* list-style: circle; */
+.controls_container {
+    --gap: 1em; 
+    align-items: center; 
 }
 
-#music-player-playlist > *:not(:last-child){
-    /* background: red; */
-    border-bottom: 2px solid hsl(var(--clr-gray, 0 0% 67%)/0.2)
+.controls {
+    padding: 0.95em 2.6em 0.95em 1.7em; 
+    grid-template-columns: 15px auto 25px; border-radius: 100vw; 
+    border: 3px solid white;
 }
 
-/*Comment Section*/
-.comment_heading {
+.play_pause_btn {
+    --gap: 0em;
+    align-items: center; 
+    background: transparent; 
+    border: none;
+}
+
+.progress_container {
+    position: relative; 
+}
+
+.progress_track {
+    height: 3px; 
+    transform-origin:left; 
+    transition: transform 100ms linear; 
+    width: 100%; 
+    transform: scaleX(1) translateY(-50%); 
+    top: 50%; 
+    position: absolute;
+    opacity: 0.3
+}
+
+.progress {
+    height: 3px; 
+    transform-origin:left; 
+    transition: width 100ms linear; 
+    width: 0%; 
+    transform: translateY(-50%); 
+    top: 50%; 
+    position: absolute; 
+}
+
+.audio_duration {
+    align-self: center;
+}
+
+
+
+/*------------------------*/
+/*Comment Section         */
+/*------------------------*/
+.comment_section {
+    flex-direction: column;
+}
+
+.comment_heading_details {
     --gap: 0em; 
     flex-direction: column;
 }
 
-#comment-textarea {
-    background: transparent; 
+.comment_title {
+    text-align: left;
+}
+
+.comment_subtitle{
+    max-width: 40ch
+}
+
+.comment_textarea {
+    padding: 0.5em;
     border: 3px solid hsl(var(--clr-white, 0 0% 100%)); 
     border-radius: 10px; 
-    padding: 0.5em;
+    transition: border var(--speed) ease;
+    background: transparent; 
+    min-width:50em;
+    min-height: 10em; 
+}
+
+.comment_textarea:focus {
+    outline: none;
+    border: 3px solid hsl(var(--clr-accent, 60 100% 50%)); 
 }
 
 .submit_comment_btn {
@@ -178,8 +302,12 @@ body {
     color: hsl(var(--clr-white, 0 0% 100%));
 }
 
-/*Lyrics Analysis*/
-#lyric_analysis_section {
+
+
+/*------------------------*/
+/*Lyrics Analysis         */
+/*------------------------*/
+.lyric_analysis_section {
     --gap: 1.2em;
     flex-direction: column;
     height: 100%;
@@ -187,25 +315,40 @@ body {
 
 .lyric_analysis_component {
     height: 100%;
+    align-items: start;
 }
+
 
 /*Annotation*/
 .annotation_side{
-    flex-basis: 50%;
+    flex-basis: 45%;
     width: 50vw;
     align-self: stretch;
+    justify-self: stretch;
     /* outline: 3px solid red; */
 }
 
 .annotation {
     position: absolute;
-    width: 17em;
+    width: 22em;
     height: auto;
     padding: 1.5em 1em;
-    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
     visibility:hidden;
-    transform: translateX(70%);
+    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    background-color: hsl(var(--clr-dark, 0 0% 9%));
+    transform: translateX(-10%);
 }   
+
+.annotation_animation{
+    animation: annotationSlideOut 0.5s ease-out forwards;
+}
+
+
+@keyframes annotationSlideOut {
+    100% {
+        transform: translateX(0%);
+    }
+}
 
 .annotation_top_row {  
     justify-content: space-between;
@@ -217,9 +360,36 @@ body {
     font-weight: 500;
 }
 
+.annotation_edit_textarea{
+    width: 100%;
+    height: 10em;
+    display: none;
+    resize: none;
+}
+
+.annotation_edit_review {
+    padding: 0.5em;
+    display: none;
+    font-weight: 600;
+    background-image: repeating-linear-gradient(
+            45deg, 
+            hsl(var(--clr-accent, 60 100% 50%), 0.1) 0px,
+            hsl(var(--clr-accent, 60 100% 50%), 0.1) 5px,
+            hsl(var(--clr-accent, 60 100% 50%), 0.3) 5px,
+            hsl(var(--clr-accent, 60 100% 50%), 0.3) 10px
+
+    )
+}
+
 .annotation_details {
     line-height: 2;
     margin-bottom: 0.5em;
+}
+
+.annotation_details a{
+    color: hsl(var(--clr-accent, 60 100% 50%));
+    font-size: var(--fs-200);
+    text-decoration: none;
 }
 
 .annotation_figcaption {
@@ -231,6 +401,13 @@ body {
     color: hsl(var(--clr-accent, 60 100% 50%));
 }
 
+.annotation_edit_btn {
+    border: 2px solid hsl(var(--clr-accent, 60 100% 50%));
+    border-radius: 0px;
+    margin-bottom: 1em;
+    /* background: none; */
+    color:hsl(var(--clr-white, 0 0% 100%));
+}
 
 .annotation_interactions {
     margin: 1.75em 0em 0.5em;
@@ -256,13 +433,21 @@ i.fa-thumbs-down {
     align-self: center;
 }
 
-.share_link {
+.annotation_share_btn {
+    --gap: 0.5em;
+}
+
+.annotation_share_link {
     position: relative;
     align-self: center;
     text-decoration: none;
 }
 
-.share_link::before {
+i.fa-share {
+    align-self: center;
+}
+
+.annotation_share_link::before {
     position: absolute; 
     content: '';
     top: 100%; 
@@ -273,7 +458,7 @@ i.fa-thumbs-down {
     transform: scaleX(1);
 }
 
-.share_link::after {    
+.annotation_share_link::after {    
     position: absolute; 
     content: '';
     top: 100%; 
@@ -286,17 +471,13 @@ i.fa-thumbs-down {
     transform: scaleX(0);
 }
 
-.share_link:hover::before {
+.annotation_share_btn:hover  .annotation_share_link::before {
     transform: scaleX(0);
 }
 
-.share_link:hover::after {
+.annotation_share_btn:hover .annotation_share_link::after {
     transform: scaleX(1);
     transform-origin: left;
-}
-
-.annotation_share_btn {
-    flex-basis: 5%;
 }
 
 [name="suggestions"] {
@@ -306,45 +487,53 @@ i.fa-thumbs-down {
     padding: 0.25em 1em;    
 }
 
-
-
-
-
-
+[name="suggestions"]:focus{
+    outline: none;
+    border: 2px solid hsl(var(--clr-white, 0 0% 100%)); 
+}
 
 /*Lyrics*/
-.lyrics {
-    padding: 2em 0em;
-    line-height: 1.5;
+.lyrics_side{
+    flex-basis: 55%;
 }
 
-.lyrics_type {
-    margin-bottom: 1em;
-}
-
-.lyrics_part {
+.lyrics_song_title {
     max-width: 45ch;
     margin-bottom: 3em;
 }
 
+.lyrics {
+    line-height: 1.5;
+}
 
-.highlight {
+.lyrics_type {
+    line-height: 0;
+    
+}
+
+.lyrics_part {
+    max-width: 45ch;
+    margin-bottom: 1em;
+    white-space: pre-line;
+}
+
+/*Highlights*/
+.highlights {
     background-color: hsl(var(--clr-accet, 60 20% 30%));
-
     position: relative;
     padding: 0.1em;
 }
 
-.highlight:hover {
+.highlights:hover {
     background-color: hsl(var(--clr-accent, 60 100% 50%), 1);
     color: hsl(var(--clr-dark, 0 0% 9%));
 }
 
-.highlight:hover::after {
+.highlights:hover::after {
     display: block;
 }
 
-.highlight::after {
+.highlights::after {
     display: none;
     position: absolute;
     content: '';
@@ -356,5 +545,101 @@ i.fa-thumbs-down {
     aspect-ratio: 0.645/1;
     clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
+
+
+
+/*----------------------*/
+/*Verified Artists      */
+/*----------------------*/
+
+.verified_artists_section {
+    padding: 1em;
+    flex-direction: column;
+}
+
+.verified_artists_component {
+    width:100%;
+    padding-inline: 2em;
+    flex-direction: column;
+    grid-template-columns: 50% 25% auto;
+    grid-template-rows: 60% 40%; 
+    grid-template-areas: 
+    "verified-artists-h1 most-popular choose-letter"
+    "verified-artists-list verified-artists-list verified-artists-list";
+    align-items: center;
+}
+
+.verified_artists_component li{
+    list-style: none;
+}
+
+.verified_artists_component h1 {
+    grid-area: verified-artists-h1;
+    justify-self: start;
+    text-align: left;
+
+}
+
+.verified_artists_top_row h2 {
+    grid-area: most-popular;
+}
+
+.choose_letter_container {
+    position: relative;
+    aspect-ratio: 1;
+    grid-area: choose-letter;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: center;
+    border-radius: 50%;
+    cursor: move;
+    user-select: none;
+    background-image: radial-gradient(circle at center, hsl(var(--clr-accent, 60, 100% 50%), 0.3), transparent 60%);
+    
+}
+
+.choose_letter {
+    position: absolute;
+    aspect-ratio: 1;
+    background-image: radial-gradient(circle at 5%, hsl(var(--clr-accent, 60, 100% 50%), 0.5), transparent 40%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(25%);
+}
+
+.choose_letter li {
+    display: grid; 
+    place-items: center;
+}
+
+.verified_artists_list {
+    grid-area: verified-artists-list;
+
+}
+
+.verified_artists_overflow {
+    overflow: hidden;
+    height: 3em;
+
+}
+
+.verified_artists_overflow > ul{
+    transition: transform var(--speed) ease;
+}
+
+.verified_artists_overflow > ul > li {
+    grid-template-columns: 50% 50%;
+    padding: 1em;
+}
+
+.verified_artists_overflow > ul > li > span:first-child{
+    flex-basis: 50%;
+}
+
+
+
+
+
+
 
 

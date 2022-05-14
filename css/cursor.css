@@ -2,7 +2,7 @@
     cursor: none;
 }
 
-#cursor-outer {
+.cursor_outer {
     position: absolute;
     z-index: 1000;
     width: 40px;
@@ -14,13 +14,15 @@
     transition: 0.2s width;
 }
 
-#cursor-inner {
+.cursor_inner {
     position: absolute;
     width: 38px;
     aspect-ratio: 1;
     pointer-events: none;
     border-radius: 50%;
     background: hsl(var(--clr-yellow, 60 100% 50%));
+    background-size: cover;
+    background-position: center center;
     mix-blend-mode: difference;
     transition: 0.3s width ease;
     transform: translate(-50%, -50%);
@@ -29,7 +31,7 @@
     place-items: center;
 }
 
-#cursor-text {
+.cursor_text {
     transition: opacity 0.2s ease;
     opacity: 0;
     transform: rotate(45deg);

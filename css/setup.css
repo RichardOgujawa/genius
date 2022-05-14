@@ -181,6 +181,10 @@ hr {
     aspect-ratio: 1/1;
 }
 
+.line-break {
+    white-space: pre-line;
+}
+
 .container {
     /* padding-inline: var(--gap, 2em);  */
     margin-inline: var(--margin-gap, 2vw);
