@@ -1,46 +1,10 @@
-const chooseLetterContainer = document.querySelector('.choose_letter_container');
-const chooseLetter = document.querySelector('.choose_letter');
-const mostPopularHeading = document.querySelector(".most_popular_heading");
-const verifiedArtistsUl = document.querySelectorAll('.verified_artists_overflow > ul');
-const verifiedArtists = document.querySelectorAll(".verified_artist");
-
-
-const verifiedArtistJSON = JSON.stringify([
-    {
-        "artist": "A Boogie Wit Da Hoodie",
-        "img" : "../images/a-boogie-wit-da-hoodie.jpeg"
-    },
-    {
-        "artist": "Billie Eilish",
-        "img" : "../images/billie-eilish.jpg"
-    },
-    {
-        "artist": "Cardi B",
-        "img" : "../images/cardi-b.jpg"
-    },
-    {
-        "artist": "Andrea Bocelli",
-        "img" : "../images/andrea-bocelli.jpeg"
-    },
-    {
-        "artist": "Bob Marley",
-        "img" : "../images/bob-marley.jpg"
-    },
-    {
-        "artist": "Conor Maynard",
-        "img" : "../images/conor-maynard.jpeg"
-    }
-])
-
-const verifiedArtistData = JSON.parse(verifiedArtistJSON);
-
 console.log(verifiedArtistData);
 
 verifiedArtists.forEach((verifiedArtist) => 
     {
         verifiedArtist.addEventListener("mouseenter", ()=>{
             for(i=0; i<verifiedArtistData.length; i++){
-                if(verifiedArtist.querySelector('.text-gray').innerHTML== verifiedArtistData[i].artist){
+                if(verifiedArtist.querySelector('.fs-300').innerHTML== verifiedArtistData[i].artist){
                     console.log("match");
                 cursorInner.style.backgroundImage = `url(${verifiedArtistData[i].img})`; 
                 cursorInner.style.mixBlendMode = "normal"
@@ -80,7 +44,7 @@ const mouseMoveHandler = function (e) {
     y = e.clientY;
     
   
-    if (offsetX >= -92) {
+    if (offsetX > -92) {
         for(i=0; verifiedArtistsUl.length-1; i++){
             verifiedArtistsUl[i].style.transform =`translateY(0em)`;
             verifiedArtistsUl[i].style.transition =`transform var(--speed) ${0.5+i*0.1}s ease`;  
@@ -90,7 +54,7 @@ const mouseMoveHandler = function (e) {
             on Genius` 
         }
     }
-    else if (offsetX >= -197) {
+    else if (offsetX > -197) {
         for(i=0; verifiedArtistsUl.length-1; i++){
             verifiedArtistsUl[i].style.transform =`translateY(-3.5em)`;
             mostPopularHeading.textContent = `Most
@@ -99,7 +63,7 @@ const mouseMoveHandler = function (e) {
             on Genius` 
         }
     }
-    else if (offsetX >= -300) {
+    else if (offsetX > -300) {
         for(i=0; verifiedArtistsUl.length-1; i++){
             verifiedArtistsUl[i].style.transform =`translateY(-7em)`;
             mostPopularHeading.textContent = `Most

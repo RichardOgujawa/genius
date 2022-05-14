@@ -52,14 +52,25 @@
 
 #nav-logo-container a{
     align-items: center;
+    clip-path: polygon(0% 0%, 0% 90%, 100% 90%, 100% 0%);
 }
 
 #nav-logo-img {
     max-height: 50%;
     object-fit: contain;
+    transform: translateY(0%);
     transition: transform var(--speed, 500ms) ease;
 }
 
+.preload_nav_img {
+    animation: preloadNavImg var(--speed) ease forwards;
+}
+
+@keyframes preloadNavImg{
+    0% {
+        transform: translateY(100%);
+    }
+}
 
 /*Navigation Links*/
 #nav-link-container {
@@ -68,8 +79,14 @@
     align-items: center;
 }
 
-.nav_link>a {
+.nav_link a{
+    clip-path: polygon(0% 0%, 0% 90%, 100% 90%, 100% 0%);
     padding: 0.1em 0.1em;
+}
+
+.nav_link > a > span {
+    color: purple;
+    transform: translateY(0%);
 }
 
 .nav_link>a:hover {
@@ -411,6 +428,12 @@
         background-color: hsl(var(--clr-dark, 0 0% 9%));
     }
 
+}
+
+@media (max-width: 1024px) {
+    .sign_in {
+        display: none;
+    }
 }
 
 @media (max-width: 810px) {

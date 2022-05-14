@@ -8,6 +8,17 @@ for (i = 0; i < 4; i++) {
     featuredLink[i].innerText = "See the article";
 }
 
+
+featuredImg.forEach((item, index)=> {
+    item.addEventListener("mouseenter", ()=> {
+        featuredImg[index].style.backgroundImage = `url(${featuredData[index].gif})`
+    })
+    item.addEventListener("mouseleave", ()=> {
+        featuredImg[index].style.backgroundImage = `url(${featuredData[index].image})`
+    })
+})
+
+
 /*Load more content*/
 loadMoreButton.addEventListener("click", () => {
     clickCount++;
@@ -153,6 +164,15 @@ loadMoreButton.addEventListener("click", () => {
                 });
             })
 
+            const featuredImg = document.querySelectorAll(".featured_cell_img_container");
+            featuredImg.forEach((item, index)=> {
+                item.addEventListener("mouseenter", ()=> {
+                    featuredImg[index].style.backgroundImage = `url(${featuredData[index].gif})`
+                })
+                item.addEventListener("mouseleave", ()=> {
+                    featuredImg[index].style.backgroundImage = `url(${featuredData[index].image})`
+                })
+            })
 
             loadMoreButtonText.style.display = "inline-block";
             loadingCircle.style.display = "none";

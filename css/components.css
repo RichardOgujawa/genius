@@ -3,10 +3,20 @@
     padding: 0.7em;
 }
 
+/*------------------------*/
+/*Buttons                 */
+/*------------------------*/
+.button_section {
+    flex-direction: column;
+}
 
 /*------------------------*/
 /*Share and Like Buttons  */
 /*------------------------*/
+.share_and_like_section {
+    flex-direction: column;
+}
+
 .share_and_like_component {
     --gap: 0em;
     min-width: 40rem;
@@ -111,10 +121,11 @@
     flex-basis: 400px
 }
 
+
 .music_player_playlist {
-    --gap: 0em; flex-direction:
-    column; padding: 
-    0.1em 0em; 
+    --gap: 0em; 
+    flex-direction:column; 
+    padding: 0.1em 0em; 
 }
 
 .music_player_playlist > * { 
@@ -124,6 +135,12 @@
 .music_player_playlist > *:not(:last-child){
     /* background: red; */
     border-bottom: 2px solid hsl(var(--clr-gray, 0 0% 67%)/0.2)
+}
+
+.fa-e {
+    border: 2px solid hsl(var(--clr-dark, 0 0% 9%));
+    float: right;
+    padding: 0.25em;
 }
 
 
@@ -541,7 +558,7 @@ i.fa-share {
     left: 0; 
     transform: translate(-100%, 0%);
     background-color: hsl(var(--clr-accent, 60 100% 50%)); 
-    height: 1.55em; 
+    height: 1.4em; 
     aspect-ratio: 0.645/1;
     clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
@@ -604,6 +621,7 @@ i.fa-share {
     background-image: radial-gradient(circle at 5%, hsl(var(--clr-accent, 60, 100% 50%), 0.5), transparent 40%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
     transform: translateX(25%);
 }
 
@@ -614,13 +632,47 @@ i.fa-share {
 
 .verified_artists_list {
     grid-area: verified-artists-list;
+}
 
+.verified_artists_list > *+* {
+    border-bottom: 2px solid hsl(var(--clr-accent, 60 100% 50%), 0.3);
+}
+
+.verified_artists_overflow{
+    position: relative;
+    z-index: 1;
+    border-top: 2px solid hsl(var(--clr-accent, 60 100% 50%), 0.3);
+    transition: color var(--speed) ease;
+}
+
+.verified_artists_overflow::after{
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    z-index: -1;
+    height: 100%; 
+    width: 100%; 
+    background-color: hsl(var(--clr-accent, 60 100% 50%), 1);
+    transition: transform var(--speed) ease;
+    transform-origin: bottom center;
+    transform: scaleY(0%);
+}
+
+.verified_artists_overflow:hover::after {
+    transform-origin: top center;
+    transition: transform var(--speed) 0.2s ease;
+    transform: scaleY(100%);
+}
+
+.verified_artists_overflow:hover {
+    color: black;
+    transition: color var(--speed) 0.2s ease;
 }
 
 .verified_artists_overflow {
     overflow: hidden;
     height: 3em;
-
 }
 
 .verified_artists_overflow > ul{
@@ -632,14 +684,16 @@ i.fa-share {
     padding: 1em;
 }
 
+
 .verified_artists_overflow > ul > li > span:first-child{
     flex-basis: 50%;
 }
 
+/*----------------------*/
+/*Footer                */
+/*----------------------*/
 
-
-
-
-
-
-
+footer{
+    margin: 7vh 0vh 3vh;
+    
+}

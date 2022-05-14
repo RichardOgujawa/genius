@@ -5,18 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Genius</title>
 
     <!--StyleSheets-->
     <link rel="stylesheet" href="css/setup.css">
     <link rel="stylesheet" href="css/new-nav.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/new-home.css">
     <link rel="stylesheet" href="css/components.css">
-    <!-- <link rel="stylesheet" href="css/home.css"> -->
-    <!-- <link rel="stylesheet" href="css/nav.css"> -->
-
 
     <!--Favicon-->
     <link rel="shortcut icon" href="images/genius-icon.png" type="image/x-icon">
@@ -32,15 +29,16 @@
                 <!--Logo-->
                 <div class="container bg-dark" id="nav-logo-container" tabindex="-1">
                     <a href="index.html" class="flex fill-space">
-                        <img id="nav-logo-img" class="cursor-bigger" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
+                        <img id="nav-logo-img" class="cursor-bigger preload_nav_img" src="images/genius-logo.png" alt="Genius Logo" tabindex="1">
                     </a>
                 </div>
 
                 <!--Nav Links-->
                 <ul class="link-container list-container flex fs-400 bg-dark" id="nav-link-container">
 
+                    <!--Try and Make the Text a span within an A tag and then make it move within the A tag-->
                     <li class="nav_link cursor-bigger"><a href="components.html" class="text-white">components</a></li>
-                    <li class="nav_link cursor-bigger"><a href="#" class="text-white">feedback</a></li>
+                    <li class="nav_link cursor-bigger"><a href="#" class="nav_link_text text-white">featured</a></li>
                     <li class="nav_link cursor-bigger"><a href="#" class="text-white">community</a></li>
                     <li class="nav_link cursor-bigger"><a href="#" class="text-white">charts</a></li>
                     <li class="nav_link cursor-bigger"><a href="#" class="text-white">videos</a></li>
@@ -51,25 +49,25 @@
                 <ul class="list-container link-container flex center bg-dark" id="nav-social-link-container">
 
                     <li class="nav_social_link cursor-bigger">
-                        <a href="#">
+                        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjszOegod_3AhVDi1wKHQGzD7oQFnoECAYQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fgenius%2F%3Fhl%3Den&usg=AOvVaw1vyyapidsY_3Jq96X5M4lL">
                             <img src="icons/ig.png" alt="Instagram Icon">
                         </a>
                     </li>
 
                     <li class="nav_social_link cursor-bigger">
-                        <a href="#">
+                        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjvg4auod_3AhXagVwKHWkaBt0QFnoECAkQAQ&url=https%3A%2F%2Ftwitter.com%2Fgenius&usg=AOvVaw1mDRFWumUweapY4fdr5j6K">
                             <img src="icons/twitter.png" alt="Twitter Icon">
                         </a>
                     </li>
 
                     <li class="nav_social_link cursor-bigger">
-                        <a href="#">
+                        <a href="https://www.facebook.com/Genius/">
                             <img src="icons/fb.png" alt="Facebook Icon">
                         </a>
                     </li>
 
                     <li class="nav_social_link cursor-bigger">
-                        <a href="#">
+                        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjaxKi5od_3AhXUiVwKHe1nDBEQFnoECBMQAQ&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCyFZMEnm1il5Wv3a6tPscbA&usg=AOvVaw1i4XoP4iNEemPP9toCJxM_">
                             <img src="icons/yt.png" alt="YouTube Icon">
                         </a>
                     </li>
@@ -78,8 +76,8 @@
 
                 <!--Nav Buttons-->
                 <ul class="fill-space list-container link-container flex bg-dark" id="nav-buttons-container">
-                    <a href="#" class="fs-300 small-button yellow-button cursor-bigger">sign up</a>
-                    <a href="#" class="fs-300 small-button black-button cursor-bigger">sign in</a>
+                    <a href="#" class="fs-300 small-button yellow-button cursor-bigger sign_up">sign up</a>
+                    <a href="#" class="fs-300 small-button black-button cursor-bigger sign_in">sign in</a>
                 </ul>
 
                 <!--Nav Hr-->
@@ -122,10 +120,7 @@
 
                     <ul class="list-container link-container flex" id="mobile-nav-link-container">
                         <li>
-                            <a href="components.html" class="mobile_nav_link">components</a>
-                        </li>
-                        <li>
-                            <a href="#" class="mobile_nav_link">feedback</a>
+                            <a href="#" class="mobile_nav_link">featured</a>
                         </li>
                         <li>
                             <a href="#" class="mobile_nav_link">community</a>
@@ -296,15 +291,22 @@
         <!--Load More Button-->
         <div class="center" id="load-more-container">
             <button class="fill-space x-large-button fs-700 cursor-bigger" type="button" id="load-more-button"><span
-                    id="load-more-button-text">Load More  Featured News</span><span id="loading-circle"
+                    id="load-more-button-text">Load More Featured News</span><span id="loading-circle"
                     style="display:none;"></span></button>
         </div>
 
+        <footer class="fs-300 grid center text-gray">
+            <p>&copy; Designed by <a href="https://www.behance.net/gallery/140483359/GENIUS-website-redesign?tracking_source=search_projects%7Cwebsite" class="link text-accent cursor-bigger">Pavel Korzh</a>. Coded by <a href="https://github.com/RichardOgujawa/" class="link text-accent cursor-bigger">Richard Ogujawa</a> | 2022</p>
+        </footer>
+
     </section>
 
-
+    <!--Cursor-->
     <div class="cursor_inner"></div>
     <div class="cursor_outer"></div>
+
+    
+
 </body>
 <!--Variables-->
 <script src="script/home-message.js"></script>

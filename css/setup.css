@@ -1,6 +1,7 @@
 /*/ SETUP FILE /*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
 
 /*------------------------------------*/
@@ -37,7 +38,7 @@
     font-size: 11pt;
     /*Recommended not to go lower than 12pt*/
     /* ff prefix for font-family */
-    --ff-sans-serif: "Poppins", Arial, sans-serif;
+    --ff-sans-serif: "Space Grotesk", Arial, sans-serif;
 
     /* Padding */
     --padding-large: 0.883rem 2.476rem;
@@ -66,10 +67,10 @@ body {
     overflow-x: hidden;
     line-height: 1.5;
     min-height: 100vh;
-    font-family: var(--ff-sans-serif, "Outfit", sans-serif);
+    font-family: var(--ff-sans-serif, "Space Grotesk", sans-serif);
     font-size: var(--fs-400, 1.125rem);
     color: hsl(var(--clr-white, 0, 0%, 100%));
-    font-weight: 400;
+    font-weight: 500;
     /*This is not going to work until you take away the body color changes in the media queries to help see the breakpoints*/
     background: hsl(var(--clr-dark, 0 0% 9%));
 
@@ -94,7 +95,7 @@ h4,
 h5,
 p, 
 span {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 ul {

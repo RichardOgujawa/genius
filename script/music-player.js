@@ -14,12 +14,12 @@ audioPlaylistSong.forEach((item, index) => {
         }
 
         //Add special styling to selected element
-        currentSong.innerHTML = `${audioPlaylistSong[index].innerHTML}`;
+        currentSong.innerHTML = `${audioPlaylistTitle[index].innerHTML}`;
         item.style.backgroundColor = "black";
         item.style.color = "hsl(var(--clr-accent, 60 100% 50%))";
 
         for (j = 0; j < albumSongsData.length; j++) {
-            if (audioPlaylistSong[index].innerHTML === albumSongsData[j].title) {
+            if (audioPlaylistTitle[index].innerHTML === albumSongsData[j].title) {
                 audio.setAttribute("src", `${albumSongsData[j].song}`);
 
                 playPauseBtn.querySelector('i.fa').classList.remove('fa-play'); 

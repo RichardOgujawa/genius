@@ -204,6 +204,7 @@ const playPauseBtn = document.querySelector('.play_pause_btn');
 var audio = document.querySelector(".audio");
 var currentSong = document.querySelector(".current_song");
 const audioPlaylistSong = document.querySelectorAll(".playlist_song");
+const audioPlaylistTitle = document.querySelectorAll(".playlist_song_title");
 
 const progress = document.querySelector(".progress");
 const progressContainer = document.querySelector(".progress_container");
@@ -238,14 +239,16 @@ const featuredDataJson = JSON.stringify(
             "title": "Radio Personality Laura Stylez Talks Balancing Motherhood And Her Career",
             "date": "May 6, 2022",
             "image": "images/laura-stylez.jpg",
+            "gif" : "images/laura-stylez.gif",
             "author": "Leah Degrazia",
             "href": "../featured/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career.html"
         },
-
+        
         {
             "title": "A$AP Rocky Professes His Love For Rihanna In New Song “D.M.B.”",
             "date": "May 6, 2022",
             "image": "images/a-ghetto-love-tale-asap-rocky.jpg",
+            "gif" : "images/a-ghetto-love-tale-asap-rocky.gif",
             "author": "Ken Partidge",
             "href": "https://genius.com/a/a-ap-rocky-professes-his-love-for-rihanna-in-new-song-d-m-b"
         },
@@ -254,6 +257,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Read All The Lyrics To Bad Bunny’s New Album ‘Un Verano Sin Ti’",
             "date": "May 6, 2022",
             "image": "images/el-ultimo-tour-del-mundo-bad-baby.jpg ",
+            "gif": "images/el-ultimo-tour-del-mundo-bad-baby.gif ",
             "author": "Leah Degrazia",
             "href": "https://genius.com/a/read-all-the-lyrics-to-bad-bunnys-new-album-un-verano-sin-ti"
         },
@@ -262,6 +266,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Read All The Lyrics To Arcade Fire’s New Album ‘WE’",
             "date": "May 6, 2022",
             "image": "images/we-arcade-fire.jpg",
+            "gif": "images/we-arcade-fire.gif",
             "author": "Ken Partridge",
             "href": "https://genius.com/a/read-all-the-lyrics-to-arcade-fires-new-album-we"
         },
@@ -270,6 +275,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Read All The Lyrics To Jack Harlow’s New Album ‘Come Home The Kids Miss You’",
             "date": "May 6, 2022",
             "image": "images/come-home-the-kids-miss-you-jack-harlow.jpg",
+            "gif": "images/come-home-the-kids-miss-you-jack-harlow.gif",
             "author": "Leah Degrazia",
             "href": "https://genius.com/a/read-all-the-lyrics-to-jack-harlows-new-album-come-home-the-kids-miss-you"
         },
@@ -278,6 +284,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Tove Lo Struggles To Survive Heartbreak On New Song “No One Dies From Love”",
             "date": "May 5th, 2022",
             "image": "images/no-one-dies-from-love-tove-lo.jpg",
+            "gif": "images/no-one-dies-from-love-tove-lo.gif",
             "author": "Leah Degrazia",
             "href": "https://genius.com/a/tove-lo-struggles-to-survive-heartbreak-on-new-song-no-one-dies-from-love"
         },
@@ -286,6 +293,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Chase Atlantic Suffer Dark Times On New Song “COLD NIGHTS”",
             "date": "May 4th, 2022",
             "image": "images/beauty-in-death-chase-atlantic.jpg",
+            "gif": "images/beauty-in-death-chase-atlantic.gif",
             "author": "Ken Partridge",
             "href": "https://genius.com/a/chase-atlantic-suffer-dark-times-on-new-song-cold-nights"
         },
@@ -294,6 +302,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Lady Gaga Provides Comfort During Difficult Times On New Song “Hold My Hand”",
             "date": "May 3, 2022",
             "image": "images/hold-my-hand-lady-gaga.jpg",
+            "gif": "images/hold-my-hand-lady-gaga.gif",
             "author": "Leah Degrazia",
             "href": "https://genius.com/a/lady-gaga-provides-comfort-during-difficult-times-on-new-song-hold-my-hand"
 
@@ -303,6 +312,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Genius Community Playlist April 2022 ",
             "date": "April 30th, 2022",
             "image": "images/genius-community.gif",
+            "gif": "images/genius-community.gif",
             "author": "streetlights",
             "href": "https://genius.com/a/genius-community-playlist-april-2022"
         },
@@ -311,6 +321,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Justin Bieber Links With Don Toliver On New Song “Honest”",
             "date": "April 29th, 2022",
             "image": "images/honest-justin-bieber-don-toliver.jpg",
+            "gif": "images/honest-justin-bieber-don-toliver.gif",
             "author": "Leah Degrazia",
             "href": "https://genius.com/a/justin-bieber-links-with-don-toliver-on-new-song-honest"
         },
@@ -318,6 +329,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Read All The Lyrics To Future’s New Album ‘I NEVER LIKED YOU’",
             "date": "April 29th, 2022",
             "image": "images/i-never-liked-you-future.jpg",
+            "gif": "images/i-never-liked-you-future.gif",
             "author": "Ken Partridge",
             "href": "https://genius.com/a/read-all-the-lyrics-to-futures-new-album-i-never-liked-you"
         },
@@ -326,6 +338,7 @@ const featuredDataJson = JSON.stringify(
             "title": "Read All The Lyrics To Toro y Moi’s New Album ‘MAHAL’",
             "date": "April 29th, 2022",
             "image": "images/mahal-chaz-bear.jpg",
+            "gif": "images/mahal-chaz-bear.gif",
             "author": "Ken Partridge",
             "href": "https://genius.com/a/read-all-the-lyrics-to-toro-y-mois-new-album-mahal"
         }
@@ -335,4 +348,42 @@ const featuredDataJson = JSON.stringify(
 
 const featuredData = JSON.parse(featuredDataJson);
 
+/*---------------------*/
+/* Verified Artists    */
+/*---------------------*/
 
+const chooseLetterContainer = document.querySelector('.choose_letter_container');
+const chooseLetter = document.querySelector('.choose_letter');
+const mostPopularHeading = document.querySelector(".most_popular_heading");
+const verifiedArtistsUl = document.querySelectorAll('.verified_artists_overflow > ul');
+const verifiedArtists = document.querySelectorAll(".verified_artist");
+
+
+const verifiedArtistJSON = JSON.stringify([
+    {
+        "artist": "A Boogie Wit Da Hoodie",
+        "img" : "../images/a-boogie-wit-da-hoodie.jpeg"
+    },
+    {
+        "artist": "Billie Eilish",
+        "img" : "../images/billie-eilish.jpg"
+    },
+    {
+        "artist": "Cardi B",
+        "img" : "../images/cardi-b.jpg"
+    },
+    {
+        "artist": "Andrea Bocelli",
+        "img" : "../images/andrea-bocelli.jpeg"
+    },
+    {
+        "artist": "Bob Marley",
+        "img" : "../images/bob-marley.jpg"
+    },
+    {
+        "artist": "Conor Maynard",
+        "img" : "../images/conor-maynard.jpeg"
+    }
+])
+
+const verifiedArtistData = JSON.parse(verifiedArtistJSON);

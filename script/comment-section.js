@@ -67,7 +67,7 @@ function submitComment(){
     //Generate upvotes based on likes
     var upvotesNum = document.createElement('span');
     upvotesNum.setAttribute('class', 'upvotesNum fs-200 text-gray');
-    upvotesNum.textContent = ' +3 upvotes '; 
+    upvotesNum.textContent = '0 upvotes '; 
     upvotesDownvotes.appendChild(upvotesNum);
 
     var downvote = document.createElement('button');

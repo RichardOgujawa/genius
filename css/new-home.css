@@ -98,8 +98,12 @@
 }
 
 .featured_news_row {
-    height: max(500px, 50vh);
+    height: min(500px, 70vh);
 }
+
+/* .featured_cell {
+    height: min(100%, 50px);
+} */
 
 #featured-news-title {
     align-items: center;
@@ -289,6 +293,11 @@
     100% {
         transform: rotate(1turn);
     }
+}
+
+
+footer{
+    text-align: center;
 }
 
 
@@ -523,6 +532,11 @@
         line-height:1.5;
     }
 
+    #load-more-button {
+        font-size: var(--fs-600);
+        padding: 1.5em 0.5em;
+    }
+
 }
 
 /*Smartphone Max-Width*/
@@ -531,7 +545,7 @@
     /*Setup*/
     :root {
         font-size: 10pt;
-        --fs-900: 4.5rem
+        --fs-900: 4.5rem;
         --fs-700: 1rem;
     }
 
@@ -552,7 +566,7 @@
 
     /*Hero*/
     #hero {
-        grid-template-rows: 20% 25% auto
+        grid-template-rows: 20% 25% auto;
     }
 
     #lyric-guide-text {
@@ -591,6 +605,7 @@
         height: 50%;
     }
 
-
-
+    .featured_news_row {
+        height: min(750px, 200vh);
+    }
 }
