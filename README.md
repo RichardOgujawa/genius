@@ -8,13 +8,7 @@ To check out the website check out this <a href="https://richardogujawa.github.i
 - HTML 
 - SCSS/CSS
 - JavaScript 
-- README.md
 - Git & Github
-- PHP 
+- Markdown
 
-## Resources Used
-- <a target="_blank" href="https://icons8.com/icon/37326/youtube">YouTube</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-- <a target="_blank" href="https://icons8.com/icon/106163/facebook-f">Facebook F</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-- <a target="_blank" href="https://icons8.com/icon/8824/twitter">Twitter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-- <a target="_blank" href="https://icons8.com/icon/32309/instagram">Instagram</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
