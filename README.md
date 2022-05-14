@@ -11,7 +11,7 @@ Of course I made it so that the <em>rest of the page is functional</em> in that 
 I also used Adobe XD to re-designe the Featured Page that Pavel designed. I did so not as a critique on Pavel's work by any means, but rather I just wanted to add back in some features from the original <a href="https://genius.com/">Genius.com</a> page that I thought would be nice to code.
 
 <figure> 
-<img src="../images/featured-page-template.jpg" alt="Adobe XD Redesign of Featured Page">
+<img src="https://raw.githubusercontent.com/RichardOgujawa/genius/master/images/featured-page-template.jpg" alt="Adobe XD Redesign of Featured Page">
 <figcaption>My Featured Page Adobe Re-Design</figcaption>
 </figure>
 
