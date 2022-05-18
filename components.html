@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Components</title>
+
+    <!--StyleSheets-->
+    <link rel="stylesheet" href="css/setup.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        body {
+            margin-inline: auto;
+            max-width: 85rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 1em 0em;
+        }
+
+        .component_title {
+            color: hsl(var(--clr-light-gray, 0 0% 67%));
+            font-size: var(--fs-300);
+            border: 2px solid gray;
+            border-top: none;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .helper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1em;
+        }
+
+        .section {
+            border: 2px solid hsl(0 0% 100% / 0.25);
+            justify-content: space-around;
+            align-items: center;
+            padding: 1em 0px;
+        }
+
+        .main_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+    </style>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../icons/gear-dark.ico" type="image/x-icon">
+
+    <!--CDN | Sharer.js-->
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+
+    <!--CDN | Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body onmousemove="cursorMove(event)">
+
+    <div class="heading_of_page flex container">
+        <a class="text-white link" href="index.html">
+            <i class="fs-300 fa-solid fa-home cursor-bigger"></i><span class="fs-300"> \</span>
+        </a>
+        <span class="fs-300">Components</span>
+    </div>
+    <h1 class="fs-700 text-accent uppercase">Components</h1>
+
+    <div class="main_wrap container">
+
+        <section class="button_section flex section">
+            <h3 class="component_title">Buttons</h3>
+            <div class="container helper flex">
+
+                <!--Component | Navigation Button Yellow-->
+                <a href="#" class="fs-300 small-button yellow-button cursor-bigger">sign up</a>
+
+                <!--Component | Navigation Button Black-->
+                <a href="#" class="fs-300 small-button black-button cursor-bigger">sign in</a>
+
+                <!--Component | Tag-->
+                <div class="tag">Featured</div>
+
+                <!--Component | Body Buttons-->
+                <button class="fs-600 large-button black-button cursor-bigger" type="button">All</button>
+
+            </div>
+        </section>
+
+        <section class="share_and_like_section flex section">
+            <h3 class="component_title">Share and Like Buttons</h3>
+
+            <!--Component | Share and Like Buttons-->
+            <section class="share_and_like_component grid">
+                <!--FB Share Btn-->
+                <div class="fb_share_container cursor-bigger grid">
+                    <button class="fb_share_button button grid" type="button" data-sharer="facebook"
+                        data-title="Title of Article" data-hashtags="artist,album,genius"
+                        data-url="https://genius.com/a/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career">
+                        <i class="fa-brands fa-facebook-f text-white"></i>
+                        <span class="sr-only">Facebook Share Button</span>
+                    </button>
+                </div>
+
+                <!--Twitter Share Btn-->
+                <div class="twitter_share_container cursor-bigger grid">
+                    <button class="twitter_share_button button grid" type="button" aria-label="Twitter Share Button"
+                        data-sharer="twitter" data-title="Title of Article" data-hashtags="artist,album,genius"
+                        data-url="https://genius.com/a/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career">
+                        <i class="fa-brands fa-twitter text-white"></i>
+                        <span class="sr-only">Twitter Share Button</span>
+                    </button>
+                </div>
+
+                <!--Thumbs Up Button-->
+                <div class="thumbs_up_container cursor-bigger grid">
+                    <button class="thumbs_up_button grid" type="button" aria-label="Upvote">
+                        <i class="fs-400 fa-solid fa-thumbs-up text-white"></i>
+                        <span class="sr-only">Downvote</span>
+                    </button>
+                </div>
+
+                <!--Thumbs Down Button-->
+                <div class="thumbs_down_container cursor-bigger grid">
+                    <button class="thumbs_down_button grid" type="button" aria-label="Downvote">
+                        <i class="fs-400 text-white fa-solid fa-thumbs-down"></i>
+                        <span class="sr-only">Downvote</span>
+                    </button>
+                </div>
+
+                <!--Upvotes-->
+                <div class="upvotes grid fs-300"><span>+9 upvotes</span></div>
+
+            </section>
+
+        </section>
+
+
+        <!--Music Player-->
+        <section class="music_player_section flex section">
+            <h3 class="component_title">Music Player</h3>
+
+            <!--Component | Music Player-->
+            <aside class="music_player_container">
+
+                <!--Music Player Left Side-->
+                <div class="music_player_white_side grid bg-white">
+                    <div class="music_player_apple_music_logo">
+
+                        <!--Apple Music Logo-->
+                        <a href="https://music.apple.com/us/browse" target="_blank">
+                            <img class="cursor-bigger" src="../icons/apple-music.svg" alt="Apple Music Logo">
+                        </a>
+
+                    </div>
+
+                    <!--Music Player Album Cover-->
+                    <div class="music_player_album_cover">
+                        <img src="../images/come-home-the-kids-miss-you-jack-harlow-large.jpg"
+                            alt="Jack Harlow Come Home The Kids Miss You Album Cover">
+                    </div>
+
+                    <!--Music Player Details (Artist Name & Album Name)-->
+                    <div class="music_player_album_details text-dark">
+                        <p class="fs-200">Jack Harlow</p>
+                        <p class="album-name fs-400">Come Home The Kids...</p>
+                    </div>
+
+                    <!--Music Player CTA-->
+                    <div class="music_player_cta grid">
+                        <a class="apple_music_cta fs-500 medium-button text-accent black-button cursor-bigger"
+                            href="https://music.apple.com/us/album/come-home-the-kids-miss-you/1618136433"
+                            target="_blank">View in Apple Music</a>
+                    </div>
+                </div>
+
+                <!--Music Player Right Side-->
+                <div class="music_player_yellow_side grid bg-accent">
+                    <div class="music_player_currently_playing flex text-white bg-dark-gray">
+
+                        <!--Current Song-->
+                        <div class="current_song fs-500">
+                            <span>Come Home The Kids Miss You</span>
+                        </div>
+
+                        <!--Animating Level Bars-->
+                        <div class="level_bars flex">
+                            <span class="level_bar one"></span>
+                            <span class="level_bar two"></span>
+                            <span class="level_bar three"></span>
+                        </div>
+
+                    </div>
+
+                    <!--Music Playlist-->
+                    <div class="music_player_playlist_container">
+                        <div class="grid">
+                            <ul class="music_player_playlist flex text-dark cursor-bigger">
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Talk Of The Town</span>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Young Harleezy</span> 
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">I'd Do Anything To Make You Smile</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">First Class</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Dua Lipa</span> 
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Side Piece</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Movie Star (ft. Pharrell Williams)</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Lil Secret</span>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">I Got A Shot</span> 
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Churchill Downs (ft. Drake)</span> 
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Like A Blade of Grass</span> 
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Parent Trap (ft. Justin Timberlake)</span>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Poison (ft. Lil Wayne)</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">Nail Tech</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                                <li class="playlist_song">
+                                    <span class="playlist_song_title">State Fair</span>
+                                    <i class="fa-solid fa-e fs-200"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Controls-->
+                    <div class="controls_container grid text-white bg-dark-gray">
+                        <div class="controls container fs-400 large-button grid cursor-bigger">
+
+                            <!--Audio-->
+                            <audio class="audio" preload="metadata">
+                                <source class="audio-source" src="../sound/jack-harlow-talk-of-the-town.mp3">
+                            </audio>
+
+                            <!--Play Button-->
+                            <div class="grid">
+                                <button class="play_pause_btn" class="flex">
+                                    <i class="fa text-white fa-play"></i>
+                                    <span class="sr-only">Play/Pause Button</span>
+                                </button>
+                            </div>
+
+                            <!--Progress Container-->
+                            <div class="progress_container">
+                                <hr class="progress_track bg-white">
+                                <hr class="progress bg-accent">
+                            </div>
+
+                            <!--Duration of Audio-->
+                            <div class="grid">
+                                <span class="full_time">0:00</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </section>
+
+        <!--Comment Section-->
+        <section class="comment_section flex section">
+            <h3 class="component_title">Comment Section</h3>
+
+            <!---Component | Comment-->
+            <section class="comment_section_container grid">
+
+                <!--Comment Title and Subtitle-->
+                <div class="comment_heading_details flex">
+                    <h2 class="comment_title text-accent">COMMENTS</h2>
+                    <p class="comment_subtitle fs-300">Write down what you think about the song, express yourself!</p>
+                </div>
+
+                <!--Comment TextArea-->
+                <textarea class="comment_textarea text-white cursor-bigger" name="user-comment-on-song">
+                </textarea>
+
+                <!--Submit Button-->
+                <button class="submit_comment_btn large-button black-button uppercase cursor-bigger" type="submit"
+                    onclick="submitComment();">Send</button>
+
+                <!--Template for Users' Comments-->
+                <section class="comments flex">
+
+                    <div class="comment_container bg-dark grid">
+
+                        <div class="comment_top_row flex">
+
+                            <div class="profile_details flex">
+                                <!--Profile Image-->
+                                <a class='profile_picture_link' href="#">
+                                    <img class="profile_picture" src="../images/profile-pic-1.jpg"
+                                        alt="Picture of Man with glasses and beard">
+                                </a>
+
+                                <!--Account Name-->
+                                <span class="account_name text-white fs-200">
+                                    James Raposo
+                                </span>
+                            </div>
+
+                            <!--Time Past since post was typed out-->
+                            <div class="time_past fs-200 text-white">
+                                6 days ago
+                            </div>
+
+                        </div>
+
+                        <!--User's Comment-->
+                        <p class="user_comment fs-400 text-accent">
+                            Love this tune!
+                        </p>
+
+                        <!--Upvote and Downvote Section-->
+                        <div class="upvotes_downvotes">
+                            <button class="upvote" type="button">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <span class="sr-only">Upvote</span>
+                            </button>
+                            <span class="upvotesNum fs-200 text-gray">+3 upvotes</span>
+                            <button class="downvote" type="button">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                                <span class="sr-only">Downvote</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </section>
+
+        <!--Lyric Analysis-->
+        <section class=" lyric_analysis_section flex section">
+            <h3 class="component_title">Lyric Analysis Section</h3>
+
+            <!--Component| Lyrics Analysisi-->
+            <section class="lyric_analysis_component flex">
+
+                <!--Annotation Side-->
+                <div class="annotation_side">
+
+                    <!--Template for Annotation-->
+                    <section class="annotation">
+
+                        <div class="annotation_top_row flex">
+
+                            <span><strong>Genius Annotation</strong></span>
+                            <i class="fa-solid fa-close text-accent cursor-bigger"></i>
+                            <span class="sr-only">Close Annotations Button</span>
+
+                        </div>
+
+                        <!--Annotation Comment-->
+                        <div class="annotation_edit_review fs-200 text-white">This edit will be reviewed before updating</div>
+                        <textarea name="edit-annotation" class="annotation_edit_textarea fs-200"></textarea>
+                        
+
+                        <p class="annotation_details fs-200">
+
+                            <!--Figure for Comment (Image and Caption)-->
+                        <figure>
+                            <img class='annotation_img' src="">
+                            <figcaption class="annotation_figcaption fs-100"></figcaption>
+                        </figure>
+
+                        </p>
+
+                        
+                        <button class="annotation_edit_btn small-button black-button fs-200" type="submit">Edit</button>
+
+                        <!--Annotation Interactions (Upvotes/Downvote & Share)-->
+                        <div class="annotation_interactions flex">
+                            <!--Annotation Upvote-->
+                            <div class="annotation_upvote_container">
+                                <button type="button" class="annotation_upvote text-accent cursor-bigger">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <span class="sr-only">Upvote</span>
+                                </button>
+                                <span class="fs-200">+91</span>
+                            </div>
+
+                            <!--Annotation Downvote-->
+                            <button type="button" class="annotation_downvote text-accent cursor-bigger"><i
+                                    class="fa-solid fa-thumbs-down"></i><span class="sr-only">Downvote</span></button>
+
+                            <!--Annotation Share-->
+
+                            <button class="annotation_share_btn text-accent flex cursor-bigger" type="button">
+                                <a class="annotation_share_link fs-200 text-white" href="#">Share</a>
+                                <i class="fas fa-share"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="suggestion_container">
+                            <input
+                                class="suggestion_input_1 fs-300 bg-dark text-white suggestion_input_field cursor-bigger"
+                                type="text" name="suggestions" placeholder="suggest an improvement to earn IQ">
+                        </div>
+
+                    </section>
+                </div>
+
+                <section class="lyrics_side">
+                    <p class="fs-400 lyrics">
+                    <h2 class="fs-500 lyrics_song_title">Face Off - Tech N9ne ft. Dwayne Johnson, King Iso & Joey Cool
+                    </h2>
+
+                    <p class="lyrics_type fs-200 uppercase">
+                        [Verse 4: Dwayne Johnson & Tech N9ne]</p>
+
+                    <p class="lyrics_part">
+                        It's about drive, it's about power, we stay hungry, we devour
+                        Put in the work, put in the hours and take what's ours
+                        <span class="highlights">Black and Samoan in my veins, my culture bangin' with Strange</span>
+                        I change the game so what's my m************' name? (Rock)
+                        What they gonna get though?
+                        Desecration, defamation, if you wanna bring it to the masses
+                        <span class="highlights">Face to face now we escalatin' when I have to put boots to asses</span>
+                        Mean on ya like a dream when I'm rumblin'
+                        You're gonna scream, "Mama"
+                        So bring drama to the king Brahma (Then what?)
+                        Comin' at ya' with extreme mana (Ahoo, ahoo, ahoo)
+                        <br>
+                    </p>
+
+
+
+
+                    <p class="lyrics_type fs-200 uppercase">[Outro: Dwayne Johnson]</p>
+                    <p class="lyrics_part">
+                        Thank you brother, Tech N9ne
+                        <span class="highlights">Thank you, Teremana</span>
+                        One take, that's a wrap
+                        Face-off
+                    </p>
+
+                    </p>
+                </section>
+            </section>
+        </section>
+
+        <div class="verified_artists_section flex section">
+            <h3 class="component_title">Verified Artists Section</h3>
+
+
+            <section class="verified_artists_component grid container">
+                <h1 class="fs-800 text-accent line-break">Verified
+                    Artists
+                </h1>
+
+                <h2 class="most_popular_heading fs-600 line-break flex">Most
+                    Popular A
+                    Artists
+                    on Genius</h2>
+
+
+                <div class="choose_letter_container flex cursor-bigger">
+                    <ul class="choose_letter flex fs-900">
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                    </ul>
+                </div>
+
+                <ul class="verified_artists_list">
+                    <li class="verified_artists_overflow">
+                        <ul>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">A Boogie Wit Da Hoodie</span>
+                                <span class="fs-400">Still Thinkin' About You</span>
+                            </li>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">Billie Eilish</span>
+                                <span class="fs-400">Bellyache</span>
+                            </li>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">Cardi B</span>
+                                <span class="fs-400">I Like it</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="verified_artists_overflow">
+                        <ul>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">Andrea Bocelli</span>
+                                <span class="fs-400">Con Te Partiro</span>
+                            </li>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">Bob Marley</span>
+                                <span class="fs-400">Buffalo Soldier</span>
+                            </li>
+                            <li class="verified_artist grid cursor-bigger">
+                                <span class="fs-300">Conor Maynard</span>
+                                <span class="fs-400">Turn Around (ft. Neyo)</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <footer class="fs-300 grid center text-gray">
+        <p>&copy; Designed by <a href="https://www.behance.net/gallery/140483359/GENIUS-website-redesign?tracking_source=search_projects%7Cwebsite" class="link text-accent cursor-bigger">Pavel Korzh</a>. Coded by <a href="https://github.com/RichardOgujawa/" class="link text-accent cursor-bigger">Richard Ogujawa</a> | 2022</p>
+    </footer>
+
+
+    <!--Cursor-->
+    <div class="cursor_inner"><span class="cursor_text">PRESS</span></div>
+    <div class="cursor_outer"></div>
+
+</body>
+<script src="script/components-message.js"></script>
+<script src="script/new-variables.js"></script>
+<script src="script/cursor.js"></script>
+<script src="script/share.js"></script>
+<script src="script/music-player.js"></script>
+<script src="script/comment-section.js"></script>
+<script src="script/lyrics-analysis.js"></script>
+<script src="script/verified_artists.js"></script>
+
+
+</html>
