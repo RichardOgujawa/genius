@@ -70,7 +70,7 @@ const annotationJSON = JSON.stringify(
             "annotationDetails" : 
             'In this line, Dwayne explains his mixed ancestry. His father, former professional wrestler <a href="https://www.wwe.com/superstars/rockyjohnson">Rocky Johnson</a>, was Black, while his mother Ata Johnson, is Samoan. His adopted maternal grandfather Peter Maivia was also a pro wrestler, making him an honorary member of the Anoa\' i Samoan wrestling family. Johnson’s original ring name was Rocky Maivia, an homage to both his father and grandfather\.',
 
-            "annotationSrc" : "../images/peter-rocky-rock.jpg",
+            "annotationSrc" : "./images/peter-rocky-rock.jpg",
 
             "annotationFigcaption" : 'Pictured left to right: Peter Maivia, Rocky Johnson, and Dwayne “The Rock” Johnson.',
 
@@ -82,7 +82,7 @@ const annotationJSON = JSON.stringify(
             "annotationDetails" : 
             `Dwayne "The Rock" Johnson's first verse is written as a “stream-of-conscious” narrative, as exemplified in James Joyce’s Ulysses. The orientation of the constellations offer a greater degradation of the human civilisation. In other words boots to asses is one of the rock’s most famous catchphrases`,
 
-            "annotationSrc" : "../images/face-off-the-rock.jpg",
+            "annotationSrc" : "./images/face-off-the-rock.jpg",
 
             "annotationFigcaption" : 'The Rock in <a href="https://www.youtube.com/watch?v=E9T78bT26sk">"Face Off"</a> Music Video',
 
@@ -94,7 +94,7 @@ const annotationJSON = JSON.stringify(
             "annotationDetails" : 
             `Teremana means spirit of the earth, and the name of Dwayne “The Rock” Johnson’s tequila brand.`,
 
-            "annotationSrc" : "../images/rock-holding-teremana-drink.jpg",
+            "annotationSrc" : "./images/rock-holding-teremana-drink.jpg",
 
             "annotationFigcaption" : '',
 
@@ -121,76 +121,76 @@ const albumSongsJSON = JSON.stringify(
     [
         {
             "title": "Talk Of The Town",
-            "song": "../sound/jack-harlow-talk-of-the-town.mp3",
+            "song": "./sound/jack-harlow-talk-of-the-town.mp3",
         },
 
         {
             "title": "Young Harleezy",
-            "song": "../sound/jack-harlow-young-harleezy.mp3"
+            "song": "./sound/jack-harlow-young-harleezy.mp3"
         },
 
         {
             "title": "I'd Do Anything To Make You Smile",
-            "song": "../sound/jack-harlow-id-do-anything-to-make-you-smile.mp3"
+            "song": "./sound/jack-harlow-id-do-anything-to-make-you-smile.mp3"
         },
 
         {
             "title": "First Class",
-            "song": "../sound/jack-harlow-first-class.mp3"
+            "song": "./sound/jack-harlow-first-class.mp3"
         },
 
         {
             "title": "Dua Lipa",
-            "song": "../sound/jack-harlow-dua-lipa.mp3"
+            "song": "./sound/jack-harlow-dua-lipa.mp3"
         },
 
         {
             "title": "Side Piece",
-            "song": "../sound/jack-harlow-side-piece.mp3"
+            "song": "./sound/jack-harlow-side-piece.mp3"
         },
 
         {
             "title": "Movie Star (ft. Pharrell Williams)",
-            "song": "../sound/jack-harlow-movie-star-feat-pharrell-williams.mp3"
+            "song": "./sound/jack-harlow-movie-star-feat-pharrell-williams.mp3"
         },
 
         {
             "title": "Lil Secret",
-            "song": "../sound/jack-harlow-lil-secret.mp3"
+            "song": "./sound/jack-harlow-lil-secret.mp3"
         },
         {
             "title": "I Got A Shot",
-            "song": "../sound/jack-harlow-i-got-a-shot.mp3"
+            "song": "./sound/jack-harlow-i-got-a-shot.mp3"
         },
 
         {
             "title": "Churchill Downs (ft. Drake)",
-            "song": "../sound/jack-harlow-churchill-downs-feat-drake.mp3"
+            "song": "./sound/jack-harlow-churchill-downs-feat-drake.mp3"
         },
 
         {
             "title": "Like A Blade of Grass",
-            "song": "../sound/jack-harlow-like-a-blade-of-grass.mp3"
+            "song": "./sound/jack-harlow-like-a-blade-of-grass.mp3"
         },
 
         {
             "title": "Parent Trap (ft. Justin Timberlake)",
-            "song": "../sound/jack-harlow-parent-trap-feat-justin-timberlake.mp3"
+            "song": "./sound/jack-harlow-parent-trap-feat-justin-timberlake.mp3"
         },
 
         {
             "title": "Poison (ft. Lil Wayne)",
-            "song": "../sound/jack-harlow-poison-feat-lil-wayne.mp3"
+            "song": "./sound/jack-harlow-poison-feat-lil-wayne.mp3"
         },
 
         {
             "title": "Nail Tech",
-            "song": "../sound/jack-harlow-nail-tech.mp3"
+            "song": "./sound/jack-harlow-nail-tech.mp3"
         },
 
         {
             "title": "State Fair",
-            "song": "../sound/jack-harlow-state-fair.mp3"
+            "song": "./sound/jack-harlow-state-fair.mp3"
         }
     ]
 )
@@ -362,27 +362,27 @@ const verifiedArtists = document.querySelectorAll(".verified_artist");
 const verifiedArtistJSON = JSON.stringify([
     {
         "artist": "A Boogie Wit Da Hoodie",
-        "img" : "../images/a-boogie-wit-da-hoodie.jpeg"
+        "img" : "./images/a-boogie-wit-da-hoodie.jpeg"
     },
     {
         "artist": "Billie Eilish",
-        "img" : "../images/billie-eilish.jpg"
+        "img" : "./images/billie-eilish.jpg"
     },
     {
         "artist": "Cardi B",
-        "img" : "../images/cardi-b.jpg"
+        "img" : "./images/cardi-b.jpg"
     },
     {
         "artist": "Andrea Bocelli",
-        "img" : "../images/andrea-bocelli.jpeg"
+        "img" : "./images/andrea-bocelli.jpeg"
     },
     {
         "artist": "Bob Marley",
-        "img" : "../images/bob-marley.jpg"
+        "img" : "./images/bob-marley.jpg"
     },
     {
         "artist": "Conor Maynard",
-        "img" : "../images/conor-maynard.jpeg"
+        "img" : "./images/conor-maynard.jpeg"
     }
 ])
 
