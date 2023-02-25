@@ -4,7 +4,7 @@
 
 I coded a <a href="https://www.behance.net/gallery/140483359/GENIUS-website-redesign?tracking_source=search_projects%7Cwebsite"> redesign of Genius.com by Pavel Korzh</a> 
 
-To check out the website check out this <a href="https://richardogujawa.github.io/genius/">link</a>
+To check out the website check out this <a href="https://ro-genius.netlify.app/">link</a>
 
 The main focus of the page is the <strong>Homepage</strong> and the <strong>Components</strong> page (where I practised building out the functionalities present throughout Pavel's design) 
 
