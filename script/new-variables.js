@@ -241,7 +241,7 @@ const featuredDataJson = JSON.stringify(
             "image": "images/laura-stylez.jpg",
             "gif" : "images/laura-stylez.gif",
             "author": "Leah Degrazia",
-            "href": "../featured/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career.html"
+            "href": "./featured/radio-personality-laura-stylez-talks-balancing-motherhood-and-her-career.html"
         },
         
         {
