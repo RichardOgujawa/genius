@@ -73,9 +73,17 @@ playPauseBtn.addEventListener("click", () => {
             fullTime.textContent = minute+':'+second;
         }
 
-        //
-        audioPlaylistSong[0].style.backgroundColor = "black";
-        audioPlaylistSong[0].style.color = "hsl(var(--clr-accent, 60 100% 50%))";
+        //No other audio playlist song is currently selected then highlight the first one
+        for(let i = 0; i < audioPlaylistSong.length; i++){
+            if(audioPlaylistSong[i].style.backgroundColor == "black") {
+                console.log("track already selected")
+            } else {
+                audioPlaylistSong[0].style.backgroundColor = "black";
+                audioPlaylistSong[0].style.color = "hsl(var(--clr-accent, 60 100% 50%))";
+            }
+        }
+        
+      
 
 
         audio.play();
