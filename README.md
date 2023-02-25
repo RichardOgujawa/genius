@@ -8,7 +8,7 @@ To check out the website check out this <a href="https://ro-genius.netlify.app/"
 
 The main focus of the page is the <strong>Homepage</strong> and the <strong>Components</strong> page (where I practised building out the functionalities present throughout Pavel's design) 
 
-I made some parts of the webiste work too, for demonstrational purposes, but did so by, for example, using links to articles that already exist Genius' website. 
+I made some parts of the website work too, for demonstration purposes, but did so by, for example, using links to articles that already exist Genius' website. 
 
 I also used Adobe XD to re-design the Featured Page that Pavel designed. I did so not as a critique on Pavel's work, but rather I thought it would be nice to include some more of the features from the original 2022 version of the <a href="https://genius.com/">Genius.com</a> website.
 
