@@ -33,6 +33,10 @@
 
 .cursor_text {
     transition: opacity 0.2s ease;
-    opacity: 0;
     transform: rotate(45deg);
+}
+
+.cursor_press, .cursor_drag {
+    opacity: 0;
+    display: none;
 }

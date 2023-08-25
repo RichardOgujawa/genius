@@ -10,6 +10,15 @@
     flex-direction: column;
 }
 
+.buttons-container {
+    width: clamp(22.5rem, 100%, 40rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
 /*------------------------*/
 /*Share and Like Buttons  */
 /*------------------------*/
@@ -19,7 +28,7 @@
 
 .share_and_like_component {
     --gap: 0em;
-    min-width: 40rem;
+    width: clamp(22.5rem, 100%, 40rem);
     overflow: hidden; 
     grid-template-columns: repeat(4, 1fr) 30%;
     border: 3px solid hsl(var(--clr-white, 0 0% 100%));
@@ -67,18 +76,27 @@
 }
 
 .music_player_container {
-    min-width: 700px; 
+    width: 100%;
+    min-width: 300px; 
     max-height: 500px;
     display: flex;
     overflow: hidden; 
-    border-radius: 30px; 
     transform: scale(0.9); 
 }
 
+.music_player_additional_info {
+    display: none;
+}
+
+.apple_music_link {
+    text-decoration: underline ;
+}
+
 .music_player_white_side {
-    --gap: 0em; 
-    padding: 0em 1em 1em 1em; 
-    grid-template-rows: 65px 57% 12% 75px; 
+    --gap: 3em; 
+    padding: 1em;
+    display: grid;
+    grid-template-rows: 4rem 1fr 30px 110px; 
     flex-basis: 300px; 
     flex-shrink: 0;
 }
@@ -107,13 +125,13 @@
 .music_player_yellow_side {
     --gap: 0em; 
     flex-basis: 100%; 
-    grid-template-rows: 65px auto 75px;
+    grid-template-rows: 90px auto 90px;
 }
 
 .music_player_currently_playing {
     align-items: center; 
     justify-content: space-between;
-    padding-inline: 1.5em;
+    padding: 1.5em 1em;
 }
 
 .current_song {
@@ -183,6 +201,7 @@
 }
 
 .controls_container {
+    padding: 1em;
     --gap: 1em; 
     align-items: center; 
 }
@@ -230,6 +249,21 @@
 }
 
 
+@media screen and (max-width: 768px) {
+    /*Remove the white side on smaller screen sizes, and add in any missing info to the remaining ui*/
+    .music_player_white_side {
+        display: none;
+    }
+
+    .music_player_additional_info {
+        display: block;
+    }
+
+    
+}
+
+
+
 
 /*------------------------*/
 /*Comment Section         */
@@ -248,7 +282,7 @@
 }
 
 .comment_subtitle{
-    max-width: 40ch
+    max-width: 50ch
 }
 
 .comment_textarea {
@@ -257,7 +291,7 @@
     border-radius: 10px; 
     transition: border var(--speed) ease;
     background: transparent; 
-    min-width:50em;
+    width: clamp(10em, 100%, 70em);
     min-height: 10em; 
 }
 
@@ -347,7 +381,9 @@
 
 .annotation {
     position: absolute;
-    width: 22em;
+    z-index: 100;
+    min-width: 10em;
+    max-width: 22em;
     height: auto;
     padding: 1.5em 1em;
     visibility:hidden;
@@ -523,11 +559,6 @@ i.fa-share {
     line-height: 1.5;
 }
 
-.lyrics_type {
-    line-height: 0;
-    
-}
-
 .lyrics_part {
     max-width: 45ch;
     margin-bottom: 1em;
@@ -563,6 +594,32 @@ i.fa-share {
     clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
 }
 
+@media screen and (max-width: 768px) {
+    .lyrics_side {
+        flex-basis: 100%;
+    }
+    .lyrics_song_title {
+        max-width: 100%;
+    }
+    
+    .lyrics {
+        line-height: 1.5;
+    }
+    
+    .lyrics_part {
+        max-width: 100%;
+        margin-bottom: 1em;
+        white-space: pre-line;
+    }
+    .annotation_side {
+        flex-basis: 0;
+    }
+    .lyric_analysis_section {
+        --gap: 0em;
+    }
+}
+
+
 
 
 /*----------------------*/
@@ -570,13 +627,12 @@ i.fa-share {
 /*----------------------*/
 
 .verified_artists_section {
-    padding: 1em;
     flex-direction: column;
 }
 
 .verified_artists_component {
     width:100%;
-    padding-inline: 2em;
+    height: 100%;
     flex-direction: column;
     grid-template-columns: 50% 25% auto;
     grid-template-rows: 60% 40%; 
@@ -590,14 +646,14 @@ i.fa-share {
     list-style: none;
 }
 
-.verified_artists_component h1 {
+.verified_artists_component h2 {
     grid-area: verified-artists-h1;
     justify-self: start;
     text-align: left;
 
 }
 
-.verified_artists_top_row h2 {
+.verified_artists_component h3 {
     grid-area: most-popular;
 }
 
@@ -689,11 +745,21 @@ i.fa-share {
     flex-basis: 50%;
 }
 
+@media screen and (max-width: 768px){
+    .verified_artists_component {
+        gap: 2em;
+        grid-template-rows: 100px 100px 30%; 
+        grid-template-areas: 
+        "verified-artists-h1 . ."
+        "most-popular choose-letter ."
+        "verified-artists-list verified-artists-list verified-artists-list";
+    }
+}
 /*----------------------*/
 /*Footer                */
 /*----------------------*/
 
 footer{
+    text-align: center;
     margin: 7vh 0vh 3vh;
-    
 }

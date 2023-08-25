@@ -206,7 +206,7 @@ hr {
 }
 
 /* Colours */
-.bg-red {
+.bg-red { /*For debugging purposes*/
     background-color: red;
 }
 
@@ -242,6 +242,9 @@ hr {
     color: hsl(var(--clr-accent, 60, 100%, 50%));
 }
 
+.text-light-gray {
+    color: hsl(var(--clr-light-gray, 0, 0%, 66%));
+}
 .text-gray {
     color: hsl(var(--clr-gray, 0, 0%, 66%));
 }
@@ -397,6 +400,16 @@ hr {
     background-color: hsl(var(--clr-dark, 0, 0%, 9%));
     color: hsl(var(--clr-white, 0, 0%, 100%));
     outline: none;
+}
+
+/*Tooltip*/
+.tooltip-parent {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%; 
 }
 
 

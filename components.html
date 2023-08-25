@@ -44,7 +44,8 @@
             border: 2px solid hsl(0 0% 100% / 0.25);
             justify-content: space-around;
             align-items: center;
-            padding: 1em 0px;
+            padding: 0em 2em 2em;
+            
         }
 
         .main_wrap {
@@ -81,7 +82,7 @@
 
         <section class="button_section flex section">
             <h3 class="component_title">Buttons</h3>
-            <div class="container helper flex">
+            <div class="container buttons-container">
 
                 <!--Component | Navigation Button Yellow-->
                 <a href="#" class="fs-300 small-button yellow-button cursor-bigger">sign up</a>
@@ -141,8 +142,9 @@
 
                 <!--Upvotes-->
                 <div class="upvotes grid fs-300"><span>+9 upvotes</span></div>
-
+                
             </section>
+            <div class="upvotes grid fs-300"><span>+9 upvotes</span></div>
 
         </section>
 
@@ -155,10 +157,10 @@
             <aside class="music_player_container">
 
                 <!--Music Player Left Side-->
-                <div class="music_player_white_side grid bg-white">
+                <div class="music_player_white_side bg-white">
+                    <!--Apple Music Logo-->
                     <div class="music_player_apple_music_logo">
 
-                        <!--Apple Music Logo-->
                         <a href="https://music.apple.com/us/browse" target="_blank">
                             <img class="cursor-bigger" src="../icons/apple-music.svg" alt="Apple Music Logo">
                         </a>
@@ -190,8 +192,13 @@
                     <div class="music_player_currently_playing flex text-white bg-dark-gray">
 
                         <!--Current Song-->
-                        <div class="current_song fs-500">
-                            <span>Come Home The Kids Miss You</span>
+                        <div class="current_song">
+                            <div class="flex music_player_additional_info show_on_tablet fs-300">
+                                <a ><i class="fa-brands fa-apple fs-300"></i> <span class="apple_music_link">View in Apple Music</span></a>
+                                <span> |</span>
+                                <span class="artist_name text-light-gray">Jack Harlow:</span>
+                            </div>
+                            <span class="fs-500">Come Home The Kids Miss You</span>
                         </div>
 
                         <!--Animating Level Bars-->
@@ -279,7 +286,7 @@
 
                             <!--Play Button-->
                             <div class="grid">
-                                <button class="play_pause_btn" class="flex">
+                                <button class="play_pause_btn flex">
                                     <i class="fa text-white fa-play"></i>
                                     <span class="sr-only">Play/Pause Button</span>
                                 </button>
@@ -405,7 +412,7 @@
 
                             <!--Figure for Comment (Image and Caption)-->
                         <figure>
-                            <img class='annotation_img' src="">
+                            <img class="annotation_img" src="/">
                             <figcaption class="annotation_figcaption fs-100"></figcaption>
                         </figure>
 
@@ -449,11 +456,11 @@
 
                 <section class="lyrics_side">
                     <p class="fs-400 lyrics">
-                    <h2 class="fs-500 lyrics_song_title">Face Off - Tech N9ne ft. Dwayne Johnson, King Iso & Joey Cool
+                    <h2 class="fs-500 lyrics_song_title">Face Off - Tech N9ne ft. Dwayne Johnson, King Iso &amp; Joey Cool
                     </h2>
 
                     <p class="lyrics_type fs-200 uppercase">
-                        [Verse 4: Dwayne Johnson & Tech N9ne]</p>
+                        [Verse 4: Dwayne Johnson &amp; Tech N9ne]</p>
 
                     <p class="lyrics_part">
                         It's about drive, it's about power, we stay hungry, we devour
@@ -491,22 +498,23 @@
 
 
             <section class="verified_artists_component grid container">
-                <h1 class="fs-800 text-accent line-break">Verified
-                    Artists
-                </h1>
+                <h2 class="verified_artists_container text-accent ">Verified Artists
+                </h2>
 
-                <h2 class="most_popular_heading fs-600 line-break flex">Most
+                <h3 class="most_popular_heading fs-600 line-break flex">Most
                     Popular A
                     Artists
-                    on Genius</h2>
+                    on Genius
+                </h3>
 
 
-                <div class="choose_letter_container flex cursor-bigger">
+                <div class="tooltip-parent choose_letter_container flex cursor-bigger">
                     <ul class="choose_letter flex fs-900">
                         <li>A</li>
                         <li>B</li>
                         <li>C</li>
                     </ul>
+                    <div class="tooltip">Drag to navigate</div>
                 </div>
 
                 <ul class="verified_artists_list">
@@ -554,7 +562,9 @@
 
 
     <!--Cursor-->
-    <div class="cursor_inner"><span class="cursor_text">PRESS</span></div>
+    <div class="cursor_inner"><span class="cursor_text cursor_press">PRESS</span>
+        <span class="cursor_text cursor_drag">DRAG</span>
+    </div>
     <div class="cursor_outer"></div>
 
 </body>
