@@ -125,7 +125,11 @@
 .music_player_yellow_side {
     --gap: 0em; 
     flex-basis: 100%; 
-    grid-template-rows: 90px auto 90px;
+    grid-template-rows: 90px 1fr 90px;
+}
+
+.music_player_playlist_container {
+    overflow-x: hidden !important;
 }
 
 .music_player_currently_playing {
@@ -144,6 +148,11 @@
     --gap: 0em; 
     flex-direction:column; 
     padding: 0.1em 0em; 
+}
+
+.overflow-hidden {
+    overflow: hidden;
+    outline: red 3px solid;
 }
 
 .music_player_playlist > * { 
